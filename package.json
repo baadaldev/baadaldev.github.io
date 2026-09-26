@@ -1,0 +1,21 @@
+{
+  "name": "got-epic-portfolio",
+  "version": "1.0.0",
+  "description": "Game of Thrones Themed 3D Cinematic Portfolio & WebGL Astrolabe",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve . -l 3000",
+    "dev": "npx serve . -l 3000"
+  },
+  "keywords": [
+    "game-of-thrones",
+    "portfolio",
+    "threejs",
+    "web-audio-api",
+    "cinematic",
+    "webgl",
+    "dark-fantasy"
+  ],
+  "author": "Shahed Alam",
+  "license": "MIT"
+}

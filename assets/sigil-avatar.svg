@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <radialGradient id="avatarGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#d4af37" stop-opacity="0.35"/>
+      <stop offset="70%" stop-color="#996515" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="goldPlate" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff0aa"/>
+      <stop offset="40%" stop-color="#d4af37"/>
+      <stop offset="80%" stop-color="#80540a"/>
+      <stop offset="100%" stop-color="#4a3000"/>
+    </linearGradient>
+    <linearGradient id="valyrianSteel" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#e8ecf2"/>
+      <stop offset="50%" stop-color="#8a97a8"/>
+      <stop offset="100%" stop-color="#2a3340"/>
+    </linearGradient>
+    <filter id="sigilShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.8"/>
+    </filter>
+  </defs>
+
+  <!-- Background Circle & Glow -->
+  <circle cx="200" cy="200" r="190" fill="#0d0e12" stroke="url(#goldPlate)" stroke-width="4"/>
+  <circle cx="200" cy="200" r="175" fill="none" stroke="#d4af37" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.6"/>
+  <circle cx="200" cy="200" r="160" fill="url(#avatarGlow)"/>
+
+  <!-- Ornate Border Rings & Compass Glyphs -->
+  <g stroke="url(#goldPlate)" stroke-width="2" fill="none" opacity="0.7">
+    <circle cx="200" cy="200" r="145"/>
+    <circle cx="200" cy="200" r="135" stroke-width="1" stroke-dasharray="3,6"/>
+  </g>
+
+  <!-- Crown / Royal Crest Top -->
+  <g transform="translate(140, 60)" fill="url(#goldPlate)" filter="url(#sigilShadow)">
+    <path d="M 0 45 L 20 15 L 40 35 L 60 5 L 80 35 L 100 15 L 120 45 Z"/>
+    <circle cx="20" cy="12" r="4" fill="#e2583e"/>
+    <circle cx="60" cy="2" r="5" fill="#e2583e"/>
+    <circle cx="100" cy="12" r="4" fill="#e2583e"/>
+    <rect x="5" y="47" width="110" height="7" rx="3" fill="url(#goldPlate)"/>
+  </g>
+
+  <!-- Crossed Valyrian Swords -->
+  <g filter="url(#sigilShadow)">
+    <!-- Sword 1 -->
+    <g transform="translate(200, 210) rotate(45)">
+      <rect x="-4" y="-110" width="8" height="150" fill="url(#valyrianSteel)"/>
+      <path d="M -4 -110 L 0 -130 L 4 -110 Z" fill="#ffffff"/>
+      <rect x="-18" y="40" width="36" height="8" rx="2" fill="url(#goldPlate)"/>
+      <rect x="-3" y="48" width="6" height="25" fill="#3a2410"/>
+      <circle cx="0" cy="77" r="8" fill="url(#goldPlate)"/>
+      <line x1="0" y1="-110" x2="0" y2="40" stroke="#1a222d" stroke-width="1.5"/>
+    </g>
+    <!-- Sword 2 -->
+    <g transform="translate(200, 210) rotate(-45)">
+      <rect x="-4" y="-110" width="8" height="150" fill="url(#valyrianSteel)"/>
+      <path d="M -4 -110 L 0 -130 L 4 -110 Z" fill="#ffffff"/>
+      <rect x="-18" y="40" width="36" height="8" rx="2" fill="url(#goldPlate)"/>
+      <rect x="-3" y="48" width="6" height="25" fill="#3a2410"/>
+      <circle cx="0" cy="77" r="8" fill="url(#goldPlate)"/>
+      <line x1="0" y1="-110" x2="0" y2="40" stroke="#1a222d" stroke-width="1.5"/>
+    </g>
+  </g>
+
+  <!-- Shield of the Citadel -->
+  <g transform="translate(135, 140)" filter="url(#sigilShadow)">
+    <path d="M 65 0 C 115 0 130 15 130 45 C 130 110 65 145 65 155 C 65 145 0 110 0 45 C 0 15 15 0 65 0 Z" 
+          fill="#121620" stroke="url(#goldPlate)" stroke-width="4"/>
+    
+    <!-- Shield Inner Emblems: Dragon + Code Brackets -->
+    <!-- Dragon Silhouette -->
+    <path d="M 65 30 C 50 45 40 70 50 95 C 55 85 62 80 65 75 C 68 80 75 85 80 95 C 90 70 80 45 65 30 Z" 
+          fill="#d4af37" opacity="0.9"/>
+    <!-- Code Brackets & Slash in Gold -->
+    <text x="65" y="115" font-family="'Cinzel', serif" font-weight="900" font-size="24" 
+          fill="#d4af37" text-anchor="middle" letter-spacing="2">&lt; / &gt;</text>
+  </g>
+
+  <!-- Laurel Wreath of Victory -->
+  <g stroke="url(#goldPlate)" fill="none" stroke-width="2.5" opacity="0.7">
+    <path d="M 70 240 C 65 300 130 350 200 350 C 270 350 335 300 330 240"/>
+  </g>
+</svg>

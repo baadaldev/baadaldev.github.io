@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" width="100%" height="100%">
+  <defs>
+    <radialGradient id="tomeBg" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#1c160e"/>
+      <stop offset="60%" stop-color="#0e0a06"/>
+      <stop offset="100%" stop-color="#050402"/>
+    </radialGradient>
+    <radialGradient id="magicGlow" cx="50%" cy="55%" r="45%">
+      <stop offset="0%" stop-color="#ffd54f" stop-opacity="0.8"/>
+      <stop offset="40%" stop-color="#ff9800" stop-opacity="0.4"/>
+      <stop offset="80%" stop-color="#e65100" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="leatherCover" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4e342e"/>
+      <stop offset="100%" stop-color="#1b0000"/>
+    </linearGradient>
+    <linearGradient id="parchment" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f5e6c8"/>
+      <stop offset="50%" stop-color="#ebd5a8"/>
+      <stop offset="100%" stop-color="#d4b882"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="360" fill="url(#tomeBg)"/>
+
+  <!-- Celestial Arc / Astrolabe Rings behind Tome -->
+  <g transform="translate(300, 180)" fill="none" stroke="#d4af37" opacity="0.3">
+    <circle cx="0" cy="0" r="140" stroke-width="2"/>
+    <circle cx="0" cy="0" r="120" stroke-width="1.5" stroke-dasharray="8,6"/>
+    <circle cx="0" cy="0" r="90" stroke-width="1"/>
+    <!-- Astrolabe axis ticks -->
+    <line x1="-140" y1="0" x2="140" y2="0" stroke-width="1.5"/>
+    <line x1="0" y1="-140" x2="0" y2="140" stroke-width="1.5"/>
+    <line x1="-99" y1="-99" x2="99" y2="99" stroke-width="1"/>
+    <line x1="-99" y1="99" x2="99" y2="-99" stroke-width="1"/>
+  </g>
+
+  <!-- Glowing Aura of Arcane Knowledge -->
+  <circle cx="300" cy="190" r="130" fill="url(#magicGlow)"/>
+
+  <!-- The Open Ancient Tome / Grimoire -->
+  <g transform="translate(300, 200)">
+    <!-- Book Leather Binding Base -->
+    <path d="M -180 30 C -120 45 -40 35 0 25 C 40 35 120 45 180 30 L 175 45 C 115 60 40 50 0 40 C -40 50 -115 60 -175 45 Z" fill="url(#leatherCover)"/>
+
+    <!-- Left Pages Stack -->
+    <path d="M -170 20 C -120 30 -50 25 0 15 L 0 -55 C -50 -45 -120 -50 -170 -60 Z" fill="url(#parchment)" stroke="#8d6e63" stroke-width="1"/>
+    <!-- Left Inner Curved Page -->
+    <path d="M -165 15 C -115 25 -45 20 0 15 L 0 -55 C -45 -50 -115 -45 -165 -55 Z" fill="#fff3e0" opacity="0.9"/>
+    
+    <!-- Right Pages Stack -->
+    <path d="M 0 15 C 50 25 120 30 170 20 L 170 -60 C 120 -50 50 -45 0 -55 Z" fill="url(#parchment)" stroke="#8d6e63" stroke-width="1"/>
+    <!-- Right Inner Curved Page -->
+    <path d="M 0 15 C 45 20 115 25 165 15 L 165 -55 C 115 -45 45 -50 0 -55 Z" fill="#fff3e0" opacity="0.9"/>
+
+    <!-- Spine Divider Ribbon in Royal Crimson -->
+    <path d="M -4 -65 L 4 -65 L 8 50 L 0 40 L -8 50 Z" fill="#b71c1c"/>
+
+    <!-- Arcane Glowing Glyphs on Pages -->
+    <g fill="#d84315" font-family="'Cinzel', serif" font-size="9" font-weight="bold" opacity="0.8">
+      <!-- Left Page Content: AI Neural Network Pattern & Ancient Script -->
+      <line x1="-140" y1="-40" x2="-20" y2="-40" stroke="#795548" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="-140" y1="-25" x2="-35" y2="-25" stroke="#795548" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="-140" y1="-10" x2="-20" y2="-10" stroke="#795548" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="-140" y1="5" x2="-50" y2="5" stroke="#795548" stroke-width="1.5" stroke-linecap="round"/>
+      
+      <!-- Right Page Content: Glowing Code / Neural Nodes -->
+      <line x1="20" y1="-40" x2="140" y2="-40" stroke="#795548" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="20" y1="-25" x2="125" y2="-25" stroke="#795548" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="20" y1="-10" x2="140" y2="-10" stroke="#795548" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="20" y1="5" x2="110" y2="5" stroke="#795548" stroke-width="1.5" stroke-linecap="round"/>
+    </g>
+
+    <!-- Floating Holographic / Neural Network Constellation Rising from Book -->
+    <g transform="translate(0, -90)" fill="#ffd54f">
+      <circle cx="0" cy="0" r="7" fill="#fff" stroke="#ffb300" stroke-width="3"/>
+      <circle cx="-50" cy="-30" r="5" fill="#ffd54f"/>
+      <circle cx="50" cy="-30" r="5" fill="#ffd54f"/>
+      <circle cx="-30" cy="-60" r="4" fill="#ffb300"/>
+      <circle cx="30" cy="-60" r="4" fill="#ffb300"/>
+      <circle cx="0" cy="-75" r="6" fill="#fff" stroke="#ffd54f" stroke-width="2"/>
+
+      <line x1="0" y1="0" x2="-50" y2="-30" stroke="#ffb300" stroke-width="1.5" opacity="0.8"/>
+      <line x1="0" y1="0" x2="50" y2="-30" stroke="#ffb300" stroke-width="1.5" opacity="0.8"/>
+      <line x1="-50" y1="-30" x2="-30" y2="-60" stroke="#ffb300" stroke-width="1.2" opacity="0.8"/>
+      <line x1="50" y1="-30" x2="30" y2="-60" stroke="#ffb300" stroke-width="1.2" opacity="0.8"/>
+      <line x1="-30" y1="-60" x2="0" y2="-75" stroke="#ffb300" stroke-width="1.5" opacity="0.8"/>
+      <line x1="30" y1="-60" x2="0" y2="-75" stroke="#ffb300" stroke-width="1.5" opacity="0.8"/>
+      <line x1="-50" y1="-30" x2="50" y2="-30" stroke="#ffb300" stroke-width="0.8" stroke-dasharray="3,3" opacity="0.5"/>
+    </g>
+  </g>
+</svg>

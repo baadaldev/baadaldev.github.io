@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="100%" height="100%">
+  <defs>
+    <radialGradient id="waxGrad" cx="35%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#ff4d4d"/>
+      <stop offset="35%" stop-color="#b71c1c"/>
+      <stop offset="70%" stop-color="#7f0000"/>
+      <stop offset="100%" stop-color="#400000"/>
+    </radialGradient>
+    <filter id="waxShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="2" dy="5" stdDeviation="5" flood-color="#000" flood-opacity="0.7"/>
+    </filter>
+  </defs>
+
+  <!-- Irregular Melted Wax Silhouette -->
+  <path d="M 80 8 
+           C 105 5, 128 20, 142 38 
+           C 155 58, 158 85, 146 110 
+           C 135 135, 110 155, 80 152 
+           C 50 155, 22 138, 12 112 
+           C 2 86, 6 56, 20 36 
+           C 34 18, 55 10, 80 8 Z" 
+        fill="url(#waxGrad)" filter="url(#waxShadow)"/>
+
+  <!-- Inner Pressed Ring -->
+  <circle cx="80" cy="80" r="52" fill="#8b0000" stroke="#ff8585" stroke-width="2" opacity="0.6"/>
+  <circle cx="80" cy="80" r="48" fill="none" stroke="#4a0000" stroke-width="3"/>
+  <circle cx="80" cy="80" r="44" fill="none" stroke="#ff9999" stroke-width="1" stroke-dasharray="3,3"/>
+
+  <!-- Dragon / Crown Imprint Relief -->
+  <g fill="#5e0000" stroke="#ff8080" stroke-width="0.8">
+    <!-- Crown -->
+    <path d="M 60 62 L 68 50 L 80 60 L 92 50 L 100 62 Z"/>
+    <!-- Dragon Head / Code Chevron -->
+    <path d="M 80 66 L 95 80 L 80 94 L 75 88 L 84 80 L 75 72 Z"/>
+    <path d="M 80 66 L 65 80 L 80 94 L 85 88 L 76 80 L 85 72 Z"/>
+    <circle cx="80" cy="105" r="4"/>
+  </g>
+</svg>

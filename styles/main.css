@@ -1,0 +1,1220 @@
+/**
+ * =====================================================================
+ * THE CITADEL GRAND PORTFOLIO STYLES (GAME OF THRONES MASTERWORK)
+ * =====================================================================
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@400;600;700;900&family=Marcellus&family=MedievalSharp&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+/* --- Reset & Base --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--realm-bg);
+  color: var(--realm-text);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100vh;
+  position: relative;
+  background-color: var(--realm-bg);
+  transition: background-color 0.8s ease, color 0.8s ease;
+  line-height: 1.6;
+}
+
+/* Custom Scrollbar - Valyrian Steel & Gold */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #06070a;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--realm-gold) 0%, #5a400c 100%);
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--realm-gold-light);
+}
+
+/* Selection Color */
+::selection {
+  background: var(--realm-primary);
+  color: #ffffff;
+}
+
+/* Content Layer (Above 3D Viewport) */
+#realm-app {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+}
+
+/* Layout Container */
+.realm-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* =======================================================
+   ORNAMENTAL SECTION HEADERS & DIVIDERS
+   ======================================================= */
+.realm-header {
+  text-align: center;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.header-sigil {
+  font-size: 32px;
+  margin-bottom: 8px;
+  display: inline-block;
+  filter: drop-shadow(0 0 10px var(--realm-primary-glow));
+}
+
+.header-subtitle {
+  font-family: 'Cinzel', serif;
+  font-size: 13px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--realm-gold);
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.header-title {
+  font-family: 'Cinzel Decorative', 'Cinzel', serif;
+  font-size: clamp(28px, 4.5vw, 46px);
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: var(--realm-text-heading);
+  text-transform: uppercase;
+  background: linear-gradient(180deg, #ffffff 0%, var(--realm-gold-light) 40%, var(--realm-gold) 75%, var(--realm-gold-dark) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 16px;
+  text-shadow: 0 4px 15px rgba(0,0,0,0.8);
+}
+
+/* Medieval Ornamental Sword Divider */
+.medieval-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin: 0 auto 20px auto;
+  max-width: 380px;
+  opacity: 0.8;
+}
+
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--realm-gold), transparent);
+}
+
+.divider-gem {
+  width: 10px;
+  height: 10px;
+  background: var(--realm-primary);
+  transform: rotate(45deg);
+  border: 1px solid var(--realm-gold);
+  box-shadow: 0 0 10px var(--realm-primary);
+}
+
+/* =======================================================
+   ROYAL NAVIGATION BAR
+   ======================================================= */
+.citadel-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 900;
+  background: rgba(9, 10, 14, 0.85);
+  border-bottom: 1px solid var(--realm-border);
+  backdrop-filter: blur(12px);
+  padding: 14px 0;
+  transition: all 0.3s ease;
+}
+
+.nav-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--realm-gold-light);
+  font-family: 'Cinzel', serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.nav-crest {
+  width: 34px;
+  height: 34px;
+  filter: drop-shadow(0 0 8px var(--realm-gold));
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-family: 'Cinzel', serif;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--realm-text-muted);
+  transition: all 0.25s ease;
+  position: relative;
+  font-weight: 600;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--realm-gold-light);
+  text-shadow: 0 0 12px var(--realm-primary-glow);
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--realm-gold);
+  transition: all 0.25s ease;
+  transform: translateX(-50%);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.btn-scribe-nav {
+  background: rgba(212, 175, 55, 0.12);
+  border: 1px solid var(--realm-gold);
+  color: var(--realm-gold-light);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-family: 'Cinzel', serif;
+  font-size: 12px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.25s ease;
+}
+
+.btn-scribe-nav:hover {
+  background: rgba(212, 175, 55, 0.3);
+  transform: translateY(-1px);
+  box-shadow: 0 0 12px var(--realm-primary-glow);
+}
+
+/* =======================================================
+   HERO: THE GRAND CITADEL
+   ======================================================= */
+.hero-citadel-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 130px 0 80px 0;
+  text-align: center;
+  position: relative;
+}
+
+.hero-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero-sigil-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(18, 21, 30, 0.7);
+  border: 1px solid var(--realm-border);
+  padding: 8px 20px;
+  border-radius: 30px;
+  font-family: 'Cinzel', serif;
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--realm-gold);
+  margin-bottom: 24px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
+.hero-avatar-wrapper {
+  width: 130px;
+  height: 130px;
+  margin: 0 auto 24px auto;
+  position: relative;
+}
+
+.hero-avatar-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--realm-gold);
+  box-shadow: 0 0 30px var(--realm-primary-glow);
+}
+
+.hero-title {
+  font-family: 'Cinzel Decorative', 'Cinzel', serif;
+  font-size: clamp(38px, 7vw, 76px);
+  font-weight: 900;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  line-height: 1.15;
+  background: linear-gradient(180deg, #ffffff 0%, #fff0b3 35%, var(--realm-gold) 70%, var(--realm-gold-dark) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 16px;
+  filter: drop-shadow(0 6px 25px rgba(0, 0, 0, 0.9));
+}
+
+.hero-royal-titles {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(16px, 2.4vw, 22px);
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: var(--realm-gold-light);
+  margin-bottom: 18px;
+  text-transform: uppercase;
+}
+
+.hero-creed {
+  font-family: 'Marcellus', serif;
+  font-size: clamp(15px, 1.8vw, 19px);
+  color: var(--realm-text-muted);
+  max-width: 680px;
+  margin: 0 auto 36px auto;
+  line-height: 1.7;
+}
+
+/* Hero Action Buttons */
+.hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+.btn-primary-realm {
+  background: linear-gradient(180deg, #2a2318 0%, #151820 100%);
+  color: #fff9e6;
+  border: 1px solid var(--realm-gold);
+  padding: 14px 34px;
+  font-family: 'Cinzel', serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.25), inset 0 0 10px rgba(212, 175, 55, 0.15);
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-primary-realm:hover {
+  transform: translateY(-2px);
+  border-color: #ffe082;
+  box-shadow: 0 0 35px var(--realm-primary-glow), inset 0 0 15px rgba(255, 215, 79, 0.3);
+  color: #ffffff;
+}
+
+.btn-secondary-realm {
+  background: rgba(18, 22, 32, 0.6);
+  color: var(--realm-text);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 14px 32px;
+  font-family: 'Cinzel', serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 4px;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-secondary-realm:hover {
+  border-color: var(--realm-gold);
+  color: var(--realm-gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+}
+
+/* Realm Stats Row */
+.realm-stats-bar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  background: var(--realm-bg-card);
+  border: 1px solid var(--realm-border);
+  backdrop-filter: blur(14px);
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
+}
+
+.stat-box {
+  text-align: center;
+  position: relative;
+}
+
+.stat-box:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: -10px;
+  top: 15%;
+  height: 70%;
+  width: 1px;
+  background: var(--realm-border);
+}
+
+.stat-number {
+  font-family: 'Cinzel', serif;
+  font-size: 32px;
+  font-weight: 900;
+  color: var(--realm-gold-light);
+  margin-bottom: 4px;
+  text-shadow: 0 0 15px var(--realm-primary-glow);
+}
+
+.stat-label {
+  font-family: 'Marcellus', serif;
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: var(--realm-text-muted);
+  text-transform: uppercase;
+}
+
+/* =======================================================
+   SECTION: HOUSES OF TECH (SKILLS & ARSENAL)
+   ======================================================= */
+.skills-citadel-section {
+  padding: 100px 0;
+  position: relative;
+}
+
+.houses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+  gap: 30px;
+}
+
+@media (max-width: 600px) {
+  .houses-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.house-tech-card {
+  background: var(--realm-bg-card);
+  border: 1px solid var(--realm-border);
+  border-radius: 8px;
+  padding: 32px;
+  position: relative;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+.house-tech-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--realm-gold), transparent);
+  opacity: 0.5;
+  transition: opacity 0.35s ease;
+}
+
+.house-tech-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--realm-gold);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8), 0 0 25px var(--realm-primary-glow);
+}
+
+.house-tech-card:hover::before {
+  opacity: 1;
+}
+
+.house-card-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 16px;
+}
+
+.house-card-sigil {
+  font-size: 32px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--realm-border);
+}
+
+.house-card-name {
+  font-family: 'Cinzel', serif;
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--realm-gold-light);
+  letter-spacing: 1.5px;
+}
+
+.house-card-motto {
+  font-family: 'MedievalSharp', cursive;
+  font-size: 13px;
+  color: var(--realm-primary);
+  font-style: italic;
+  letter-spacing: 1px;
+}
+
+.house-card-desc {
+  font-size: 14px;
+  color: var(--realm-text-muted);
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+/* Skill Blade Bars */
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.skill-item {
+  position: relative;
+}
+
+.skill-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+.skill-name {
+  font-weight: 600;
+  color: var(--realm-text);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.skill-role {
+  font-family: 'Cinzel', serif;
+  font-size: 12px;
+  color: var(--realm-gold);
+  letter-spacing: 1px;
+}
+
+.skill-blade-track {
+  height: 7px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+}
+
+.skill-blade-fill {
+  height: 100%;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #b8860b 0%, var(--realm-gold) 50%, #fff2a3 100%);
+  box-shadow: 0 0 10px var(--realm-primary-glow);
+  position: relative;
+  transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* =======================================================
+   SECTION: CHRONICLES OF CONQUEST (PROJECTS)
+   ======================================================= */
+.projects-citadel-section {
+  padding: 100px 0;
+  position: relative;
+}
+
+.campaigns-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 34px;
+}
+
+.campaign-card {
+  background: var(--realm-bg-card);
+  border: 1px solid var(--realm-border);
+  border-radius: 8px;
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.7);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.campaign-card:hover {
+  transform: translateY(-8px) scale(1.01);
+  border-color: var(--realm-gold);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.85), 0 0 30px var(--realm-primary-glow);
+}
+
+.campaign-image-box {
+  width: 100%;
+  height: 220px;
+  position: relative;
+  overflow: hidden;
+  background: #090c12;
+}
+
+.campaign-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.campaign-card:hover .campaign-img {
+  transform: scale(1.08);
+}
+
+/* Wax Seal Stamp on Project Card */
+.campaign-wax-seal {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 48px;
+  height: 48px;
+  z-index: 5;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.8));
+  transition: transform 0.3s ease;
+}
+
+.campaign-card:hover .campaign-wax-seal {
+  transform: rotate(12deg) scale(1.1);
+}
+
+.campaign-house-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 14px;
+  background: rgba(10, 13, 20, 0.85);
+  border: 1px solid var(--realm-gold);
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: var(--realm-gold-light);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  backdrop-filter: blur(6px);
+}
+
+.campaign-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.campaign-title {
+  font-family: 'Cinzel', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--realm-text-heading);
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.campaign-summary {
+  font-size: 14px;
+  color: var(--realm-text-muted);
+  line-height: 1.6;
+  margin-bottom: 18px;
+  flex: 1;
+}
+
+.campaign-tech-runes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 22px;
+}
+
+.tech-rune {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-family: 'Cinzel', serif;
+  color: var(--realm-gold);
+  letter-spacing: 0.5px;
+}
+
+.campaign-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 16px;
+}
+
+.btn-campaign-modal {
+  flex: 1;
+  background: rgba(212, 175, 55, 0.12);
+  border: 1px solid var(--realm-gold);
+  color: var(--realm-gold-light);
+  padding: 10px 16px;
+  border-radius: 4px;
+  font-family: 'Cinzel', serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.btn-campaign-modal:hover {
+  background: rgba(212, 175, 55, 0.3);
+  box-shadow: 0 0 15px var(--realm-primary-glow);
+}
+
+.btn-campaign-link {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--realm-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 16px;
+  transition: all 0.25s ease;
+}
+
+.btn-campaign-link:hover {
+  border-color: var(--realm-gold);
+  color: var(--realm-gold);
+  transform: translateY(-2px);
+}
+
+/* =======================================================
+   SECTION: CITADEL ANNALS (TIMELINE & CAREER MILESTONES)
+   ======================================================= */
+.annals-citadel-section {
+  padding: 100px 0;
+  position: relative;
+}
+
+.annals-timeline {
+  position: relative;
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.annals-timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 30px;
+  height: 100%;
+  width: 2px;
+  background: linear-gradient(180deg, transparent 0%, var(--realm-gold) 20%, var(--realm-gold) 80%, transparent 100%);
+}
+
+.annal-item {
+  position: relative;
+  margin-bottom: 40px;
+  padding-left: 75px;
+}
+
+.annal-gear-node {
+  position: absolute;
+  left: 17px;
+  top: 6px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #0d0f15;
+  border: 2px solid var(--realm-gold);
+  box-shadow: 0 0 12px var(--realm-primary-glow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  color: var(--realm-gold);
+  animation: gearSpinSlow 20s linear infinite;
+}
+
+@keyframes gearSpinSlow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.annal-card {
+  background: var(--realm-bg-card);
+  border: 1px solid var(--realm-border);
+  border-radius: 6px;
+  padding: 24px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+}
+
+.annal-era {
+  font-family: 'Cinzel', serif;
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: var(--realm-gold);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+.annal-role {
+  font-family: 'Cinzel', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--realm-text-heading);
+  margin-bottom: 4px;
+}
+
+.annal-citadel {
+  font-family: 'MedievalSharp', cursive;
+  font-size: 14px;
+  color: var(--realm-primary);
+  margin-bottom: 12px;
+}
+
+.annal-desc {
+  font-size: 14px;
+  color: var(--realm-text-muted);
+  line-height: 1.6;
+}
+
+/* =======================================================
+   SECTION: ENDORSEMENTS OF THE LORDS (TESTIMONIALS)
+   ======================================================= */
+.endorsements-citadel-section {
+  padding: 100px 0;
+  position: relative;
+}
+
+.endorsements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.endorsement-scroll-card {
+  background: var(--realm-bg-card);
+  border: 1px solid var(--realm-border);
+  border-radius: 8px;
+  padding: 30px;
+  position: relative;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.scroll-quote {
+  font-family: 'Marcellus', serif;
+  font-size: 15px;
+  font-style: italic;
+  color: var(--realm-text);
+  line-height: 1.7;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.scroll-quote::before {
+  content: '“';
+  font-family: 'Cinzel', serif;
+  font-size: 48px;
+  color: var(--realm-gold);
+  opacity: 0.3;
+  position: absolute;
+  top: -24px;
+  left: -12px;
+}
+
+.scroll-lord-info {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 16px;
+}
+
+.lord-sigil {
+  font-size: 26px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--realm-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lord-name {
+  font-family: 'Cinzel', serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--realm-gold-light);
+}
+
+.lord-title {
+  font-size: 12px;
+  color: var(--realm-text-muted);
+}
+
+/* =======================================================
+   SECTION: SEND A RAVEN (INTERACTIVE CONTACT PARCHMENT)
+   ======================================================= */
+.contact-citadel-section {
+  padding: 100px 0 140px 0;
+  position: relative;
+}
+
+.parchment-contact-box {
+  max-width: 740px;
+  margin: 0 auto;
+  background: var(--realm-bg-card);
+  border: 2px solid var(--realm-border);
+  border-radius: 12px;
+  padding: 44px;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), 0 0 35px var(--realm-primary-glow);
+  backdrop-filter: blur(14px);
+}
+
+.parchment-contact-box::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  position: relative;
+  z-index: 2;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 600px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-label {
+  font-family: 'Cinzel', serif;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--realm-gold);
+  font-weight: 600;
+}
+
+.form-input,
+.form-textarea {
+  background: rgba(9, 11, 16, 0.7);
+  border: 1px solid var(--realm-border);
+  border-radius: 4px;
+  padding: 14px 16px;
+  color: #ffffff;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 14px;
+  transition: all 0.25s ease;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--realm-gold);
+  box-shadow: 0 0 15px var(--realm-primary-glow);
+}
+
+.form-textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.btn-dispatch-raven {
+  background: linear-gradient(180deg, #302615 0%, #151822 100%);
+  border: 2px solid var(--realm-gold);
+  color: #fffaf0;
+  padding: 16px 36px;
+  border-radius: 4px;
+  font-family: 'Cinzel', serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.3);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.btn-dispatch-raven:hover {
+  transform: translateY(-2px);
+  border-color: #ffe082;
+  box-shadow: 0 0 40px var(--realm-primary-glow);
+  color: #ffffff;
+}
+
+/* Stamped Confirmation Decree Notice */
+.raven-decree-confirmed {
+  display: none;
+  text-align: center;
+  padding: 30px;
+  background: rgba(20, 25, 36, 0.9);
+  border: 1px solid var(--realm-gold);
+  border-radius: 8px;
+  margin-top: 24px;
+  animation: decreeFadeIn 0.6s ease;
+}
+
+@keyframes decreeFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.decree-wax-seal {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 16px auto;
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.8));
+}
+
+.decree-text {
+  font-family: 'MedievalSharp', cursive;
+  font-size: 16px;
+  color: var(--realm-gold-light);
+  line-height: 1.7;
+}
+
+/* =======================================================
+   FOOTER & ROYAL COINAGE
+   ======================================================= */
+.citadel-footer {
+  border-top: 1px solid var(--realm-border);
+  background: #050608;
+  padding: 40px 0;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
+
+.footer-motto {
+  font-family: 'Cinzel', serif;
+  font-size: 13px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--realm-gold);
+  margin-bottom: 12px;
+}
+
+.footer-copy {
+  font-size: 13px;
+  color: var(--realm-text-muted);
+}
+
+/* =======================================================
+   MODALS: BATTLE LORE & CITADEL SCRIBE (IN-PLACE EDITOR)
+   ======================================================= */
+.realm-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10000;
+  background: rgba(4, 5, 8, 0.85);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.realm-modal-backdrop.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.realm-modal-dialog {
+  background: #11141c;
+  border: 1px solid var(--realm-gold);
+  border-radius: 8px;
+  max-width: 650px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: 36px;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9), 0 0 30px var(--realm-primary-glow);
+  transform: translateY(20px);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.realm-modal-backdrop.active .realm-modal-dialog {
+  transform: translateY(0);
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: var(--realm-text-muted);
+  font-size: 24px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.modal-close-btn:hover {
+  color: var(--realm-gold);
+}
+
+.modal-title {
+  font-family: 'Cinzel', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--realm-gold-light);
+  margin-bottom: 8px;
+}
+
+.modal-subtitle {
+  font-family: 'MedievalSharp', cursive;
+  font-size: 14px;
+  color: var(--realm-primary);
+  margin-bottom: 20px;
+}
+
+.modal-body-text {
+  font-size: 14px;
+  color: var(--realm-text);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.modal-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.modal-stat-pill {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--realm-border);
+  padding: 10px 14px;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.modal-stat-val {
+  font-family: 'Cinzel', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--realm-gold);
+}
+
+.modal-stat-key {
+  font-size: 11px;
+  text-transform: uppercase;
+  color: var(--realm-text-muted);
+}

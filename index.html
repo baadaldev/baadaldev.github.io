@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Citadel Archives | Master of Full Stack Realm</title>
+  
+  <!-- Favicon / Sigil -->
+  <link rel="icon" type="image/svg+xml" href="assets/sigil-avatar.svg" />
+
+  <!-- Google Fonts for Game of Thrones Aesthetic -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@400;600;700;900&family=Marcellus&family=MedievalSharp&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles/houses.css" />
+  <link rel="stylesheet" href="styles/astrolabe.css" />
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body class="house-targaryen">
+
+  <!-- =======================================================
+       3D ASTROLABE VIEWPORT & ATMOSPHERIC CANVAS
+       ======================================================= -->
+  <div id="canvas-viewport"></div>
+  <canvas id="particles-canvas"></canvas>
+  <div class="cinematic-vignette"></div>
+
+  <!-- =======================================================
+       CINEMATIC INTRO CURTAIN (ENTER THE REALM)
+       ======================================================= -->
+  <div id="intro-curtain">
+    <div class="intro-astrolabe-disc">
+      <div class="intro-ring ring-1"></div>
+      <div class="intro-ring ring-2"></div>
+      <div class="intro-ring ring-3"></div>
+      <div class="intro-sun-emblem">☀️</div>
+    </div>
+    <div class="intro-sub-banner">The Citadel of Code & Architecture</div>
+    <h1 class="intro-main-title">Warden of the Full Stack</h1>
+    <p class="intro-desc">
+      A digital empire forged in modern steel and high-concurrency fire.
+      Concentric astrolabes rotate as the kingdom awakens.
+    </p>
+    <button id="btn-enter-realm" class="btn-enter-realm">
+      <span>⚔️</span> CLAIM THE THRONE & ENTER <span>►</span>
+    </button>
+    <div class="audio-hint">🔊 Turn up your sound for the Grand Orchestral Experience</div>
+  </div>
+
+  <!-- =======================================================
+       FLOATING HOUSE SWITCHER (TOP LEFT)
+       ======================================================= -->
+  <div class="realm-house-selector" title="Pledge Allegiance to a Great House">
+    <button class="house-btn active" data-house="targaryen" title="House Targaryen: Fire & Blood">🐉</button>
+    <button class="house-btn" data-house="stark" title="House Stark: Winter is Coming">🐺</button>
+    <button class="house-btn" data-house="lannister" title="House Lannister: Hear Me Roar">🦁</button>
+    <button class="house-btn" data-house="nightswatch" title="The Night's Watch: Shield of the Realm">⚔️</button>
+  </div>
+
+  <!-- =======================================================
+       FLOATING AUDIO WIDGET & VISUALIZER (TOP RIGHT)
+       ======================================================= -->
+  <div id="realm-audio-widget" class="realm-audio-widget">
+    <button id="audio-play-btn" class="audio-play-btn" title="Toggle Citadel Theme Song">▶</button>
+    <div class="audio-visualizer-bars">
+      <div class="vis-bar"></div>
+      <div class="vis-bar"></div>
+      <div class="vis-bar"></div>
+      <div class="vis-bar"></div>
+      <div class="vis-bar"></div>
+    </div>
+    <input type="range" id="audio-vol-slider" class="audio-vol-slider" min="0" max="1" step="0.05" value="0.55" title="Master Orchestral Volume" />
+  </div>
+
+  <!-- =======================================================
+       ROYAL CITADEL NAVIGATION BAR
+       ======================================================= -->
+  <nav class="citadel-nav">
+    <div class="realm-container nav-content">
+      <a href="#hero" class="nav-brand">
+        <img src="assets/sigil-avatar.svg" alt="Sigil Crest" class="nav-crest" />
+        <span>THE CITADEL</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#hero">Citadel</a></li>
+        <li><a href="#skills">Arsenal</a></li>
+        <li><a href="#campaigns">Conquests</a></li>
+        <li><a href="#annals">Annals</a></li>
+        <li><a href="#endorsements">Endorsements</a></li>
+        <li><a href="#contact">Send Raven</a></li>
+        <li>
+          <button id="btn-open-scribe" class="btn-scribe-nav">
+            <span>🖋️</span> Edit Scribe
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- =======================================================
+       MAIN CONTENT CONTAINER
+       ======================================================= -->
+  <main id="realm-app">
+
+    <!-- HERO SECTION: THE GRAND CITADEL -->
+    <section id="hero" class="hero-citadel-section">
+      <div class="realm-container hero-content">
+        <div class="hero-sigil-badge">
+          <span>⚔️</span> Forged in the fires of Modern Web Architecture
+        </div>
+
+        <div class="hero-avatar-wrapper">
+          <img id="hero-avatar" class="hero-avatar-img" src="assets/sigil-avatar.svg" alt="Warden Sigil" />
+        </div>
+
+        <h1 id="hero-lord-name" class="hero-title">SHAHED ALAM</h1>
+        <div id="hero-lord-title" class="hero-royal-titles">
+          Warden of the Full Stack & Architect of the Digital Realm
+        </div>
+
+        <div class="medieval-divider">
+          <div class="divider-line"></div>
+          <div class="divider-gem"></div>
+          <div class="divider-line"></div>
+        </div>
+
+        <p id="hero-lord-creed" class="hero-creed">
+          Forging modern, high-resilience web kingdoms across the digital realms.
+          Master of distributed backends, modern frontend fortresses, and high-performance WebGL experiences.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#campaigns" class="btn-primary-realm">
+            <span>📜</span> Chronicles of Conquest
+          </a>
+          <a href="#skills" class="btn-secondary-realm">
+            <span>🛡️</span> Inspect The Arsenal
+          </a>
+          <a href="#contact" class="btn-secondary-realm">
+            <span>🦅</span> Send a Raven
+          </a>
+        </div>
+
+        <div id="realm-stats-bar" class="realm-stats-bar">
+          <!-- Dynamically populated from realm-config.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 1: HOUSES OF TECH (SKILLS & ARSENAL) -->
+    <section id="skills" class="skills-citadel-section">
+      <div class="realm-container">
+        <div class="realm-header">
+          <div class="header-sigil">🛡️</div>
+          <div class="header-subtitle">The Grand Arsenal</div>
+          <h2 class="header-title">The Four Houses of Code</h2>
+          <div class="medieval-divider">
+            <div class="divider-line"></div>
+            <div class="divider-gem"></div>
+            <div class="divider-line"></div>
+          </div>
+          <p class="intro-desc" style="margin: 0 auto;">
+            Weapons and shields forged to withstand heavy siege, astronomical traffic loads, and the harshest winters.
+          </p>
+        </div>
+
+        <div id="houses-grid" class="houses-grid">
+          <!-- Populated from realm-config.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: CHRONICLES OF CONQUEST (PROJECTS) -->
+    <section id="campaigns" class="projects-citadel-section">
+      <div class="realm-container">
+        <div class="realm-header">
+          <div class="header-sigil">⚔️</div>
+          <div class="header-subtitle">Battle-Tested Architecture</div>
+          <h2 class="header-title">Chronicles of Conquest</h2>
+          <div class="medieval-divider">
+            <div class="divider-line"></div>
+            <div class="divider-gem"></div>
+            <div class="divider-line"></div>
+          </div>
+          <p class="intro-desc" style="margin: 0 auto;">
+            Major campaigns fought and fortresses established across the realms of Web, Cloud, and Intelligence.
+          </p>
+        </div>
+
+        <div id="campaigns-grid" class="campaigns-grid">
+          <!-- Populated from realm-config.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: CITADEL ANNALS (TIMELINE & CAREER) -->
+    <section id="annals" class="annals-citadel-section">
+      <div class="realm-container">
+        <div class="realm-header">
+          <div class="header-sigil">🏛️</div>
+          <div class="header-subtitle">Scrolls of Provenance</div>
+          <h2 class="header-title">The Citadel Annals</h2>
+          <div class="medieval-divider">
+            <div class="divider-line"></div>
+            <div class="divider-gem"></div>
+            <div class="divider-line"></div>
+          </div>
+        </div>
+
+        <div id="annals-timeline" class="annals-timeline">
+          <!-- Populated from realm-config.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: ENDORSEMENTS OF THE LORDS (TESTIMONIALS) -->
+    <section id="endorsements" class="endorsements-citadel-section">
+      <div class="realm-container">
+        <div class="realm-header">
+          <div class="header-sigil">👑</div>
+          <div class="header-subtitle">Royal Alliances</div>
+          <h2 class="header-title">Decrees of the High Lords</h2>
+          <div class="medieval-divider">
+            <div class="divider-line"></div>
+            <div class="divider-gem"></div>
+            <div class="divider-line"></div>
+          </div>
+        </div>
+
+        <div id="endorsements-grid" class="endorsements-grid">
+          <!-- Populated from realm-config.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: SEND A RAVEN (INTERACTIVE CONTACT) -->
+    <section id="contact" class="contact-citadel-section">
+      <div class="realm-container">
+        <div class="realm-header">
+          <div class="header-sigil">🦅</div>
+          <div class="header-subtitle">The Citadel Ravenry</div>
+          <h2 class="header-title">Send a Raven to the Warden</h2>
+          <div class="medieval-divider">
+            <div class="divider-line"></div>
+            <div class="divider-gem"></div>
+            <div class="divider-line"></div>
+          </div>
+          <p class="intro-desc" style="margin: 0 auto;">
+            Need a stronghold fortified, an empire engineered, or a technical consultation? Dispatch your decree.
+          </p>
+        </div>
+
+        <div class="parchment-contact-box">
+          <form id="citadel-contact-form" class="contact-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="contact-lord-name">Your Lord / House Name</label>
+                <input type="text" id="contact-lord-name" class="form-input" placeholder="e.g. Lord Stark of Winterfell" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="contact-raven-email">Raven Return Address (Email)</label>
+                <input type="email" id="contact-raven-email" class="form-input" placeholder="lord@realm.com" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contact-subject">Subject of the Decree</label>
+              <input type="text" id="contact-subject" class="form-input" placeholder="e.g. High-Scale Citadel Architecture Inquiry" required />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contact-message">Royal Decree & Mission Brief</label>
+              <textarea id="contact-message" class="form-textarea" placeholder="Speak your mind, Lord or Lady of the realm..." required></textarea>
+            </div>
+
+            <button type="submit" id="btn-dispatch-raven" class="btn-dispatch-raven">
+              <span>🦅</span> DISPATCH RAVEN TO CITADEL <span>⚔️</span>
+            </button>
+          </form>
+
+          <!-- Confirmation Decree Message -->
+          <div id="raven-decree-confirmed" class="raven-decree-confirmed">
+            <img src="assets/wax-seal.svg" alt="Imperial Wax Seal" class="decree-wax-seal" />
+            <h3 style="font-family: 'Cinzel', serif; color: var(--realm-gold-light); margin-bottom: 8px;">THE RAVEN HAS TAKEN FLIGHT</h3>
+            <p class="decree-text">
+              Your decree has been sealed with royal crimson wax and dispatched into the starry skies.
+              The Maesters shall review your missive and send an answer before the fortnight ends.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CITADEL FOOTER -->
+    <footer class="citadel-footer">
+      <div class="realm-container">
+        <div class="footer-motto">“Code is Fire • Architecture is Steel”</div>
+        <p class="footer-copy">
+          Designed in the Grand Citadel Archives • Forged with Valyrian Precision & Three.js 3D WebGL
+        </p>
+      </div>
+    </footer>
+  </main>
+
+  <!-- =======================================================
+       MODAL: BATTLE LORE (PROJECT CASE STUDY)
+       ======================================================= -->
+  <div id="battle-lore-modal" class="realm-modal-backdrop" onclick="if(event.target === this) closeBattleLoreModal()">
+    <div class="realm-modal-dialog">
+      <button class="modal-close-btn" onclick="closeBattleLoreModal()">✕</button>
+      <h3 id="lore-modal-title" class="modal-title">Battle Title</h3>
+      <div id="lore-modal-subtitle" class="modal-subtitle">Campaign</div>
+      <div id="lore-modal-stats" class="modal-stats-grid"></div>
+      <p id="lore-modal-body" class="modal-body-text"></p>
+      <div style="text-align: right;">
+        <button class="btn-primary-realm" onclick="closeBattleLoreModal()">
+          <span>✓</span> Understood, Maester
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =======================================================
+       MODAL: CITADEL SCRIBE (IN-PLACE REALM EDITOR)
+       ======================================================= -->
+  <div id="citadel-scribe-modal" class="realm-modal-backdrop" onclick="if(event.target === this) closeScribeModal()">
+    <div class="realm-modal-dialog">
+      <button class="modal-close-btn" onclick="closeScribeModal()">✕</button>
+      <h3 class="modal-title">🖋️ The Citadel Scribe</h3>
+      <div class="modal-subtitle">Update Your Realm Identity Instantly</div>
+      <form id="scribe-edit-form" class="contact-form">
+        <div class="form-group">
+          <label class="form-label" for="scribe-name">Your Lord / Developer Name</label>
+          <input type="text" id="scribe-name" class="form-input" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="scribe-title">Royal Titles & Specialization</label>
+          <input type="text" id="scribe-title" class="form-input" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="scribe-creed">Lord's Creed & Bio</label>
+          <textarea id="scribe-creed" class="form-textarea" style="min-height: 80px;" required></textarea>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="scribe-email">Raven Email</label>
+            <input type="email" id="scribe-email" class="form-input" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="scribe-github">GitHub Realm URL</label>
+            <input type="url" id="scribe-github" class="form-input" required />
+          </div>
+        </div>
+        <div style="display: flex; gap: 12px; justify-content: flex-end; margin-top: 10px;">
+          <button type="button" class="btn-secondary-realm" onclick="closeScribeModal()">Cancel</button>
+          <button type="submit" class="btn-primary-realm">Seal Decree & Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- =======================================================
+       SCRIPTS
+       ======================================================= -->
+  <!-- Local Three.js with CDN Fallback -->
+  <script src="scripts/three.min.js"></script>
+  <script>
+    if (typeof THREE === 'undefined') {
+      document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"><\/script>');
+    }
+  </script>
+
+  <!-- Realm Modules -->
+  <script src="realm-config.js"></script>
+  <script src="scripts/audio-engine.js"></script>
+  <script src="scripts/particles.js"></script>
+  <script src="scripts/astrolabe-3d.js"></script>
+  <script src="scripts/raven-animation.js"></script>
+  <script src="scripts/app.js"></script>
+</body>
+</html>

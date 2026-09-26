@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" width="100%" height="100%">
+  <defs>
+    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="100%">
+      <stop offset="0%" stop-color="#07090e"/>
+      <stop offset="60%" stop-color="#181d29"/>
+      <stop offset="100%" stop-color="#2a241a"/>
+    </linearGradient>
+    <radialGradient id="moonGlow" cx="70%" cy="30%" r="40%">
+      <stop offset="0%" stop-color="#e2583e" stop-opacity="0.6"/>
+      <stop offset="60%" stop-color="#d4af37" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#07090e" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="citadelGold" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f0cb69"/>
+      <stop offset="50%" stop-color="#b8860b"/>
+      <stop offset="100%" stop-color="#3c2605"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Sky & Moon -->
+  <rect width="600" height="360" fill="url(#skyGrad)"/>
+  <circle cx="420" cy="110" r="140" fill="url(#moonGlow)"/>
+  <circle cx="420" cy="110" r="45" fill="#f8e7b5" opacity="0.9"/>
+  <circle cx="435" cy="100" r="42" fill="#181d29" opacity="0.85"/>
+
+  <!-- Distant Mountains -->
+  <polygon points="-50,360 80,180 200,360" fill="#10141d" opacity="0.9"/>
+  <polygon points="120,360 260,160 400,360" fill="#0c0f16"/>
+  <polygon points="350,360 480,200 620,360" fill="#131720"/>
+
+  <!-- Mechanical Fortress Towers / Citadel Silhouette -->
+  <!-- Tower Left -->
+  <rect x="70" y="140" width="60" height="220" fill="#1a1e28"/>
+  <polygon points="60,140 100,80 140,140" fill="url(#citadelGold)"/>
+  <!-- Tower Center Left -->
+  <rect x="160" y="100" width="80" height="260" fill="#141822"/>
+  <polygon points="150,100 200,40 250,100" fill="url(#citadelGold)"/>
+  <!-- Central Great Keep -->
+  <rect x="260" y="70" width="110" height="290" fill="#1c212e"/>
+  <polygon points="245,70 315,10 385,70" fill="url(#citadelGold)"/>
+  <rect x="280" y="110" width="70" height="40" fill="#0d0f15"/>
+  <path d="M 290 135 A 8 8 0 0 1 306 135 Z" fill="#ffd700"/>
+  <path d="M 324 135 A 8 8 0 0 1 340 135 Z" fill="#ffd700"/>
+
+  <!-- Mechanical Cog Wheel Rising Behind City -->
+  <g transform="translate(315, 230)" opacity="0.25">
+    <circle cx="0" cy="0" r="90" fill="none" stroke="#d4af37" stroke-width="8"/>
+    <circle cx="0" cy="0" r="60" fill="none" stroke="#d4af37" stroke-width="4" stroke-dasharray="10,8"/>
+    <line x1="-90" y1="0" x2="90" y2="0" stroke="#d4af37" stroke-width="4"/>
+    <line x1="0" y1="-90" x2="0" y2="90" stroke="#d4af37" stroke-width="4"/>
+  </g>
+
+  <!-- Tower Right -->
+  <rect x="400" y="120" width="70" height="240" fill="#181c26"/>
+  <polygon points="390,120 435,65 480,120" fill="url(#citadelGold)"/>
+
+  <!-- Watchtowers and Battlements -->
+  <path d="M 50 360 L 50 250 L 70 250 L 70 230 L 90 230 L 90 250 L 110 250 L 110 230 L 130 230 L 130 250 L 550 250 L 550 360 Z" fill="#0b0d13"/>
+
+  <!-- Glowing Citadel Windows -->
+  <g fill="#ffc107" opacity="0.85">
+    <rect x="180" y="150" width="8" height="18" rx="4"/>
+    <rect x="210" y="150" width="8" height="18" rx="4"/>
+    <rect x="195" y="190" width="10" height="22" rx="5"/>
+    <rect x="295" y="180" width="12" height="25" rx="6"/>
+    <rect x="325" y="180" width="12" height="25" rx="6"/>
+    <rect x="310" y="230" width="14" height="28" rx="7"/>
+    <rect x="425" y="160" width="8" height="18" rx="4"/>
+    <rect x="445" y="160" width="8" height="18" rx="4"/>
+  </g>
+
+  <!-- Dragon Silhouette in Flight -->
+  <path d="M 120 70 Q 150 50 170 65 Q 160 80 145 78 Q 180 85 200 70 Q 175 95 140 85 Q 130 95 110 85 Q 115 75 120 70 Z" fill="#e2583e" opacity="0.7"/>
+
+  <!-- Floating Embers -->
+  <circle cx="280" cy="280" r="2" fill="#ff7700"/>
+  <circle cx="350" cy="240" r="1.5" fill="#ffd700"/>
+  <circle cx="210" cy="270" r="2.5" fill="#ff5500"/>
+  <circle cx="410" cy="230" r="1.5" fill="#ffaa00"/>
+</svg>

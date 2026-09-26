@@ -1,0 +1,342 @@
+/**
+ * =====================================================================
+ * ASTROLABE 3D VIEWPORT & CINEMATIC INTRO STYLES
+ * =====================================================================
+ */
+
+/* 3D Canvas Background Viewport */
+#canvas-viewport {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+#canvas-viewport canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Atmospheric Particles Canvas */
+#particles-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Vignette & Cinematic Shadow Overlay */
+.cinematic-vignette {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 3;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at 50% 45%,
+    rgba(9, 10, 14, 0.2) 0%,
+    rgba(9, 10, 14, 0.65) 60%,
+    rgba(5, 6, 9, 0.95) 100%
+  );
+}
+
+/* =======================================================
+   CINEMATIC INTRO CURTAIN (ENTER THE REALM)
+   ======================================================= */
+#intro-curtain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10000;
+  background: radial-gradient(circle at center, #141822 0%, #08090d 75%, #020304 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 1.4s cubic-bezier(0.16, 1, 0.3, 1), visibility 1.4s ease;
+  overflow: hidden;
+  padding: 20px;
+  text-align: center;
+}
+
+#intro-curtain.realm-entered {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.intro-astrolabe-disc {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.intro-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid var(--realm-gold);
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.25);
+  animation: introSpin 24s linear infinite;
+}
+
+.intro-ring.ring-1 {
+  width: 210px;
+  height: 210px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: rgba(212, 175, 55, 0.7);
+}
+
+.intro-ring.ring-2 {
+  width: 165px;
+  height: 165px;
+  border-style: dashed;
+  border-width: 2px;
+  border-color: var(--realm-primary);
+  animation-direction: reverse;
+  animation-duration: 18s;
+}
+
+.intro-ring.ring-3 {
+  width: 120px;
+  height: 120px;
+  border-style: dotted;
+  border-width: 3px;
+  border-color: var(--realm-gold-light);
+  animation-duration: 12s;
+}
+
+.intro-sun-emblem {
+  width: 70px;
+  height: 70px;
+  background: radial-gradient(circle, #fff3b0 0%, #d4af37 60%, #8a5a00 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 35px #ffaa00, 0 0 60px rgba(255, 100, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  animation: sunPulse 3s ease-in-out infinite alternate;
+}
+
+@keyframes introSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes sunPulse {
+  0% { transform: scale(0.94); box-shadow: 0 0 25px #ffaa00; }
+  100% { transform: scale(1.06); box-shadow: 0 0 50px #ff7700; }
+}
+
+.intro-sub-banner {
+  font-family: 'Cinzel', serif;
+  font-size: 13px;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: var(--realm-gold-light);
+  margin-bottom: 8px;
+  opacity: 0.85;
+}
+
+.intro-main-title {
+  font-family: 'Cinzel Decorative', 'Cinzel', serif;
+  font-size: clamp(28px, 5.5vw, 56px);
+  font-weight: 900;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  background: linear-gradient(180deg, #fff7d6 0%, #d4af37 60%, #8a5a00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+  margin: 0 0 16px 0;
+}
+
+.intro-desc {
+  font-family: 'Marcellus', serif;
+  color: var(--realm-text-muted);
+  font-size: clamp(14px, 1.8vw, 18px);
+  max-width: 600px;
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+/* Enter the Realm CTA Button */
+.btn-enter-realm {
+  position: relative;
+  background: linear-gradient(180deg, #242a38 0%, #11141c 100%);
+  color: #fff9e6;
+  border: 2px solid var(--realm-gold);
+  border-radius: 4px;
+  padding: 16px 42px;
+  font-family: 'Cinzel', serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.25), inset 0 0 12px rgba(212, 175, 55, 0.2);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-enter-realm:hover {
+  transform: translateY(-2px) scale(1.03);
+  border-color: #ffe082;
+  box-shadow: 0 0 40px rgba(255, 215, 79, 0.5), inset 0 0 20px rgba(255, 215, 79, 0.3);
+  color: #ffffff;
+}
+
+.btn-enter-realm:active {
+  transform: translateY(1px);
+}
+
+.audio-hint {
+  margin-top: 14px;
+  font-family: 'Marcellus', serif;
+  font-size: 13px;
+  color: var(--realm-gold);
+  opacity: 0.75;
+  letter-spacing: 1px;
+}
+
+/* =======================================================
+   AUDIO CONTROLLER & VISUALIZER WIDGET (TOP RIGHT)
+   ======================================================= */
+.realm-audio-widget {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  background: rgba(14, 17, 24, 0.85);
+  border: 1px solid var(--realm-border);
+  backdrop-filter: blur(10px);
+  border-radius: 30px;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+  transition: border-color 0.3s ease;
+}
+
+.realm-audio-widget:hover {
+  border-color: var(--realm-gold);
+}
+
+.audio-play-btn {
+  background: none;
+  border: none;
+  color: var(--realm-gold);
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(212, 175, 55, 0.12);
+  transition: all 0.2s ease;
+}
+
+.audio-play-btn:hover {
+  background: rgba(212, 175, 55, 0.3);
+  transform: scale(1.08);
+}
+
+/* 5 Animated Audio Visualizer Bars */
+.audio-visualizer-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 18px;
+}
+
+.vis-bar {
+  width: 3px;
+  background: var(--realm-gold);
+  border-radius: 2px;
+  height: 4px;
+  transition: height 0.08s ease;
+}
+
+.playing .vis-bar:nth-child(1) { animation: visPulse 0.6s infinite ease-in-out; }
+.playing .vis-bar:nth-child(2) { animation: visPulse 0.45s 0.1s infinite ease-in-out; }
+.playing .vis-bar:nth-child(3) { animation: visPulse 0.7s 0.2s infinite ease-in-out; }
+.playing .vis-bar:nth-child(4) { animation: visPulse 0.5s 0.15s infinite ease-in-out; }
+.playing .vis-bar:nth-child(5) { animation: visPulse 0.65s 0.25s infinite ease-in-out; }
+
+@keyframes visPulse {
+  0%, 100% { height: 4px; }
+  50% { height: 18px; }
+}
+
+.audio-vol-slider {
+  width: 55px;
+  accent-color: var(--realm-gold);
+  cursor: pointer;
+}
+
+/* =======================================================
+   HOUSE SWITCHER WIDGET (TOP LEFT)
+   ======================================================= */
+.realm-house-selector {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(14, 17, 24, 0.85);
+  border: 1px solid var(--realm-border);
+  backdrop-filter: blur(10px);
+  border-radius: 30px;
+  padding: 6px 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+}
+
+.house-btn {
+  background: none;
+  border: none;
+  font-size: 17px;
+  cursor: pointer;
+  padding: 6px 8px;
+  border-radius: 20px;
+  transition: all 0.25s ease;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.6;
+}
+
+.house-btn:hover {
+  opacity: 1;
+  transform: scale(1.15);
+}
+
+.house-btn.active {
+  opacity: 1;
+  background: rgba(212, 175, 55, 0.2);
+  box-shadow: 0 0 10px var(--realm-primary-glow);
+}
