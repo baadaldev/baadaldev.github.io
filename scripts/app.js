@@ -31,7 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // 3. Audio & Theme Controls
   setupAudioWidget();
   setupHouseSwitcher('targaryen', atmosphere);
-  setupCinematicIntro(astrolabe3D);
 
   // 4. Interactive Live Widgets
   initDhakaClock();
@@ -42,30 +41,14 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ==========================================
-// CINEMATIC INTRO CURTAIN
+// AUDIO PLAYBACK TOGGLE (GLOBAL)
 // ==========================================
-function setupCinematicIntro(astrolabe3D) {
-  const curtain = document.getElementById('intro-curtain');
-  const btnEnter = document.getElementById('btn-enter-realm');
-
-  if (!btnEnter || !curtain) return;
-
-  btnEnter.addEventListener('click', () => {
-    if (window.realmAudio) {
-      window.realmAudio.playSwordClang();
-      window.realmAudio.startTheme();
-      updateAudioWidgetUI(true);
-    }
-
-    if (astrolabe3D && astrolabe3D.triggerCinematicIntro) {
-      astrolabe3D.triggerCinematicIntro(() => {
-        curtain.classList.add('realm-entered');
-      });
-    } else {
-      curtain.classList.add('realm-entered');
-    }
-  });
-}
+window.toggleThemeAudio = function() {
+  if (window.realmAudio) {
+    const isPlaying = window.realmAudio.toggleTheme();
+    updateAudioWidgetUI(isPlaying);
+  }
+};
 
 // ==========================================
 // AUDIO WIDGET & VISUALIZER
@@ -115,6 +98,11 @@ function updateAudioWidgetUI(isPlaying) {
     if (isPlaying) widget.classList.add('playing');
     else widget.classList.remove('playing');
   }
+
+  const heroBtnText = document.getElementById("hero-audio-text");
+  const heroBtnIcon = document.querySelector("#hero-audio-btn i");
+  if (heroBtnText) heroBtnText.textContent = isPlaying ? "Pause GOT Theme" : "Play GOT Theme";
+  if (heroBtnIcon) heroBtnIcon.className = isPlaying ? "fa-solid fa-pause" : "fa-solid fa-play";
 }
 
 // ==========================================

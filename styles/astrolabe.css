@@ -54,27 +54,7 @@
    CINEMATIC INTRO CURTAIN (ENTER THE REALM)
    ======================================================= */
 #intro-curtain {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 10000;
-  background: radial-gradient(circle at center, #141822 0%, #08090d 75%, #020304 100%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  transition: opacity 1.4s cubic-bezier(0.16, 1, 0.3, 1), visibility 1.4s ease;
-  overflow: hidden;
-  padding: 20px;
-  text-align: center;
-}
-
-#intro-curtain.realm-entered {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
+  display: none !important;
 }
 
 .intro-astrolabe-disc {

@@ -27,11 +27,11 @@ class RealmAstrolabe3D {
     this.mouse = { x: 0, y: 0, targetX: 0, targetY: 0 };
     this.scrollProgress = 0;
     this.isCinematicIntroRunning = false;
-    this.hasEnteredRealm = false;
+    this.hasEnteredRealm = true;
 
-    // Camera initial & target states
-    this.camPos = { x: 0, y: 0, z: 28 };
-    this.targetCamPos = { x: 0, y: 0, z: 28 };
+    // Camera initial & target states (Hero cinematic perspective)
+    this.camPos = { x: 0, y: 1.2, z: 22 };
+    this.targetCamPos = { x: 0, y: 1.2, z: 22 };
     this.camRot = { x: 0, y: 0, z: 0 };
 
     this.init();

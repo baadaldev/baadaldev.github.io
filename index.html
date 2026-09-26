@@ -34,28 +34,6 @@
   <div class="cinematic-vignette"></div>
 
   <!-- =======================================================
-       CINEMATIC INTRO CURTAIN (ENTER THE REALM)
-       ======================================================= -->
-  <div id="intro-curtain">
-    <div class="intro-astrolabe-disc">
-      <div class="intro-ring ring-1"></div>
-      <div class="intro-ring ring-2"></div>
-      <div class="intro-ring ring-3"></div>
-      <div class="intro-sun-emblem">☀️</div>
-    </div>
-    <div class="intro-sub-banner">Daffodil International University &bull; Software Engineering</div>
-    <h1 class="intro-main-title">Md Rakibul Islam (Baadal)</h1>
-    <p class="intro-desc">
-      Computer Science &amp; Engineering undergraduate at Daffodil International University.
-      Architecting high-performance full-stack web applications and solving algorithmic challenges in C++.
-    </p>
-    <button id="btn-enter-realm" class="btn-enter-realm">
-      <span>⚔️</span> ENTER PORTFOLIO REALM <span>►</span>
-    </button>
-    <div class="audio-hint">🔊 Turn up sound for the Game of Thrones Orchestral Experience</div>
-  </div>
-
-  <!-- =======================================================
        FLOATING HOUSE SWITCHER (TOP LEFT)
        ======================================================= -->
   <div class="realm-house-selector" title="Switch Theme">
@@ -143,6 +121,9 @@
               <a href="#projects" class="btn-primary-realm">
                 <i class="fa-solid fa-code"></i> Explore Projects
               </a>
+              <button type="button" class="btn-primary-realm" id="hero-audio-btn" onclick="toggleThemeAudio()">
+                <i class="fa-solid fa-play"></i> <span id="hero-audio-text">Play GOT Theme</span>
+              </button>
               <a href="#terminal-section" class="btn-secondary-realm">
                 <i class="fa-solid fa-terminal"></i> Terminal CLI
               </a>

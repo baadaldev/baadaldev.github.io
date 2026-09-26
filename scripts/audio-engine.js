@@ -93,8 +93,13 @@ class RealmAudioEngine {
     try {
       this.audioEl = new Audio('assets/got-theme.mp3');
       this.audioEl.loop = true;
-      this.sourceNode = this.ctx.createMediaElementSource(this.audioEl);
-      this.sourceNode.connect(this.compressor);
+      this.audioEl.volume = this.volume;
+      try {
+        this.sourceNode = this.ctx.createMediaElementSource(this.audioEl);
+        this.sourceNode.connect(this.compressor);
+      } catch (nodeErr) {
+        console.warn("Audio node routing fallback (likely file:// protocol):", nodeErr);
+      }
       this.hasMp3 = true;
     } catch (e) {
       this.hasMp3 = false;
