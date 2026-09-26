@@ -88,6 +88,17 @@ class RealmAudioEngine {
     this.compressor.connect(this.analyser);
     this.analyser.connect(this.masterGain);
     this.masterGain.connect(this.ctx.destination);
+
+    // Audio Element for got-theme.mp3
+    try {
+      this.audioEl = new Audio('assets/got-theme.mp3');
+      this.audioEl.loop = true;
+      this.sourceNode = this.ctx.createMediaElementSource(this.audioEl);
+      this.sourceNode.connect(this.compressor);
+      this.hasMp3 = true;
+    } catch (e) {
+      this.hasMp3 = false;
+    }
   }
 
   ensureContext() {
@@ -258,6 +269,18 @@ class RealmAudioEngine {
     if (this.isPlaying) return;
     this.isPlaying = true;
 
+    if (this.hasMp3 && this.audioEl) {
+      this.audioEl.play().catch(e => {
+        console.warn("MP3 play failed, falling back to procedural synthesizer:", e);
+        this.startProceduralTheme();
+      });
+      return;
+    }
+
+    this.startProceduralTheme();
+  }
+
+  startProceduralTheme() {
     let beatDuration = 60 / this.bpm; // 1 beat in seconds
     let eighthNote = beatDuration / 2; // In 6/8 meter, eighth note is the pulse
 
@@ -319,6 +342,9 @@ class RealmAudioEngine {
 
   stopTheme() {
     this.isPlaying = false;
+    if (this.audioEl) {
+      this.audioEl.pause();
+    }
     if (this.loopTimer) {
       clearTimeout(this.loopTimer);
       this.loopTimer = null;
