@@ -3,15 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Citadel Archives | Master of Full Stack Realm</title>
+  <title>Md Rakibul Islam (Baadal) — Software Engineer &amp; CSE Undergraduate</title>
   
+  <!-- SEO & Social Meta -->
+  <meta name="description" content="Portfolio of Md Rakibul Islam (Baadal) - CSE Undergraduate at Daffodil International University, Full-Stack Developer, C++ Algorithmic Problem Solver." />
+  <meta name="keywords" content="Md Rakibul Islam, Baadal, baadaldev, Full Stack Developer, Daffodil International University, CSE, Data Structures, Software Engineer, Portfolio" />
+  <meta name="author" content="Md Rakibul Islam (Baadal)" />
+
   <!-- Favicon / Sigil -->
   <link rel="icon" type="image/svg+xml" href="assets/sigil-avatar.svg" />
 
-  <!-- Google Fonts for Game of Thrones Aesthetic -->
+  <!-- Google Fonts & Font Awesome 6 Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@400;600;700;900&family=Marcellus&family=MedievalSharp&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@600;700;900&family=Fira+Code:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="styles/houses.css" />
@@ -37,22 +43,22 @@
       <div class="intro-ring ring-3"></div>
       <div class="intro-sun-emblem">☀️</div>
     </div>
-    <div class="intro-sub-banner">The Citadel of Code & Architecture</div>
-    <h1 class="intro-main-title">Warden of the Full Stack</h1>
+    <div class="intro-sub-banner">Daffodil International University &bull; Software Engineering</div>
+    <h1 class="intro-main-title">Md Rakibul Islam (Baadal)</h1>
     <p class="intro-desc">
-      A digital empire forged in modern steel and high-concurrency fire.
-      Concentric astrolabes rotate as the kingdom awakens.
+      Computer Science &amp; Engineering undergraduate at Daffodil International University.
+      Architecting high-performance full-stack web applications and solving algorithmic challenges in C++.
     </p>
     <button id="btn-enter-realm" class="btn-enter-realm">
-      <span>⚔️</span> CLAIM THE THRONE & ENTER <span>►</span>
+      <span>⚔️</span> ENTER PORTFOLIO REALM <span>►</span>
     </button>
-    <div class="audio-hint">🔊 Turn up your sound for the Grand Orchestral Experience</div>
+    <div class="audio-hint">🔊 Turn up sound for the Game of Thrones Orchestral Experience</div>
   </div>
 
   <!-- =======================================================
        FLOATING HOUSE SWITCHER (TOP LEFT)
        ======================================================= -->
-  <div class="realm-house-selector" title="Pledge Allegiance to a Great House">
+  <div class="realm-house-selector" title="Switch Theme">
     <button class="house-btn active" data-house="targaryen" title="House Targaryen: Fire & Blood">🐉</button>
     <button class="house-btn" data-house="stark" title="House Stark: Winter is Coming">🐺</button>
     <button class="house-btn" data-house="lannister" title="House Lannister: Hear Me Roar">🦁</button>
@@ -63,7 +69,7 @@
        FLOATING AUDIO WIDGET & VISUALIZER (TOP RIGHT)
        ======================================================= -->
   <div id="realm-audio-widget" class="realm-audio-widget">
-    <button id="audio-play-btn" class="audio-play-btn" title="Toggle Citadel Theme Song">▶</button>
+    <button id="audio-play-btn" class="audio-play-btn" title="Toggle Game of Thrones Theme Song">▶</button>
     <div class="audio-visualizer-bars">
       <div class="vis-bar"></div>
       <div class="vis-bar"></div>
@@ -71,31 +77,37 @@
       <div class="vis-bar"></div>
       <div class="vis-bar"></div>
     </div>
-    <input type="range" id="audio-vol-slider" class="audio-vol-slider" min="0" max="1" step="0.05" value="0.55" title="Master Orchestral Volume" />
+    <input type="range" id="audio-vol-slider" class="audio-vol-slider" min="0" max="1" step="0.05" value="0.55" title="Master Volume" />
   </div>
 
   <!-- =======================================================
        ROYAL CITADEL NAVIGATION BAR
        ======================================================= -->
   <nav class="citadel-nav">
-    <div class="realm-container nav-content">
-      <a href="#hero" class="nav-brand">
+    <div class="container nav-content">
+      <a href="#home" class="nav-brand">
         <img src="assets/sigil-avatar.svg" alt="Sigil Crest" class="nav-crest" />
-        <span>THE CITADEL</span>
+        <span>BAADAL<span style="color: var(--realm-gold);">.DEV</span></span>
       </a>
       <ul class="nav-links">
-        <li><a href="#hero">Citadel</a></li>
-        <li><a href="#skills">Arsenal</a></li>
-        <li><a href="#campaigns">Conquests</a></li>
-        <li><a href="#annals">Annals</a></li>
-        <li><a href="#endorsements">Endorsements</a></li>
-        <li><a href="#contact">Send Raven</a></li>
-        <li>
-          <button id="btn-open-scribe" class="btn-scribe-nav">
-            <span>🖋️</span> Edit Scribe
-          </button>
-        </li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#journey">Journey</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#terminal-section">Terminal</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#memories">Memories</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
+      <div class="nav-actions">
+        <button type="button" class="btn-nav-action" onclick="openResumeModal()">
+          <i class="fa-solid fa-file-lines"></i> Interactive CV
+        </button>
+        <a href="https://github.com/baadaldev" target="_blank" rel="noopener noreferrer" class="btn-nav-action">
+          <i class="fa-brands fa-github"></i> GitHub
+        </a>
+      </div>
     </div>
   </nav>
 
@@ -104,276 +116,1103 @@
        ======================================================= -->
   <main id="realm-app">
 
-    <!-- HERO SECTION: THE GRAND CITADEL -->
-    <section id="hero" class="hero-citadel-section">
-      <div class="realm-container hero-content">
-        <div class="hero-sigil-badge">
-          <span>⚔️</span> Forged in the fires of Modern Web Architecture
-        </div>
-
-        <div class="hero-avatar-wrapper">
-          <img id="hero-avatar" class="hero-avatar-img" src="assets/sigil-avatar.svg" alt="Warden Sigil" />
-        </div>
-
-        <h1 id="hero-lord-name" class="hero-title">SHAHED ALAM</h1>
-        <div id="hero-lord-title" class="hero-royal-titles">
-          Warden of the Full Stack & Architect of the Digital Realm
-        </div>
-
-        <div class="medieval-divider">
-          <div class="divider-line"></div>
-          <div class="divider-gem"></div>
-          <div class="divider-line"></div>
-        </div>
-
-        <p id="hero-lord-creed" class="hero-creed">
-          Forging modern, high-resilience web kingdoms across the digital realms.
-          Master of distributed backends, modern frontend fortresses, and high-performance WebGL experiences.
-        </p>
-
-        <div class="hero-actions">
-          <a href="#campaigns" class="btn-primary-realm">
-            <span>📜</span> Chronicles of Conquest
-          </a>
-          <a href="#skills" class="btn-secondary-realm">
-            <span>🛡️</span> Inspect The Arsenal
-          </a>
-          <a href="#contact" class="btn-secondary-realm">
-            <span>🦅</span> Send a Raven
-          </a>
-        </div>
-
-        <div id="realm-stats-bar" class="realm-stats-bar">
-          <!-- Dynamically populated from realm-config.js -->
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 1: HOUSES OF TECH (SKILLS & ARSENAL) -->
-    <section id="skills" class="skills-citadel-section">
-      <div class="realm-container">
-        <div class="realm-header">
-          <div class="header-sigil">🛡️</div>
-          <div class="header-subtitle">The Grand Arsenal</div>
-          <h2 class="header-title">The Four Houses of Code</h2>
-          <div class="medieval-divider">
-            <div class="divider-line"></div>
-            <div class="divider-gem"></div>
-            <div class="divider-line"></div>
-          </div>
-          <p class="intro-desc" style="margin: 0 auto;">
-            Weapons and shields forged to withstand heavy siege, astronomical traffic loads, and the harshest winters.
-          </p>
-        </div>
-
-        <div id="houses-grid" class="houses-grid">
-          <!-- Populated from realm-config.js -->
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 2: CHRONICLES OF CONQUEST (PROJECTS) -->
-    <section id="campaigns" class="projects-citadel-section">
-      <div class="realm-container">
-        <div class="realm-header">
-          <div class="header-sigil">⚔️</div>
-          <div class="header-subtitle">Battle-Tested Architecture</div>
-          <h2 class="header-title">Chronicles of Conquest</h2>
-          <div class="medieval-divider">
-            <div class="divider-line"></div>
-            <div class="divider-gem"></div>
-            <div class="divider-line"></div>
-          </div>
-          <p class="intro-desc" style="margin: 0 auto;">
-            Major campaigns fought and fortresses established across the realms of Web, Cloud, and Intelligence.
-          </p>
-        </div>
-
-        <div id="campaigns-grid" class="campaigns-grid">
-          <!-- Populated from realm-config.js -->
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 3: CITADEL ANNALS (TIMELINE & CAREER) -->
-    <section id="annals" class="annals-citadel-section">
-      <div class="realm-container">
-        <div class="realm-header">
-          <div class="header-sigil">🏛️</div>
-          <div class="header-subtitle">Scrolls of Provenance</div>
-          <h2 class="header-title">The Citadel Annals</h2>
-          <div class="medieval-divider">
-            <div class="divider-line"></div>
-            <div class="divider-gem"></div>
-            <div class="divider-line"></div>
-          </div>
-        </div>
-
-        <div id="annals-timeline" class="annals-timeline">
-          <!-- Populated from realm-config.js -->
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 4: ENDORSEMENTS OF THE LORDS (TESTIMONIALS) -->
-    <section id="endorsements" class="endorsements-citadel-section">
-      <div class="realm-container">
-        <div class="realm-header">
-          <div class="header-sigil">👑</div>
-          <div class="header-subtitle">Royal Alliances</div>
-          <h2 class="header-title">Decrees of the High Lords</h2>
-          <div class="medieval-divider">
-            <div class="divider-line"></div>
-            <div class="divider-gem"></div>
-            <div class="divider-line"></div>
-          </div>
-        </div>
-
-        <div id="endorsements-grid" class="endorsements-grid">
-          <!-- Populated from realm-config.js -->
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 5: SEND A RAVEN (INTERACTIVE CONTACT) -->
-    <section id="contact" class="contact-citadel-section">
-      <div class="realm-container">
-        <div class="realm-header">
-          <div class="header-sigil">🦅</div>
-          <div class="header-subtitle">The Citadel Ravenry</div>
-          <h2 class="header-title">Send a Raven to the Warden</h2>
-          <div class="medieval-divider">
-            <div class="divider-line"></div>
-            <div class="divider-gem"></div>
-            <div class="divider-line"></div>
-          </div>
-          <p class="intro-desc" style="margin: 0 auto;">
-            Need a stronghold fortified, an empire engineered, or a technical consultation? Dispatch your decree.
-          </p>
-        </div>
-
-        <div class="parchment-contact-box">
-          <form id="citadel-contact-form" class="contact-form">
-            <div class="form-row">
-              <div class="form-group">
-                <label class="form-label" for="contact-lord-name">Your Lord / House Name</label>
-                <input type="text" id="contact-lord-name" class="form-input" placeholder="e.g. Lord Stark of Winterfell" required />
-              </div>
-              <div class="form-group">
-                <label class="form-label" for="contact-raven-email">Raven Return Address (Email)</label>
-                <input type="email" id="contact-raven-email" class="form-input" placeholder="lord@realm.com" required />
-              </div>
+    <!-- ==========================================
+         SECTION 1: HERO (#home)
+         ========================================== -->
+    <section class="hero-clean-section" id="home">
+      <div class="container">
+        <div class="hero-clean-grid">
+          <div class="hero-text-col">
+            <div class="hero-status-pill">
+              <span class="pulse-circle"></span>
+              <span>Open to Software Engineering Internships &bull; DIU CSE</span>
             </div>
 
-            <div class="form-group">
-              <label class="form-label" for="contact-subject">Subject of the Decree</label>
-              <input type="text" id="contact-subject" class="form-input" placeholder="e.g. High-Scale Citadel Architecture Inquiry" required />
-            </div>
+            <h1 class="hero-main-title">
+              Hi, I'm <span class="name-highlight">Rakibul Islam</span>
+              <span class="nickname-tag">(Baadal)</span>
+            </h1>
 
-            <div class="form-group">
-              <label class="form-label" for="contact-message">Royal Decree & Mission Brief</label>
-              <textarea id="contact-message" class="form-textarea" placeholder="Speak your mind, Lord or Lady of the realm..." required></textarea>
-            </div>
-
-            <button type="submit" id="btn-dispatch-raven" class="btn-dispatch-raven">
-              <span>🦅</span> DISPATCH RAVEN TO CITADEL <span>⚔️</span>
-            </button>
-          </form>
-
-          <!-- Confirmation Decree Message -->
-          <div id="raven-decree-confirmed" class="raven-decree-confirmed">
-            <img src="assets/wax-seal.svg" alt="Imperial Wax Seal" class="decree-wax-seal" />
-            <h3 style="font-family: 'Cinzel', serif; color: var(--realm-gold-light); margin-bottom: 8px;">THE RAVEN HAS TAKEN FLIGHT</h3>
-            <p class="decree-text">
-              Your decree has been sealed with royal crimson wax and dispatched into the starry skies.
-              The Maesters shall review your missive and send an answer before the fortnight ends.
+            <p class="hero-lead-text">
+              Computer Science &amp; Engineering undergraduate at <strong>Daffodil International University</strong>. 
+              I engineer performant full-stack web applications, solve algorithmic challenges in <strong>C++</strong>, 
+              and build pragmatic developer software with clean architecture.
             </p>
+
+            <div class="hero-action-row">
+              <a href="#projects" class="btn-primary-realm">
+                <i class="fa-solid fa-code"></i> Explore Projects
+              </a>
+              <a href="#terminal-section" class="btn-secondary-realm">
+                <i class="fa-solid fa-terminal"></i> Terminal CLI
+              </a>
+              <button type="button" class="btn-secondary-realm" onclick="openResumeModal()">
+                <i class="fa-solid fa-file-lines"></i> Interactive CV
+              </button>
+              <a href="https://github.com/baadaldev" target="_blank" rel="noopener noreferrer" class="btn-secondary-realm">
+                <i class="fa-brands fa-github"></i> GitHub
+              </a>
+            </div>
+
+            <div class="hero-quick-meta">
+              <span><i class="fa-solid fa-location-dot"></i> Dhaka, Bangladesh</span>
+              <span><i class="fa-solid fa-graduation-cap"></i> DIU CSE (4th Sem)</span>
+              <span><i class="fa-solid fa-clock-rotate-left"></i> Coding Since 2019</span>
+            </div>
+          </div>
+
+          <!-- Profile Photo Card -->
+          <div class="hero-visual-card">
+            <div class="profile-card-wrapper">
+              <div class="profile-image-box">
+                <img src="assets/profile.jpeg" onerror="this.src='assets/profile.jpg'" alt="Md Rakibul Islam (Baadal)" class="profile-img" />
+              </div>
+              <div class="profile-caption">
+                <div class="profile-identity">
+                  <h4>Md Rakibul Islam</h4>
+                  <p>Software Engineer &bull; Baadal.dev</p>
+                </div>
+                <span class="profile-badge-pill">DIU CSE</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Home Bento Grid Highlights -->
+        <div class="home-bento-section">
+          <div class="section-label-bar">
+            <span class="section-label"><i class="fa-solid fa-bolt"></i> Quick Highlights &bull; Interactive Bento</span>
+            <a href="#projects" class="bento-link">All Projects <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+
+          <div class="bento-grid">
+            <!-- Bento 1: Flagship Project DevTrack PRO + Live Mini Timer Demo (Span 8) -->
+            <div class="bento-card bento-col-8">
+              <span class="bento-tag"><i class="fa-solid fa-fire"></i> Flagship System &bull; Live Demo</span>
+              <h3 class="bento-title">DevTrack PRO: Engineering Study OS</h3>
+              <p class="bento-desc">
+                Engineered an OS-level Picture-in-Picture floating mini-timer using Canvas Stream API that stays pinned over VS Code and LeetCode on Windows, complete with class lecture checkoffs, audio synthesis, and multi-user profile isolation.
+              </p>
+
+              <!-- Interactive DevTrack Mini Timer Widget -->
+              <div class="mini-timer-widget">
+                <div class="mini-timer-display" id="mini-timer-time">25:00</div>
+                <div class="mini-timer-controls">
+                  <button type="button" class="mini-timer-btn primary" id="mini-timer-toggle" title="Start/Pause Focus Timer">
+                    <i class="fa-solid fa-play"></i> Start Focus
+                  </button>
+                  <button type="button" class="mini-timer-btn" id="mini-timer-reset" title="Reset Timer">
+                    <i class="fa-solid fa-rotate-right"></i> Reset
+                  </button>
+                </div>
+                <span class="mini-timer-caption">
+                  <i class="fa-solid fa-tv"></i> Live Interactive DevTrack PRO Timer Simulation
+                </span>
+              </div>
+
+              <div class="bento-footer">
+                <div class="step-tags">
+                  <span class="tech-chip">Picture-in-Picture API</span>
+                  <span class="tech-chip">Web Audio API</span>
+                  <span class="tech-chip">JavaScript ES6+</span>
+                  <span class="tech-chip">Tailwind CSS</span>
+                </div>
+                <button type="button" class="btn-case-study" onclick="openCaseStudy('devtrack')">
+                  <i class="fa-solid fa-book-open"></i> Technical Case Study
+                </button>
+              </div>
+            </div>
+
+            <!-- Bento 2: 7-Year Milestones (Span 4) -->
+            <div class="bento-card bento-col-4">
+              <span class="bento-tag"><i class="fa-solid fa-mobile-screen"></i> Origin Story</span>
+              <h3 class="bento-title">Feb 2019 on SoloLearn</h3>
+              <p class="bento-desc">
+                Wrote my very first line of HTML on a mobile screen 7 years ago under username <code>Badolrakib</code> without a personal computer.
+              </p>
+              <div class="bento-footer">
+                <a href="#memories" class="bento-link">Inspect 2019 Archives <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+
+            <!-- Bento 3: Live Dhaka Time & Availability Status (Span 4) -->
+            <div class="bento-card bento-col-4">
+              <span class="bento-tag"><i class="fa-solid fa-clock"></i> Real-Time Sync</span>
+              <div class="dhaka-time-card">
+                <div class="dhaka-header">
+                  <div class="dhaka-city"><i class="fa-solid fa-location-dot"></i> Dhaka, Bangladesh</div>
+                  <span class="dhaka-tz">UTC+6</span>
+                </div>
+                <div class="dhaka-clock-display" id="live-dhaka-clock">--:--:-- --</div>
+                <div class="dhaka-status-row">
+                  <span class="pulse-indicator"></span>
+                  <span id="dhaka-status-text">Status: Coding &amp; Building Software</span>
+                </div>
+              </div>
+              <div class="bento-footer" style="padding-top: 0.5rem;">
+                <a href="#contact" class="bento-link">Let's Connect <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CITADEL FOOTER -->
+    <!-- ==========================================
+         SECTION 2: ABOUT ME (#about)
+         ========================================== -->
+    <section class="portfolio-section" id="about">
+      <div class="container">
+        <div class="page-header">
+          <div class="page-breadcrumb">
+            <span class="crumb-parent">Overview</span>
+            <span class="crumb-separator">/</span>
+            <span class="crumb-current">About Me</span>
+          </div>
+          <h2 class="page-title">Driven by Curiosity, Grounded in Engineering</h2>
+          <p class="page-subtitle">A blend of computer science foundations, algorithmic problem solving, and modern full-stack craft.</p>
+          <div class="medieval-divider">
+            <div class="divider-line"></div>
+            <div class="divider-gem"></div>
+            <div class="divider-line"></div>
+          </div>
+        </div>
+
+        <div class="about-layout-grid">
+          <div class="about-narrative">
+            <h3><i class="fa-solid fa-terminal" style="color: var(--realm-gold);"></i> The Mindset &amp; Story</h3>
+            <p>
+              I am <strong>Md Rakibul Islam (Baadal)</strong>, a Computer Science &amp; Engineering undergraduate based in Dhaka, Bangladesh.
+              My journey into programming began on a smartphone screen in <strong>February 2019</strong>, writing basic HTML tags and form elements on the SoloLearn app without owning a computer.
+            </p>
+            <p>
+              That early curiosity grew into a structured engineering pursuit at 
+              <strong>Daffodil International University (DIU)</strong>. 
+              Today, I specialize in connecting rigorous computer science foundations &mdash; C++, Object-Oriented Programming, and Data Structures &mdash; with practical modern full-stack web applications and data analytics.
+            </p>
+
+            <div class="about-quote-card">
+              “To become a high-impact Software Engineer and Data Analyst by mastering algorithmic fundamentals, architecting dependable products, and solving complex problems with clean code.”
+            </div>
+
+            <p>
+              When I'm not writing code or solving LeetCode problems, I spend my time exploring database schemas, analyzing system architectures, and contributing to collaborative academic projects.
+            </p>
+
+            <div class="about-quick-facts">
+              <div class="fact-item"><i class="fa-solid fa-building-columns"></i> Daffodil International University</div>
+              <div class="fact-item"><i class="fa-solid fa-book-bookmark"></i> B.Sc. in CSE (4th Semester)</div>
+              <div class="fact-item"><i class="fa-solid fa-code"></i> C++ &amp; Modern JavaScript</div>
+              <div class="fact-item"><i class="fa-solid fa-location-dot"></i> Dhaka, Bangladesh</div>
+            </div>
+          </div>
+
+          <div class="about-sidebar-column">
+            <div class="focus-panel">
+              <div class="focus-panel-icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
+              <h4>Flagship Software</h4>
+              <p>Created <strong>DevTrack PRO</strong>, a study OS with OS-level Picture-in-Picture floating timer, lecture checklists, and user profile partitioning.</p>
+            </div>
+
+            <div class="focus-panel">
+              <div class="focus-panel-icon"><i class="fa-solid fa-brain"></i></div>
+              <h4>Algorithmic Focus</h4>
+              <p>Regular practice on LeetCode in C++, focusing on Two Pointers, Sliding Window, Trees, and Dynamic Programming complexity optimization.</p>
+            </div>
+
+            <div class="focus-panel">
+              <div class="focus-panel-icon"><i class="fa-solid fa-layer-group"></i></div>
+              <h4>Full-Stack Systems</h4>
+              <p>Developing scalable web platforms like <strong>Smart Meal Management System</strong> and <strong>WanderLust</strong> using Node.js, Express, and MySQL.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 3: CODING JOURNEY (#journey)
+         ========================================== -->
+    <section class="portfolio-section" id="journey">
+      <div class="container">
+        <div class="page-header">
+          <div class="page-breadcrumb">
+            <span class="crumb-parent">Overview</span>
+            <span class="crumb-separator">/</span>
+            <span class="crumb-current">Coding Journey</span>
+          </div>
+          <h2 class="page-title">The 7-Year Engineering Roadmap</h2>
+          <p class="page-subtitle">From writing my first HTML tag on a phone screen to studying Computer Science &amp; Engineering at DIU.</p>
+          <div class="medieval-divider">
+            <div class="divider-line"></div>
+            <div class="divider-gem"></div>
+            <div class="divider-line"></div>
+          </div>
+        </div>
+
+        <div class="timeline-modern-flow">
+          <!-- Step 1 -->
+          <div class="timeline-step">
+            <div class="timeline-step-marker"><i class="fa-solid fa-bolt"></i></div>
+            <div class="timeline-step-card">
+              <div class="step-meta-row">
+                <span class="step-date-badge">Feb 26, 2019 &bull; The Spark</span>
+                <span class="step-category">Mobile IDE</span>
+              </div>
+              <h3 class="step-title">First HTML Code on SoloLearn</h3>
+              <p class="step-text">
+                With no personal computer, I wrote my very first lines of HTML code on a smartphone screen using the SoloLearn mobile app under username <code>Badolrakib</code>. Built basic forms, input buttons, and discovered the excitement of building software.
+              </p>
+              <div class="step-tags">
+                <span class="tech-chip">SoloLearn</span>
+                <span class="tech-chip">HTML5</span>
+                <span class="tech-chip">Mobile Coder</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="timeline-step">
+            <div class="timeline-step-marker"><i class="fa-solid fa-compass"></i></div>
+            <div class="timeline-step-card">
+              <div class="step-meta-row">
+                <span class="step-date-badge">2019 &ndash; 2024 &bull; Exploration</span>
+                <span class="step-category">Self-Taught</span>
+              </div>
+              <h3 class="step-title">Exploring Computational Logic &amp; Web Basics</h3>
+              <p class="step-text">
+                Progressed from basic static markup into CSS styling, JavaScript DOM logic, and foundational programming. This hands-on exploration cemented my dream to pursue a formal degree in Computer Science.
+              </p>
+              <div class="step-tags">
+                <span class="tech-chip">JavaScript</span>
+                <span class="tech-chip">CSS3</span>
+                <span class="tech-chip">Web Basics</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="timeline-step">
+            <div class="timeline-step-marker"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div class="timeline-step-card">
+              <div class="step-meta-row">
+                <span class="step-date-badge">Sept 12, 2025 &bull; Academic Milestone</span>
+                <span class="step-category">Undergraduate</span>
+              </div>
+              <h3 class="step-title">Started B.Sc. in CSE at Daffodil International University</h3>
+              <p class="step-text">
+                Officially commenced my undergraduate studies in Computer Science &amp; Engineering at Daffodil International University. Transitioned hobbyist coding into formal discipline &mdash; covering discrete mathematics, digital logic, data structures, and computer architecture.
+              </p>
+              <div class="step-tags">
+                <span class="tech-chip">DIU CSE</span>
+                <span class="tech-chip">B.Sc. Degree</span>
+                <span class="tech-chip">Discrete Math</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="timeline-step">
+            <div class="timeline-step-marker"><i class="fa-solid fa-code"></i></div>
+            <div class="timeline-step-card">
+              <div class="step-meta-row">
+                <span class="step-date-badge">2025 &ndash; Present &bull; Core Foundations</span>
+                <span class="step-category">Algorithmic Rigor</span>
+              </div>
+              <h3 class="step-title">Mastering C++, Data Structures &amp; LeetCode</h3>
+              <p class="step-text">
+                Deep dive into memory pointers, dynamic allocation, OOP paradigms, Linked Lists, Stacks, Queues, Binary Trees, and asymptotic Big-O complexity. Actively solving problems on LeetCode to sharpen competitive problem-solving instincts.
+              </p>
+              <div class="step-tags">
+                <span class="tech-chip">C++20</span>
+                <span class="tech-chip">Data Structures</span>
+                <span class="tech-chip">LeetCode Daily</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 5 -->
+          <div class="timeline-step">
+            <div class="timeline-step-marker"><i class="fa-solid fa-layer-group"></i></div>
+            <div class="timeline-step-card">
+              <div class="step-meta-row">
+                <span class="step-date-badge">Present &bull; Engineering Systems</span>
+                <span class="step-category">Full Stack</span>
+              </div>
+              <h3 class="step-title">Building Production Systems &amp; Developer Tools</h3>
+              <p class="step-text">
+                Applied theory to ship production applications: engineered <i>DevTrack PRO</i> with Picture-in-Picture technology, <i>Smart Meal Management</i> with MySQL relational schema, and <i>WanderLust</i> vacation rental platform with Mapbox SDK.
+              </p>
+              <div class="step-tags">
+                <span class="tech-chip">DevTrack PRO</span>
+                <span class="tech-chip">Node.js</span>
+                <span class="tech-chip">MySQL</span>
+                <span class="tech-chip">MERN</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 6 -->
+          <div class="timeline-step">
+            <div class="timeline-step-marker"><i class="fa-solid fa-bullseye"></i></div>
+            <div class="timeline-step-card">
+              <div class="step-meta-row">
+                <span class="step-date-badge">Future Horizon &bull; Target</span>
+                <span class="step-category">Career Vision</span>
+              </div>
+              <h3 class="step-title">Software Engineering Internships &amp; Data Analytics</h3>
+              <p class="step-text">
+                Preparing for competitive software engineering internships, contributing to open-source software, and diving into enterprise data analytics to extract intelligence and solve real-world problems.
+              </p>
+              <div class="step-tags">
+                <span class="tech-chip">Software Engineer</span>
+                <span class="tech-chip">Data Analyst</span>
+                <span class="tech-chip">Internships</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 4: FEATURED PROJECTS (#projects)
+         ========================================== -->
+    <section class="portfolio-section" id="projects">
+      <div class="container">
+        <div class="page-header">
+          <div class="page-breadcrumb">
+            <span class="crumb-parent">Portfolio</span>
+            <span class="crumb-separator">/</span>
+            <span class="crumb-current">Featured Projects</span>
+          </div>
+          <h2 class="page-title">Engineering Projects Spotlight</h2>
+          <p class="page-subtitle">Real-world systems engineered with clean code, scalable architecture, and user-centric design.</p>
+          <div class="medieval-divider">
+            <div class="divider-line"></div>
+            <div class="divider-gem"></div>
+            <div class="divider-line"></div>
+          </div>
+        </div>
+
+        <!-- Filter Tab Bar -->
+        <div class="projects-filter-bar">
+          <button class="filter-tab active" data-filter="all"><i class="fa-solid fa-border-all"></i> All Projects</button>
+          <button class="filter-tab" data-filter="fullstack"><i class="fa-solid fa-layer-group"></i> Full Stack &amp; MERN</button>
+          <button class="filter-tab" data-filter="systems"><i class="fa-solid fa-terminal"></i> Systems &amp; Tools</button>
+          <button class="filter-tab" data-filter="dsa"><i class="fa-solid fa-brain"></i> C++ &amp; Algorithms</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-masonry-grid">
+          <!-- Project 1: NEXUS -->
+          <div class="project-card-premium" data-category="fullstack systems">
+            <div class="project-mac-header">
+              <div class="mac-dots">
+                <span class="mac-dot red"></span>
+                <span class="mac-dot yellow"></span>
+                <span class="mac-dot green"></span>
+              </div>
+              <div class="mac-address-bar">baadaldev.github.io/nexus-simulator</div>
+            </div>
+            <div class="project-card-header">
+              <div class="project-folder-icon"><i class="fa-solid fa-chart-line"></i></div>
+              <div class="project-actions">
+                <button type="button" class="btn-case-study" onclick="openCaseStudy('nexus')">
+                  <i class="fa-solid fa-book-open"></i> Case Study
+                </button>
+                <a href="https://github.com/baadaldev" target="_blank" rel="noopener noreferrer" class="btn-github-link" title="GitHub Repo">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+            <h3 class="project-card-title">NEXUS: Mathematical Future Trajectory Simulator</h3>
+            <p class="project-card-desc">
+              Next-generation simulation platform projecting 5 to 10-year skill mastery, career trajectories, and stochastic compounding outcomes based on daily deliberate effort variance.
+            </p>
+            <div class="project-tags">
+              <span class="tech-tag">Next.js 16</span>
+              <span class="tech-tag">React 19</span>
+              <span class="tech-tag">Stochastic Models</span>
+              <span class="tech-tag">Tailwind CSS</span>
+            </div>
+            <div class="project-metrics-row">
+              <span class="metric-item"><i class="fa-solid fa-bolt"></i> &lt;10ms Recompute</span>
+              <span class="metric-item"><i class="fa-solid fa-database"></i> 100% Client Offline</span>
+              <span class="metric-badge">Flagship 2026</span>
+            </div>
+          </div>
+
+          <!-- Project 2: DevTrack PRO -->
+          <div class="project-card-premium" data-category="systems">
+            <div class="project-mac-header">
+              <div class="mac-dots">
+                <span class="mac-dot red"></span>
+                <span class="mac-dot yellow"></span>
+                <span class="mac-dot green"></span>
+              </div>
+              <div class="mac-address-bar">baadaldev.github.io/dev-study-tracker</div>
+            </div>
+            <div class="project-card-header">
+              <div class="project-folder-icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
+              <div class="project-actions">
+                <button type="button" class="btn-case-study" onclick="openCaseStudy('devtrack')">
+                  <i class="fa-solid fa-book-open"></i> Case Study
+                </button>
+                <a href="https://baadaldev.github.io/dev-study-tracker/" target="_blank" rel="noopener noreferrer" class="btn-live-link">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Live App
+                </a>
+                <a href="https://github.com/baadaldev" target="_blank" rel="noopener noreferrer" class="btn-github-link" title="GitHub Repo">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+            <h3 class="project-card-title">DevTrack PRO: Engineering Study OS</h3>
+            <p class="project-card-desc">
+              A high-performance productivity platform engineered with an OS-level Picture-in-Picture floating mini-timer that stays pinned on Windows over VS Code and LeetCode, comprehensive lecture checkoffs, and multi-user profile isolation.
+            </p>
+            <ul class="project-highlights-list">
+              <li><i class="fa-solid fa-check"></i> Native Windows Picture-in-Picture always-on-top timer via Canvas Stream API</li>
+              <li><i class="fa-solid fa-check"></i> Course &amp; class lecture manager with real-time percentage progress bars</li>
+              <li><i class="fa-solid fa-check"></i> Multi-profile user authentication with zero-loss localStorage isolation</li>
+            </ul>
+            <div class="project-tags-cloud">
+              <span class="tech-chip">Picture-in-Picture API</span>
+              <span class="tech-chip">Web Audio Synth</span>
+              <span class="tech-chip">Chart.js</span>
+              <span class="tech-chip">Tailwind CSS</span>
+              <span class="tech-chip">JavaScript ES6+</span>
+            </div>
+          </div>
+
+          <!-- Project 3: Discipline Tracker -->
+          <div class="project-card-premium" data-category="fullstack systems">
+            <div class="project-mac-header">
+              <div class="mac-dots">
+                <span class="mac-dot red"></span>
+                <span class="mac-dot yellow"></span>
+                <span class="mac-dot green"></span>
+              </div>
+              <div class="mac-address-bar">baadaldev.github.io/discipline-engine</div>
+            </div>
+            <div class="project-card-header">
+              <div class="project-folder-icon"><i class="fa-solid fa-shield-halved"></i></div>
+              <div class="project-actions">
+                <button type="button" class="btn-case-study" onclick="openCaseStudy('discipline')">
+                  <i class="fa-solid fa-book-open"></i> Case Study
+                </button>
+                <a href="https://github.com/baadaldev" target="_blank" rel="noopener noreferrer" class="btn-github-link" title="GitHub Repo">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+            <h3 class="project-card-title">Discipline Tracker: Cognitive Habit Engine</h3>
+            <p class="project-card-desc">
+              Cognitive behavioral tracker with streak momentum algorithms, local encrypted state storage, and dynamic GitHub-style 365-day habit heatmaps.
+            </p>
+            <div class="project-tags">
+              <span class="tech-tag">TypeScript</span>
+              <span class="tech-tag">Vanilla JS</span>
+              <span class="tech-tag">Web Audio API</span>
+              <span class="tech-tag">LocalDB</span>
+            </div>
+            <div class="project-metrics-row">
+              <span class="metric-item"><i class="fa-solid fa-fire"></i> 365-Day Heatmap</span>
+              <span class="metric-badge">Productivity</span>
+            </div>
+          </div>
+
+          <!-- Project 4: WanderLust -->
+          <div class="project-card-premium" data-category="fullstack">
+            <div class="project-mac-header">
+              <div class="mac-dots">
+                <span class="mac-dot red"></span>
+                <span class="mac-dot yellow"></span>
+                <span class="mac-dot green"></span>
+              </div>
+              <div class="mac-address-bar">wanderlust-travel.onrender.com</div>
+            </div>
+            <div class="project-card-header">
+              <div class="project-folder-icon"><i class="fa-solid fa-hotel"></i></div>
+              <div class="project-actions">
+                <button type="button" class="btn-case-study" onclick="openCaseStudy('wanderlust')">
+                  <i class="fa-solid fa-book-open"></i> Case Study
+                </button>
+                <a href="https://github.com/baadaldev" target="_blank" rel="noopener noreferrer" class="btn-github-link" title="GitHub Repo">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+            <h3 class="project-card-title">WanderLust: Vacation Marketplace</h3>
+            <p class="project-card-desc">
+              Full-stack vacation rental marketplace built with MERN stack following the MVC architecture. Features Mapbox SDK geocoding, Cloudinary image pipeline, and session authentication.
+            </p>
+            <ul class="project-highlights-list">
+              <li><i class="fa-solid fa-check"></i> Interactive Mapbox coordinate mapping</li>
+              <li><i class="fa-solid fa-check"></i> Cloudinary image storage &amp; optimization</li>
+              <li><i class="fa-solid fa-check"></i> Secure session cookies &amp; listing authorization</li>
+            </ul>
+            <div class="project-tags-cloud">
+              <span class="tech-chip">Node.js</span>
+              <span class="tech-chip">Express.js</span>
+              <span class="tech-chip">MongoDB</span>
+              <span class="tech-chip">Mapbox SDK</span>
+              <span class="tech-chip">Cloudinary</span>
+            </div>
+          </div>
+
+          <!-- Project 5: Smart Meal Management -->
+          <div class="project-card-premium" data-category="fullstack">
+            <div class="project-mac-header">
+              <div class="mac-dots">
+                <span class="mac-dot red"></span>
+                <span class="mac-dot yellow"></span>
+                <span class="mac-dot green"></span>
+              </div>
+              <div class="mac-address-bar">smart-meal-management.local</div>
+            </div>
+            <div class="project-card-header">
+              <div class="project-folder-icon"><i class="fa-solid fa-utensils"></i></div>
+              <div class="project-actions">
+                <button type="button" class="btn-case-study" onclick="openCaseStudy('smartmeal')">
+                  <i class="fa-solid fa-book-open"></i> Case Study
+                </button>
+                <a href="https://github.com/baadaldev" target="_blank" rel="noopener noreferrer" class="btn-github-link" title="GitHub Repo">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+            <h3 class="project-card-title">Smart Meal Management System</h3>
+            <p class="project-card-desc">
+              Hostel/mess dining management platform automating daily meal roll-calls, member deposit balance tracking, grocery expense audits, and transparent monthly budget rate computations.
+            </p>
+            <ul class="project-highlights-list">
+              <li><i class="fa-solid fa-check"></i> Automated meal rate &amp; balance reconciliations</li>
+              <li><i class="fa-solid fa-check"></i> Member deposit &amp; expense ledger tracking</li>
+              <li><i class="fa-solid fa-check"></i> Responsive dashboard UI with MySQL schema</li>
+            </ul>
+            <div class="project-tags-cloud">
+              <span class="tech-chip">JavaScript</span>
+              <span class="tech-chip">MySQL</span>
+              <span class="tech-chip">HTML5 / CSS3</span>
+              <span class="tech-chip">Relational Schema</span>
+            </div>
+          </div>
+
+          <!-- Project 6: DIU Student Management -->
+          <div class="project-card-premium" data-category="fullstack systems">
+            <div class="project-mac-header">
+              <div class="mac-dots">
+                <span class="mac-dot red"></span>
+                <span class="mac-dot yellow"></span>
+                <span class="mac-dot green"></span>
+              </div>
+              <div class="mac-address-bar">diu-student-portal.edu.bd</div>
+            </div>
+            <div class="project-card-header">
+              <div class="project-folder-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+              <div class="project-actions">
+                <button type="button" class="btn-case-study" onclick="openCaseStudy('student')">
+                  <i class="fa-solid fa-book-open"></i> Case Study
+                </button>
+                <a href="https://github.com/baadaldev" target="_blank" rel="noopener noreferrer" class="btn-github-link" title="GitHub Repo">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+            <h3 class="project-card-title">DIU Student Management System</h3>
+            <p class="project-card-desc">
+              Structured academic records system streamlining student registrations, course enrollments, attendance logs, and academic GPA analytics for university departmental batches.
+            </p>
+            <ul class="project-highlights-list">
+              <li><i class="fa-solid fa-check"></i> Relational database integrity &amp; query optimization</li>
+              <li><i class="fa-solid fa-check"></i> CRUD operations for student records &amp; courses</li>
+              <li><i class="fa-solid fa-check"></i> Modular administrative control panels</li>
+            </ul>
+            <div class="project-tags-cloud">
+              <span class="tech-chip">Database Systems</span>
+              <span class="tech-chip">SQL</span>
+              <span class="tech-chip">JavaScript</span>
+              <span class="tech-chip">Academic UI</span>
+            </div>
+          </div>
+
+          <!-- Project 7: C++ DSA Hub -->
+          <div class="project-card-premium" data-category="dsa">
+            <div class="project-mac-header">
+              <div class="mac-dots">
+                <span class="mac-dot red"></span>
+                <span class="mac-dot yellow"></span>
+                <span class="mac-dot green"></span>
+              </div>
+              <div class="mac-address-bar">github.com/baadaldev/leetcode-cpp</div>
+            </div>
+            <div class="project-card-header">
+              <div class="project-folder-icon"><i class="fa-solid fa-cubes-stacked"></i></div>
+              <div class="project-actions">
+                <button type="button" class="btn-case-study" onclick="openCaseStudy('dsa')">
+                  <i class="fa-solid fa-book-open"></i> Case Study
+                </button>
+                <a href="https://github.com/baadaldev" target="_blank" rel="noopener noreferrer" class="btn-github-link" title="GitHub Repo">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+            <h3 class="project-card-title">C++ Algorithms &amp; LeetCode Hub</h3>
+            <p class="project-card-desc">
+              Systematic repository archiving solutions to algorithmic challenges, standard data structure implementations (Linked Lists, Binary Trees, Graphs), and semester contest preparation breakdowns.
+            </p>
+            <ul class="project-highlights-list">
+              <li><i class="fa-solid fa-check"></i> Rigorous asymptotic Time &amp; Space complexity notes</li>
+              <li><i class="fa-solid fa-check"></i> Standard implementations in modern C++20 and STL</li>
+              <li><i class="fa-solid fa-check"></i> Two Pointers, Sliding Window, DP, and Tree traversals</li>
+            </ul>
+            <div class="project-tags-cloud">
+              <span class="tech-chip">C++20</span>
+              <span class="tech-chip">STL</span>
+              <span class="tech-chip">DSA</span>
+              <span class="tech-chip">LeetCode</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 5: DEVELOPER TERMINAL (#terminal-section)
+         ========================================== -->
+    <section class="portfolio-section" id="terminal-section">
+      <div class="container">
+        <div class="page-header">
+          <div class="page-breadcrumb">
+            <span class="crumb-parent">Developer Console</span>
+            <span class="crumb-separator">/</span>
+            <span class="crumb-current">Interactive Shell</span>
+          </div>
+          <h2 class="page-title">Interactive Developer Terminal</h2>
+          <p class="page-subtitle">Type commands into the terminal below, or click any quick command chip to execute instant system queries.</p>
+          <div class="medieval-divider">
+            <div class="divider-line"></div>
+            <div class="divider-gem"></div>
+            <div class="divider-line"></div>
+          </div>
+        </div>
+
+        <div class="terminal-window">
+          <div class="terminal-header">
+            <div class="mac-buttons">
+              <span class="mac-btn mac-close"></span>
+              <span class="mac-btn mac-min"></span>
+              <span class="mac-btn mac-max"></span>
+            </div>
+            <div class="terminal-title">baadal@diu-cse: ~ (zsh)</div>
+            <div class="terminal-actions">
+              <button type="button" class="term-action-btn" id="term-clear-btn" title="Clear console output">
+                <i class="fa-solid fa-eraser"></i> Clear
+              </button>
+            </div>
+          </div>
+
+          <div class="terminal-body" id="terminal-body">
+            <div class="term-line">
+              <span style="color: #38bdf8;">┌──(</span><span style="color: #22c55e;">baadal@diu-cse</span><span style="color: #38bdf8;">)-[</span><span style="color: #f59e0b;">~</span><span style="color: #38bdf8;">]</span><br />
+              <span style="color: #38bdf8;">└─$</span> <span class="term-highlight">welcome</span>
+            </div>
+            <div class="term-line">
+              Welcome to <strong class="term-highlight">Baadal.dev Interactive CLI</strong> [Version 2.4.0-release]<br />
+              Type <span class="term-code">help</span> to view all available commands, or click the quick chips below.
+            </div>
+          </div>
+
+          <div class="terminal-chips-bar">
+            <span class="chip-label">Quick Commands:</span>
+            <button type="button" class="term-chip" data-cmd="help">help</button>
+            <button type="button" class="term-chip" data-cmd="bio">bio</button>
+            <button type="button" class="term-chip" data-cmd="projects">projects</button>
+            <button type="button" class="term-chip" data-cmd="skills">skills</button>
+            <button type="button" class="term-chip" data-cmd="stats">stats</button>
+            <button type="button" class="term-chip" data-cmd="sudo hire">sudo hire</button>
+            <button type="button" class="term-chip" data-cmd="contact">contact</button>
+            <button type="button" class="term-chip" data-cmd="clear">clear</button>
+          </div>
+
+          <div class="terminal-input-row">
+            <span class="term-prompt">
+              <span class="prompt-user">baadal</span><span class="prompt-at">@</span><span class="prompt-host">diu-cse</span>:<span class="prompt-path">~</span>$&nbsp;
+            </span>
+            <input type="text" id="terminal-input" class="terminal-input" autocomplete="off" spellcheck="false" placeholder="Type 'help', 'bio', 'projects', 'sudo hire'..." />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 6: TECHNICAL SKILLS & STACK (#skills)
+         ========================================== -->
+    <section class="portfolio-section" id="skills">
+      <div class="container">
+        <div class="page-header">
+          <div class="page-breadcrumb">
+            <span class="crumb-parent">Architecture</span>
+            <span class="crumb-separator">/</span>
+            <span class="crumb-current">Technical Skills</span>
+          </div>
+          <h2 class="page-title">Skills &amp; Architectural Tooling</h2>
+          <p class="page-subtitle">A balanced toolkit spanning low-level language fundamentals, algorithmic problem solving, and modern web application development.</p>
+          <div class="medieval-divider">
+            <div class="divider-line"></div>
+            <div class="divider-gem"></div>
+            <div class="divider-line"></div>
+          </div>
+        </div>
+
+        <div class="skills-bento-grid">
+          <!-- Category 1: Programming Languages -->
+          <div class="skill-category-card">
+            <h3><i class="fa-solid fa-code"></i> Core Languages</h3>
+            <div class="skill-pills-wrap">
+              <span class="skill-pill-item"><i class="fa-solid fa-c"></i> C / C++20</span>
+              <span class="skill-pill-item"><i class="fa-brands fa-js"></i> JavaScript (ES6+)</span>
+              <span class="skill-pill-item"><i class="fa-brands fa-python"></i> Python</span>
+              <span class="skill-pill-item"><i class="fa-solid fa-database"></i> SQL</span>
+              <span class="skill-pill-item"><i class="fa-brands fa-html5"></i> HTML5 Markup</span>
+              <span class="skill-pill-item"><i class="fa-brands fa-css3-alt"></i> Modern CSS3</span>
+            </div>
+          </div>
+
+          <!-- Category 2: Full-Stack & Web Frameworks -->
+          <div class="skill-category-card">
+            <h3><i class="fa-solid fa-layer-group"></i> Web &amp; Frameworks</h3>
+            <div class="skill-pills-wrap">
+              <span class="skill-pill-item"><i class="fa-brands fa-react"></i> React 19</span>
+              <span class="skill-pill-item"><i class="fa-brands fa-node"></i> Node.js</span>
+              <span class="skill-pill-item"><i class="fa-solid fa-server"></i> Express.js</span>
+              <span class="skill-pill-item"><i class="fa-solid fa-wind"></i> Tailwind CSS</span>
+              <span class="skill-pill-item"><i class="fa-solid fa-network-wired"></i> RESTful APIs</span>
+            </div>
+          </div>
+
+          <!-- Category 3: Databases & Storage -->
+          <div class="skill-category-card">
+            <h3><i class="fa-solid fa-database"></i> Databases &amp; Cloud</h3>
+            <div class="skill-pills-wrap">
+              <span class="skill-pill-item"><i class="fa-solid fa-table"></i> MySQL</span>
+              <span class="skill-pill-item"><i class="fa-solid fa-leaf"></i> MongoDB / Mongoose</span>
+              <span class="skill-pill-item"><i class="fa-solid fa-cloud"></i> Cloudinary CDN</span>
+              <span class="skill-pill-item"><i class="fa-solid fa-map-location-dot"></i> Mapbox SDK</span>
+            </div>
+          </div>
+
+          <!-- Category 4: Computer Science Fundamentals -->
+          <div class="skill-category-card">
+            <h3><i class="fa-solid fa-brain"></i> CS Fundamentals</h3>
+            <div class="skill-pills-wrap">
+              <span class="skill-pill-item"><i class="fa-solid fa-cubes"></i> Data Structures</span>
+              <span class="skill-pill-item"><i class="fa-solid fa-gears"></i> Algorithms Design</span>
+              <span class="skill-pill-item"><i class="fa-solid fa-object-group"></i> OOP Principles</span>
+              <span class="skill-pill-item"><i class="fa-solid fa-calculator"></i> Discrete Math</span>
+              <span class="skill-pill-item"><i class="fa-solid fa-diagram-project"></i> Relational Modeling</span>
+            </div>
+          </div>
+
+          <!-- Category 5: Developer Toolchain -->
+          <div class="skill-category-card" style="grid-column: 1 / -1;">
+            <h3><i class="fa-solid fa-toolbox"></i> Developer Toolchain &amp; Workflow</h3>
+            <div class="skill-pills-wrap">
+              <span class="skill-pill-item"><i class="fa-brands fa-git-alt"></i> Git Version Control</span>
+              <span class="skill-pill-item"><i class="fa-brands fa-github"></i> GitHub</span>
+              <span class="skill-pill-item"><i class="fa-solid fa-terminal"></i> VS Code</span>
+              <span class="skill-pill-item"><i class="fa-brands fa-linux"></i> Linux CLI</span>
+              <span class="skill-pill-item"><i class="fa-solid fa-paper-plane"></i> Postman</span>
+              <span class="skill-pill-item"><i class="fa-solid fa-laptop-code"></i> Windows Terminal</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 7: MEMORIES & EARLY ARCHIVES (#memories)
+         ========================================== -->
+    <section class="portfolio-section" id="memories">
+      <div class="container">
+        <div class="page-header">
+          <div class="page-breadcrumb">
+            <span class="crumb-parent">Archives</span>
+            <span class="crumb-separator">/</span>
+            <span class="crumb-current">Memories</span>
+          </div>
+          <h2 class="page-title">First Coding Steps (Feb 2019)</h2>
+          <p class="page-subtitle">Every senior engineer started with humble curiosity. Preserving the exact screenshots from 7 years ago on SoloLearn.</p>
+          <div class="medieval-divider">
+            <div class="divider-line"></div>
+            <div class="divider-gem"></div>
+            <div class="divider-line"></div>
+          </div>
+        </div>
+
+        <div class="memories-story-card">
+          <h3><i class="fa-solid fa-camera-retro" style="color: var(--realm-gold);"></i> The Mobile SoloLearn Archives</h3>
+          <p>
+            Back on <strong>February 26, 2019</strong>, I didn't own a laptop or desktop computer. But my curiosity about how websites worked led me to install the <strong>SoloLearn</strong> mobile app on a smartphone under the username <code>Badolrakib</code>.
+          </p>
+          <p>
+            I typed HTML tags character-by-character on a mobile on-screen keyboard, experimenting with forms, radio buttons, and inputs. Keeping these original captures serves as a constant reminder that with dedication and curiosity, anyone can begin their engineering journey from anywhere.
+          </p>
+        </div>
+
+        <!-- Memories Gallery Grid -->
+        <div class="memories-gallery-grid">
+          <!-- Memory 1 -->
+          <div class="memory-photo-card" onclick="openLightbox('assets/sololearn-code.jpg', 'SoloLearn Mobile Code Editor — Writing raw HTML on a smartphone in Feb 2019')">
+            <div class="memory-img-wrapper">
+              <img src="assets/sololearn-code.jpg" alt="SoloLearn Mobile Code Editor" class="memory-img" />
+              <div class="memory-overlay-hover"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+            </div>
+            <div class="memory-info-box">
+              <h4>Mobile Code Editor (2019)</h4>
+              <p>Writing raw HTML form markup on a smartphone screen without a computer.</p>
+            </div>
+          </div>
+
+          <!-- Memory 2 -->
+          <div class="memory-photo-card" onclick="openLightbox('assets/sololearn-output.jpg', 'SoloLearn Rendered Output — Testing interactive web forms and buttons')">
+            <div class="memory-img-wrapper">
+              <img src="assets/sololearn-output.jpg" alt="SoloLearn Output Preview" class="memory-img" />
+              <div class="memory-overlay-hover"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+            </div>
+            <div class="memory-info-box">
+              <h4>Rendered Output Preview</h4>
+              <p>Testing my first web form with input fields, checkboxes, and submit buttons.</p>
+            </div>
+          </div>
+
+          <!-- Memory 3 -->
+          <div class="memory-photo-card" onclick="openLightbox('assets/sololearn-projects.jpg', 'SoloLearn Project History — Archives under username Badolrakib')">
+            <div class="memory-img-wrapper">
+              <img src="assets/sololearn-projects.jpg" alt="SoloLearn Project Archives" class="memory-img" />
+              <div class="memory-overlay-hover"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+            </div>
+            <div class="memory-info-box">
+              <h4>SoloLearn Profile &amp; Projects</h4>
+              <p>Saved project experiments under my earliest developer handle: <code>Badolrakib</code>.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 8: ACHIEVEMENTS & METRICS (#achievements)
+         ========================================== -->
+    <section class="portfolio-section" id="achievements">
+      <div class="container">
+        <div class="page-header">
+          <div class="page-breadcrumb">
+            <span class="crumb-parent">Milestones</span>
+            <span class="crumb-separator">/</span>
+            <span class="crumb-current">Achievements</span>
+          </div>
+          <h2 class="page-title">Verified Achievements &amp; Track Record</h2>
+          <p class="page-subtitle">Real metrics reflecting dedication to algorithmic rigor, academic excellence, and software craft.</p>
+          <div class="medieval-divider">
+            <div class="divider-line"></div>
+            <div class="divider-gem"></div>
+            <div class="divider-line"></div>
+          </div>
+        </div>
+
+        <div class="achievements-grid-modern">
+          <div class="achievement-card-clean">
+            <div class="achieve-icon-box"><i class="fa-solid fa-brain"></i></div>
+            <div class="achieve-details">
+              <span class="achieve-pill">Competitive Programming</span>
+              <h3 class="achieve-title">Algorithmic Problem Solving</h3>
+              <p class="achieve-desc">Daily LeetCode &amp; Beecrowd practice tackling Two Pointers, Binary Search, and asymptotic time-space complexity optimization in C++.</p>
+              <div class="achieve-score">50+ Problems Solved</div>
+            </div>
+          </div>
+
+          <div class="achievement-card-clean">
+            <div class="achieve-icon-box"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div class="achieve-details">
+              <span class="achieve-pill">Academic Rigor</span>
+              <h3 class="achieve-title">B.Sc. in CSE @ DIU</h3>
+              <p class="achieve-desc">Undergraduate in Computer Science &amp; Engineering at Daffodil International University. Excelling in Data Structures, Algorithms, and OOP.</p>
+              <div class="achieve-score">4th Semester Standing</div>
+            </div>
+          </div>
+
+          <div class="achievement-card-clean">
+            <div class="achieve-icon-box"><i class="fa-solid fa-code-branch"></i></div>
+            <div class="achieve-details">
+              <span class="achieve-pill">Production Systems</span>
+              <h3 class="achieve-title">Deployed Software Systems</h3>
+              <p class="achieve-desc">Architected and deployed 5+ full-stack and systems applications including DevTrack PRO, WanderLust, and Smart Meal Management.</p>
+              <div class="achieve-score">5+ Production Applications</div>
+            </div>
+          </div>
+
+          <div class="achievement-card-clean">
+            <div class="achieve-icon-box"><i class="fa-solid fa-clock-rotate-left"></i></div>
+            <div class="achieve-details">
+              <span class="achieve-pill">Persistence</span>
+              <h3 class="achieve-title">7-Year Engineering Path</h3>
+              <p class="achieve-desc">From SoloLearn mobile coder in Feb 2019 to university computer science student developing full-stack web platforms and systems software.</p>
+              <div class="achieve-score">7+ Years Journey</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 9: SEND A RAVEN (CONTACT) (#contact)
+         ========================================== -->
+    <section class="portfolio-section" id="contact">
+      <div class="container">
+        <div class="page-header">
+          <div class="page-breadcrumb">
+            <span class="crumb-parent">Inquiries</span>
+            <span class="crumb-separator">/</span>
+            <span class="crumb-current">Send a Raven</span>
+          </div>
+          <h2 class="page-title">Send a Raven to Baadal</h2>
+          <p class="page-subtitle">Interested in software engineering internships, technical collaborations, or high-performance web systems? Dispatch your message below.</p>
+          <div class="medieval-divider">
+            <div class="divider-line"></div>
+            <div class="divider-gem"></div>
+            <div class="divider-line"></div>
+          </div>
+        </div>
+
+        <div class="contact-layout-grid">
+          <!-- Contact Info Column -->
+          <div class="contact-info-card">
+            <h3>Direct Communication</h3>
+            <p>
+              Feel free to reach out directly via email, connect on LinkedIn, or inspect repositories on GitHub. I typically respond within 24 hours.
+            </p>
+            <div class="contact-details-list">
+              <a href="mailto:badolrakib1@gmail.com" class="contact-detail-item">
+                <i class="fa-solid fa-envelope"></i>
+                <div>
+                  <span style="font-size: 11px; color: var(--realm-gold); text-transform: uppercase;">Direct Email</span><br />
+                  <strong>badolrakib1@gmail.com</strong>
+                </div>
+              </a>
+              <a href="https://github.com/baadaldev" target="_blank" rel="noopener noreferrer" class="contact-detail-item">
+                <i class="fa-brands fa-github"></i>
+                <div>
+                  <span style="font-size: 11px; color: var(--realm-gold); text-transform: uppercase;">GitHub</span><br />
+                  <strong>github.com/baadaldev</strong>
+                </div>
+              </a>
+              <a href="https://linkedin.com/in/baadaldev" target="_blank" rel="noopener noreferrer" class="contact-detail-item">
+                <i class="fa-brands fa-linkedin"></i>
+                <div>
+                  <span style="font-size: 11px; color: var(--realm-gold); text-transform: uppercase;">LinkedIn</span><br />
+                  <strong>linkedin.com/in/baadaldev</strong>
+                </div>
+              </a>
+              <div class="contact-detail-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <div>
+                  <span style="font-size: 11px; color: var(--realm-gold); text-transform: uppercase;">Location</span><br />
+                  <strong>Dhaka, Bangladesh &bull; DIU Campus</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Royal Contact Parchment -->
+          <div class="parchment-contact-box">
+            <form id="citadel-contact-form" class="contact-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="contact-name">Your Name</label>
+                  <input type="text" id="contact-name" class="form-input" placeholder="e.g. John Doe / Tech Lead" required />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="contact-email">Your Email Address</label>
+                  <input type="email" id="contact-email" class="form-input" placeholder="john@company.com" required />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="contact-subject">Subject</label>
+                <input type="text" id="contact-subject" class="form-input" placeholder="e.g. Internship Inquiry / Software Engineering Role" required />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="contact-message">Message</label>
+                <textarea id="contact-message" class="form-textarea" placeholder="Write your message here..." required></textarea>
+              </div>
+
+              <button type="submit" id="btn-dispatch-raven" class="btn-dispatch-raven">
+                <span>🦅</span> DISPATCH RAVEN TO BAADAL <span>⚔️</span>
+              </button>
+            </form>
+
+            <div id="raven-decree-confirmed" class="raven-decree-confirmed">
+              <img src="assets/wax-seal.svg" alt="Imperial Wax Seal" class="decree-wax-seal" />
+              <h3 style="font-family: 'Cinzel', serif; color: var(--realm-gold-light); margin-bottom: 6px;">THE RAVEN HAS TAKEN FLIGHT</h3>
+              <p class="decree-text">
+                Your message has been sealed with royal crimson wax and dispatched. Baadal shall reply swiftly to your email!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
     <footer class="citadel-footer">
-      <div class="realm-container">
+      <div class="container">
         <div class="footer-motto">“Code is Fire • Architecture is Steel”</div>
         <p class="footer-copy">
-          Designed in the Grand Citadel Archives • Forged with Valyrian Precision & Three.js 3D WebGL
+          Md Rakibul Islam (Baadal) &bull; CSE Undergraduate at Daffodil International University &bull; Forged with Three.js 3D WebGL
         </p>
       </div>
     </footer>
   </main>
 
   <!-- =======================================================
-       MODAL: BATTLE LORE (PROJECT CASE STUDY)
+       MODAL: CASE STUDIES & RESUME
        ======================================================= -->
-  <div id="battle-lore-modal" class="realm-modal-backdrop" onclick="if(event.target === this) closeBattleLoreModal()">
+  <div id="general-modal-backdrop" class="realm-modal-backdrop" onclick="if(event.target === this) closeModal()">
     <div class="realm-modal-dialog">
-      <button class="modal-close-btn" onclick="closeBattleLoreModal()">✕</button>
-      <h3 id="lore-modal-title" class="modal-title">Battle Title</h3>
-      <div id="lore-modal-subtitle" class="modal-subtitle">Campaign</div>
-      <div id="lore-modal-stats" class="modal-stats-grid"></div>
-      <p id="lore-modal-body" class="modal-body-text"></p>
-      <div style="text-align: right;">
-        <button class="btn-primary-realm" onclick="closeBattleLoreModal()">
-          <span>✓</span> Understood, Maester
+      <button class="modal-close-btn" onclick="closeModal()">✕</button>
+      <h3 id="modal-title" class="modal-title">Title</h3>
+      <div id="modal-body" class="modal-body"></div>
+      <div style="text-align: right; margin-top: 20px;">
+        <button class="btn-primary-realm" onclick="closeModal()">
+          <span>✓</span> Close
         </button>
       </div>
     </div>
   </div>
 
   <!-- =======================================================
-       MODAL: CITADEL SCRIBE (IN-PLACE REALM EDITOR)
+       MODAL: MEMORIES LIGHTBOX
        ======================================================= -->
-  <div id="citadel-scribe-modal" class="realm-modal-backdrop" onclick="if(event.target === this) closeScribeModal()">
-    <div class="realm-modal-dialog">
-      <button class="modal-close-btn" onclick="closeScribeModal()">✕</button>
-      <h3 class="modal-title">🖋️ The Citadel Scribe</h3>
-      <div class="modal-subtitle">Update Your Realm Identity Instantly</div>
-      <form id="scribe-edit-form" class="contact-form">
-        <div class="form-group">
-          <label class="form-label" for="scribe-name">Your Lord / Developer Name</label>
-          <input type="text" id="scribe-name" class="form-input" required />
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="scribe-title">Royal Titles & Specialization</label>
-          <input type="text" id="scribe-title" class="form-input" required />
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="scribe-creed">Lord's Creed & Bio</label>
-          <textarea id="scribe-creed" class="form-textarea" style="min-height: 80px;" required></textarea>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label class="form-label" for="scribe-email">Raven Email</label>
-            <input type="email" id="scribe-email" class="form-input" required />
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="scribe-github">GitHub Realm URL</label>
-            <input type="url" id="scribe-github" class="form-input" required />
-          </div>
-        </div>
-        <div style="display: flex; gap: 12px; justify-content: flex-end; margin-top: 10px;">
-          <button type="button" class="btn-secondary-realm" onclick="closeScribeModal()">Cancel</button>
-          <button type="submit" class="btn-primary-realm">Seal Decree & Save</button>
-        </div>
-      </form>
+  <div id="lightbox-modal-backdrop" class="realm-modal-backdrop" onclick="if(event.target === this) closeLightbox()">
+    <div class="lightbox-dialog">
+      <button class="modal-close-btn" onclick="closeLightbox()">✕</button>
+      <img id="lightbox-img" class="lightbox-img" src="" alt="Early Memory" />
+      <p id="lightbox-caption" class="lightbox-caption"></p>
     </div>
   </div>
 
   <!-- =======================================================
        SCRIPTS
        ======================================================= -->
-  <!-- Local Three.js with CDN Fallback -->
   <script src="scripts/three.min.js"></script>
   <script>
     if (typeof THREE === 'undefined') {
       document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"><\/script>');
     }
   </script>
-
-  <!-- Realm Modules -->
-  <script src="realm-config.js"></script>
   <script src="scripts/audio-engine.js"></script>
   <script src="scripts/particles.js"></script>
   <script src="scripts/astrolabe-3d.js"></script>
