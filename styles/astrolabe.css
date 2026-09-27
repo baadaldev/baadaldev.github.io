@@ -320,3 +320,40 @@
   background: rgba(212, 175, 55, 0.2);
   box-shadow: 0 0 10px var(--realm-primary-glow);
 }
+
+/* Ambient Dragon Fire Heat Aura */
+.dragon-fire-aura {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 38vh;
+  z-index: 2;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at 50% 100%,
+    rgba(255, 69, 0, 0.24) 0%,
+    rgba(255, 120, 0, 0.12) 40%,
+    rgba(0, 0, 0, 0) 80%
+  );
+  mix-blend-mode: screen;
+  transition: opacity 0.5s ease;
+  animation: flameBreath 4s ease-in-out infinite alternate;
+}
+
+@keyframes flameBreath {
+  0% { opacity: 0.65; transform: scaleY(0.95); }
+  100% { opacity: 1.0; transform: scaleY(1.08); }
+}
+
+/* Audio Beat Pulse Glow */
+.beat-pulse-active {
+  animation: astrolabeFlash 0.35s cubic-bezier(0.17, 0.89, 0.32, 1.28) forwards;
+}
+
+@keyframes astrolabeFlash {
+  0% { filter: brightness(1); }
+  50% { filter: brightness(1.25) drop-shadow(0 0 25px rgba(255, 140, 0, 0.6)); }
+  100% { filter: brightness(1); }
+}
+

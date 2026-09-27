@@ -577,7 +577,49 @@ class RealmAudioEngine {
     this.playWarDrum(this.ctx.currentTime, 0.7);
     this.playParchmentRustle();
   }
+
+  // Real-time Audio Metrics for 3D Astrolabe & Dragon Fire FX
+  getAudioMetrics() {
+    if (!this.analyser || !this.isPlaying || this.isMuted) {
+      return { active: false, bass: 0, mid: 0, treble: 0, level: 0, isBeat: false };
+    }
+    if (!this.freqData) {
+      this.freqData = new Uint8Array(this.analyser.frequencyBinCount);
+      this.prevBass = 0;
+      this.beatDecay = 0;
+    }
+    this.analyser.getByteFrequencyData(this.freqData);
+
+    // Bass energy (low frequencies, e.g. war drums & deep cello)
+    let bassSum = 0;
+    for (let i = 0; i < 6; i++) bassSum += this.freqData[i];
+    const bass = bassSum / (6 * 255);
+
+    // Mid energy (strings & harmony)
+    let midSum = 0;
+    for (let i = 6; i < 20; i++) midSum += this.freqData[i];
+    const mid = midSum / (14 * 255);
+
+    // Treble energy (cymbals & high overtone shimmer)
+    let trebleSum = 0;
+    for (let i = 20; i < 32; i++) trebleSum += this.freqData[i];
+    const treble = trebleSum / (12 * 255);
+
+    const level = (bass * 0.5 + mid * 0.35 + treble * 0.15);
+
+    // Dynamic Beat Detection
+    let isBeat = false;
+    if (bass > 0.42 && (bass - this.prevBass) > 0.10 && this.beatDecay <= 0) {
+      isBeat = true;
+      this.beatDecay = 10;
+    }
+    if (this.beatDecay > 0) this.beatDecay--;
+    this.prevBass = bass;
+
+    return { active: true, bass, mid, treble, level, isBeat };
+  }
 }
 
 // Global instance
 window.realmAudio = new RealmAudioEngine();
+

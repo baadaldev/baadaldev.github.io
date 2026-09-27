@@ -20,12 +20,14 @@ document.addEventListener('DOMContentLoaded', () => {
   let astrolabe3D = null;
   if (window.RealmAstrolabe3D) {
     astrolabe3D = new window.RealmAstrolabe3D('canvas-viewport');
+    window.astrolabe3DInstance = astrolabe3D;
   }
 
   // 2. Initialize Atmosphere Particles
   let atmosphere = null;
   if (window.RealmAtmosphereEngine) {
     atmosphere = new window.RealmAtmosphereEngine('particles-canvas');
+    window.atmosphereInstance = atmosphere;
   }
 
   // 3. Audio & Theme Controls
