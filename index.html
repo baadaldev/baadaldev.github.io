@@ -3,1202 +3,812 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Md Rakibul Islam (Baadal) — Software Engineer &amp; CSE Undergraduate</title>
+  <title>Md. Rakibul Islam (Baadal) — Software Engineer &amp; Full-Stack Developer</title>
   
-  <!-- SEO & Social Meta -->
-  <meta name="description" content="Portfolio of Md Rakibul Islam (Baadal) - CSE Undergraduate at Daffodil International University, Full-Stack Developer, C++ Algorithmic Problem Solver." />
-  <meta name="keywords" content="Md Rakibul Islam, Baadal, baadaldev, Full Stack Developer, Daffodil International University, CSE, Data Structures, Software Engineer, Portfolio" />
-  <meta name="author" content="Md Rakibul Islam (Baadal)" />
+  <!-- Meta & Open Graph SEO -->
+  <meta name="description" content="Portfolio of Md. Rakibul Islam (Baadal) — CSE Undergraduate at Daffodil International University, Founder of Synovara, Full-Stack Developer & C++ Algorithmic Problem Solver." />
+  <meta name="keywords" content="Md Rakibul Islam, Baadal, baadaldev, Software Engineer, Full Stack Developer, Daffodil International University, DIU, C++, React, Next.js, Synovara" />
+  <meta name="author" content="Md. Rakibul Islam (Baadal)" />
 
-  <!-- Favicon / Sigil -->
-  <link rel="icon" type="image/svg+xml" href="assets/sigil-avatar.svg" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>" />
 
-  <!-- Google Fonts & Font Awesome 6 Icons -->
+  <!-- Fonts: Plus Jakarta Sans & Fira Code -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@600;700;900&family=Fira+Code:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  
+  <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="styles/houses.css" />
-  <link rel="stylesheet" href="styles/astrolabe.css" />
-  <link rel="stylesheet" href="styles/main.css" />
+  <!-- Premium Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
-<body class="house-targaryen">
+<body>
 
-  <!-- =======================================================
-       3D ASTROLABE VIEWPORT & ATMOSPHERIC CANVAS
-       ======================================================= -->
-  <div id="canvas-viewport"></div>
-  <canvas id="particles-canvas"></canvas>
-  <div class="dragon-fire-aura"></div>
-  <div class="cinematic-vignette"></div>
+  <!-- Background Ambient Glow Accents (GPU accelerated, pure CSS) -->
+  <div class="ambient-glow glow-top"></div>
+  <div class="ambient-glow glow-middle"></div>
+  <div class="ambient-mesh"></div>
 
-  <!-- =======================================================
-       FLOATING HOUSE SWITCHER (TOP LEFT)
-       ======================================================= -->
-  <div class="realm-house-selector" title="Switch Theme">
-    <button class="house-btn active" data-house="targaryen" title="House Targaryen: Fire & Blood">🐉</button>
-    <button class="house-btn" data-house="stark" title="House Stark: Winter is Coming">🐺</button>
-    <button class="house-btn" data-house="lannister" title="House Lannister: Hear Me Roar">🦁</button>
-    <button class="house-btn" data-house="nightswatch" title="The Night's Watch: Shield of the Realm">⚔️</button>
-  </div>
-
-  <!-- =======================================================
-       FLOATING AUDIO WIDGET & VISUALIZER (TOP RIGHT)
-       ======================================================= -->
-  <div id="realm-audio-widget" class="realm-audio-widget">
-    <button id="audio-play-btn" class="audio-play-btn" title="Toggle Game of Thrones Theme Song">▶</button>
-    <div class="audio-visualizer-bars">
-      <div class="vis-bar"></div>
-      <div class="vis-bar"></div>
-      <div class="vis-bar"></div>
-      <div class="vis-bar"></div>
-      <div class="vis-bar"></div>
-    </div>
-    <input type="range" id="audio-vol-slider" class="audio-vol-slider" min="0" max="1" step="0.05" value="0.55" title="Master Volume" />
-  </div>
-
-  <!-- =======================================================
-       ROYAL CITADEL NAVIGATION BAR
-       ======================================================= -->
-  <nav class="citadel-nav">
-    <div class="container nav-content">
-      <a href="#home" class="nav-brand">
-        <img src="assets/sigil-avatar.svg" alt="Sigil Crest" class="nav-crest" />
-        <span>BAADAL<span style="color: var(--realm-gold);">.DEV</span></span>
+  <!-- ==================== HEADER & NAVBAR ==================== -->
+  <header class="site-header" id="header">
+    <div class="container header-container">
+      <!-- Brand Logo -->
+      <a href="#hero" class="brand-logo" aria-label="Baadal.dev Home">
+        <span class="brand-bracket">&lt;</span><span class="brand-name">Baadal</span><span class="brand-dot">.dev</span><span class="brand-bracket"> /&gt;</span>
       </a>
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#journey">Journey</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#terminal-section">Terminal</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#memories">Memories</a></li>
-        <li><a href="#achievements">Achievements</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <div class="nav-actions">
-        <button type="button" class="btn-nav-action" onclick="openResumeModal()">
-          <i class="fa-solid fa-file-lines"></i> Interactive CV
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-menu" id="nav-menu">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#leadership" class="nav-link">Experience</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Right Actions: Status Badge & CTA -->
+      <div class="header-actions">
+        <div class="status-pill" title="Actively looking for software engineering roles">
+          <span class="status-dot"></span>
+          <span>Open to Internships</span>
+        </div>
+
+        <button type="button" class="btn btn-sm btn-outline" id="resume-btn" onclick="openResumeModal()">
+          <i class="fa-solid fa-file-lines"></i>
+          <span>Resume</span>
         </button>
-        <a href="https://github.com/baadaldev" target="_blank" rel="noopener noreferrer" class="btn-nav-action">
-          <i class="fa-brands fa-github"></i> GitHub
+
+        <a href="#contact" class="btn btn-sm btn-primary">
+          <span>Let's Talk</span>
+          <i class="fa-solid fa-arrow-right"></i>
         </a>
+
+        <!-- Mobile Toggle Button -->
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
       </div>
     </div>
-  </nav>
+  </header>
 
-  <!-- =======================================================
-       MAIN CONTENT CONTAINER
-       ======================================================= -->
-  <main id="realm-app">
-
-    <!-- ==========================================
-         SECTION 1: HERO (#home)
-         ========================================== -->
-    <section class="hero-clean-section" id="home">
-      <div class="container">
-        <div class="hero-clean-grid">
-          <div class="hero-text-col">
-            <div class="hero-status-pill">
-              <span class="pulse-circle"></span>
-              <span>Open to Software Engineering Internships &bull; DIU CSE</span>
+  <main>
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-container">
+        
+        <div class="hero-grid">
+          <!-- Left Column: Intro & Headline -->
+          <div class="hero-content">
+            <div class="badge-pill">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+              <span>Full-Stack Web &bull; C++ Systems &bull; Applied AI</span>
             </div>
 
-            <h1 class="hero-main-title">
-              Hi, I'm <span class="name-highlight">Rakibul Islam</span>
-              <span class="nickname-tag">(Baadal)</span>
+            <h1 class="hero-title">
+              Hi, I'm <span class="highlight-name">Md. Rakibul Islam</span><br />
+              <span class="title-sub">(Baadal)</span>
             </h1>
 
-            <p class="hero-lead-text">
-              Computer Science &amp; Engineering undergraduate at <strong>Daffodil International University</strong>. 
-              I engineer performant full-stack web applications, solve algorithmic challenges in <strong>C++</strong>, 
-              and build pragmatic developer software with clean architecture.
+            <p class="hero-tagline">
+              Computer Science &amp; Engineering undergraduate at <strong>Daffodil International University (DIU)</strong> &amp; Founder of <strong>Synovara</strong>. I bridge low-level algorithmic foundations in C++ with modern, high-performance web platforms and intelligent AI agents.
             </p>
 
-            <div class="hero-action-row">
-              <a href="#projects" class="btn-primary-realm">
-                <i class="fa-solid fa-code"></i> Explore Projects
+            <div class="hero-actions">
+              <a href="#projects" class="btn btn-primary">
+                <i class="fa-solid fa-code"></i>
+                <span>Explore Projects</span>
               </a>
-              <button type="button" class="btn-primary-realm" id="hero-audio-btn" onclick="toggleThemeAudio()">
-                <i class="fa-solid fa-play"></i> <span id="hero-audio-text">Play GOT Theme</span>
-              </button>
-              <a href="#terminal-section" class="btn-secondary-realm">
-                <i class="fa-solid fa-terminal"></i> Terminal CLI
-              </a>
-              <button type="button" class="btn-secondary-realm" onclick="openResumeModal()">
-                <i class="fa-solid fa-file-lines"></i> Interactive CV
-              </button>
-              <a href="https://github.com/baadaldev" target="_blank" rel="noopener noreferrer" class="btn-secondary-realm">
-                <i class="fa-brands fa-github"></i> GitHub
-              </a>
-            </div>
 
-            <div class="hero-quick-meta">
-              <span><i class="fa-solid fa-location-dot"></i> Dhaka, Bangladesh</span>
-              <span><i class="fa-solid fa-graduation-cap"></i> DIU CSE (4th Sem)</span>
-              <span><i class="fa-solid fa-clock-rotate-left"></i> Coding Since 2019</span>
+              <button type="button" class="btn btn-outline" onclick="openResumeModal()">
+                <i class="fa-solid fa-arrow-down-to-bracket"></i>
+                <span>View CV / Resume</span>
+              </button>
+
+              <div class="hero-social-links">
+                <a href="https://github.com/baadaldev" target="_blank" rel="noopener" class="social-icon" title="GitHub">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/md-rakibul-islam-a2b136408" target="_blank" rel="noopener" class="social-icon" title="LinkedIn">
+                  <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+                <a href="mailto:badolrakib1@gmail.com" class="social-icon" title="Send Email">
+                  <i class="fa-solid fa-envelope"></i>
+                </a>
+              </div>
             </div>
           </div>
 
-          <!-- Profile Photo Card -->
-          <div class="hero-visual-card">
-            <div class="profile-card-wrapper">
-              <div class="profile-image-box">
-                <img src="assets/profile.jpeg" onerror="this.src='assets/profile.jpg'" alt="Md Rakibul Islam (Baadal)" class="profile-img" />
-              </div>
-              <div class="profile-caption">
-                <div class="profile-identity">
-                  <h4>Md Rakibul Islam</h4>
-                  <p>Software Engineer &bull; Baadal.dev</p>
+          <!-- Right Column: Profile Showcase Card -->
+          <div class="hero-card-col">
+            <div class="profile-card">
+              <div class="profile-img-wrap">
+                <img src="assets/profile.jpeg" alt="Md. Rakibul Islam" class="profile-avatar" onerror="this.src='https://avatars.githubusercontent.com/u/baadaldev'" />
+                <div class="avatar-badge" title="CSE Undergrad @ DIU">
+                  <i class="fa-solid fa-graduation-cap"></i>
                 </div>
-                <span class="profile-badge-pill">DIU CSE</span>
+              </div>
+
+              <div class="profile-info">
+                <h3 class="profile-name">Md. Rakibul Islam</h3>
+                <p class="profile-role">Aspiring Software Engineer &bull; DIU CSE</p>
+                <div class="profile-loc">
+                  <i class="fa-solid fa-location-dot"></i>
+                  <span>Dhaka, Bangladesh &bull; Founder @ Synovara</span>
+                </div>
+              </div>
+
+              <!-- Quick Stats Grid inside Hero Card -->
+              <div class="stats-grid">
+                <div class="stat-item">
+                  <div class="stat-value">300+</div>
+                  <div class="stat-label">DSA Solved</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-value">18+</div>
+                  <div class="stat-label">Repositories</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-value">4th</div>
+                  <div class="stat-label">Semester CSE</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-value">60fps</div>
+                  <div class="stat-label">Web UI Built</div>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Home Bento Grid Highlights -->
-        <div class="home-bento-section">
-          <div class="section-label-bar">
-            <span class="section-label"><i class="fa-solid fa-bolt"></i> Quick Highlights &bull; Interactive Bento</span>
-            <a href="#projects" class="bento-link">All Projects <i class="fa-solid fa-arrow-right"></i></a>
-          </div>
-
-          <div class="bento-grid">
-            <!-- Bento 1: Flagship Project DevTrack PRO + Live Mini Timer Demo (Span 8) -->
-            <div class="bento-card bento-col-8">
-              <span class="bento-tag"><i class="fa-solid fa-fire"></i> Flagship System &bull; Live Demo</span>
-              <h3 class="bento-title">DevTrack PRO: Engineering Study OS</h3>
-              <p class="bento-desc">
-                Engineered an OS-level Picture-in-Picture floating mini-timer using Canvas Stream API that stays pinned over VS Code and LeetCode on Windows, complete with class lecture checkoffs, audio synthesis, and multi-user profile isolation.
-              </p>
-
-              <!-- Interactive DevTrack Mini Timer Widget -->
-              <div class="mini-timer-widget">
-                <div class="mini-timer-display" id="mini-timer-time">25:00</div>
-                <div class="mini-timer-controls">
-                  <button type="button" class="mini-timer-btn primary" id="mini-timer-toggle" title="Start/Pause Focus Timer">
-                    <i class="fa-solid fa-play"></i> Start Focus
-                  </button>
-                  <button type="button" class="mini-timer-btn" id="mini-timer-reset" title="Reset Timer">
-                    <i class="fa-solid fa-rotate-right"></i> Reset
-                  </button>
-                </div>
-                <span class="mini-timer-caption">
-                  <i class="fa-solid fa-tv"></i> Live Interactive DevTrack PRO Timer Simulation
-                </span>
-              </div>
-
-              <div class="bento-footer">
-                <div class="step-tags">
-                  <span class="tech-chip">Picture-in-Picture API</span>
-                  <span class="tech-chip">Web Audio API</span>
-                  <span class="tech-chip">JavaScript ES6+</span>
-                  <span class="tech-chip">Tailwind CSS</span>
-                </div>
-                <button type="button" class="btn-case-study" onclick="openCaseStudy('devtrack')">
-                  <i class="fa-solid fa-book-open"></i> Technical Case Study
-                </button>
-              </div>
-            </div>
-
-            <!-- Bento 2: 7-Year Milestones (Span 4) -->
-            <div class="bento-card bento-col-4">
-              <span class="bento-tag"><i class="fa-solid fa-mobile-screen"></i> Origin Story</span>
-              <h3 class="bento-title">Feb 2019 on SoloLearn</h3>
-              <p class="bento-desc">
-                Wrote my very first line of HTML on a mobile screen 7 years ago under username <code>Badolrakib</code> without a personal computer.
-              </p>
-              <div class="bento-footer">
-                <a href="#memories" class="bento-link">Inspect 2019 Archives <i class="fa-solid fa-arrow-right"></i></a>
-              </div>
-            </div>
-
-            <!-- Bento 3: Live Dhaka Time & Availability Status (Span 4) -->
-            <div class="bento-card bento-col-4">
-              <span class="bento-tag"><i class="fa-solid fa-clock"></i> Real-Time Sync</span>
-              <div class="dhaka-time-card">
-                <div class="dhaka-header">
-                  <div class="dhaka-city"><i class="fa-solid fa-location-dot"></i> Dhaka, Bangladesh</div>
-                  <span class="dhaka-tz">UTC+6</span>
-                </div>
-                <div class="dhaka-clock-display" id="live-dhaka-clock">--:--:-- --</div>
-                <div class="dhaka-status-row">
-                  <span class="pulse-indicator"></span>
-                  <span id="dhaka-status-text">Status: Coding &amp; Building Software</span>
-                </div>
-              </div>
-              <div class="bento-footer" style="padding-top: 0.5rem;">
-                <a href="#contact" class="bento-link">Let's Connect <i class="fa-solid fa-arrow-right"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
 
-    <!-- ==========================================
-         SECTION 2: ABOUT ME (#about)
-         ========================================== -->
-    <section class="portfolio-section" id="about">
+    <!-- ==================== ABOUT SECTION ==================== -->
+    <section class="section about-section" id="about">
       <div class="container">
-        <div class="page-header">
-          <div class="page-breadcrumb">
-            <span class="crumb-parent">Overview</span>
-            <span class="crumb-separator">/</span>
-            <span class="crumb-current">About Me</span>
-          </div>
-          <h2 class="page-title">Driven by Curiosity, Grounded in Engineering</h2>
-          <p class="page-subtitle">A blend of computer science foundations, algorithmic problem solving, and modern full-stack craft.</p>
-          <div class="medieval-divider">
-            <div class="divider-line"></div>
-            <div class="divider-gem"></div>
-            <div class="divider-line"></div>
-          </div>
+        
+        <div class="section-header">
+          <div class="section-tag">About Me</div>
+          <h2 class="section-title">Engineering with Purpose &amp; Algorithmic Rigor</h2>
+          <p class="section-desc">A builder's mindset focused on clean architecture, systems optimization, and solving real-world challenges.</p>
         </div>
 
-        <div class="about-layout-grid">
+        <div class="about-grid">
+          <!-- Story Narrative -->
           <div class="about-narrative">
-            <h3><i class="fa-solid fa-terminal" style="color: var(--realm-gold);"></i> The Mindset &amp; Story</h3>
             <p>
-              I am <strong>Md Rakibul Islam (Baadal)</strong>, a Computer Science &amp; Engineering undergraduate based in Dhaka, Bangladesh.
-              My journey into programming began on a smartphone screen in <strong>February 2019</strong>, writing basic HTML tags and form elements on the SoloLearn app without owning a computer.
+              I am a 4th-semester <strong>Computer Science &amp; Engineering</strong> student at <strong>Daffodil International University (DIU)</strong>, deeply committed to writing clean, maintainable, and high-performance software.
             </p>
             <p>
-              That early curiosity grew into a structured engineering pursuit at 
-              <strong>Daffodil International University (DIU)</strong>. 
-              Today, I specialize in connecting rigorous computer science foundations &mdash; C++, Object-Oriented Programming, and Data Structures &mdash; with practical modern full-stack web applications and data analytics.
+              Rather than merely studying theory or cloning generic tutorials, I focus on building production-grade tools. My work ranges from architecting a <strong>3D campus routing engine with Dijkstra's algorithm</strong> to developing <strong>C++ in-memory databases</strong> and offline-first productivity platforms.
             </p>
-
-            <div class="about-quote-card">
-              “To become a high-impact Software Engineer and Data Analyst by mastering algorithmic fundamentals, architecting dependable products, and solving complex problems with clean code.”
-            </div>
-
             <p>
-              When I'm not writing code or solving LeetCode problems, I spend my time exploring database schemas, analyzing system architectures, and contributing to collaborative academic projects.
+              Recently, I founded <strong>Synovara</strong>, an open-source engineering collective dedicated to high-performance developer tooling, distributed systems, and intelligent web applications.
             </p>
 
-            <div class="about-quick-facts">
-              <div class="fact-item"><i class="fa-solid fa-building-columns"></i> Daffodil International University</div>
-              <div class="fact-item"><i class="fa-solid fa-book-bookmark"></i> B.Sc. in CSE (4th Semester)</div>
-              <div class="fact-item"><i class="fa-solid fa-code"></i> C++ &amp; Modern JavaScript</div>
-              <div class="fact-item"><i class="fa-solid fa-location-dot"></i> Dhaka, Bangladesh</div>
+            <div class="about-highlights-row">
+              <div class="about-pill">
+                <i class="fa-solid fa-check-circle"></i>
+                <span>Problem Solver (LeetCode &bull; CodeChef)</span>
+              </div>
+              <div class="about-pill">
+                <i class="fa-solid fa-check-circle"></i>
+                <span>Clean Architecture &amp; Modular Design</span>
+              </div>
+              <div class="about-pill">
+                <i class="fa-solid fa-check-circle"></i>
+                <span>Consistency Beats Talent</span>
+              </div>
             </div>
           </div>
 
-          <div class="about-sidebar-column">
-            <div class="focus-panel">
-              <div class="focus-panel-icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
-              <h4>Flagship Software</h4>
-              <p>Created <strong>DevTrack PRO</strong>, a study OS with OS-level Picture-in-Picture floating timer, lecture checklists, and user profile partitioning.</p>
-            </div>
+          <!-- Key Details Card -->
+          <div class="about-card">
+            <h3 class="card-heading">
+              <i class="fa-solid fa-address-card"></i>
+              <span>Quick Snapshot</span>
+            </h3>
 
-            <div class="focus-panel">
-              <div class="focus-panel-icon"><i class="fa-solid fa-brain"></i></div>
-              <h4>Algorithmic Focus</h4>
-              <p>Regular practice on LeetCode in C++, focusing on Two Pointers, Sliding Window, Trees, and Dynamic Programming complexity optimization.</p>
-            </div>
-
-            <div class="focus-panel">
-              <div class="focus-panel-icon"><i class="fa-solid fa-layer-group"></i></div>
-              <h4>Full-Stack Systems</h4>
-              <p>Developing scalable web platforms like <strong>Smart Meal Management System</strong> and <strong>WanderLust</strong> using Node.js, Express, and MySQL.</p>
+            <div class="snapshot-list">
+              <div class="snapshot-item">
+                <span class="s-label">Degree</span>
+                <span class="s-value">B.Sc. in Computer Science &amp; Engineering</span>
+              </div>
+              <div class="snapshot-item">
+                <span class="s-label">Institution</span>
+                <span class="s-value">Daffodil International University (DIU)</span>
+              </div>
+              <div class="snapshot-item">
+                <span class="s-label">Core Interests</span>
+                <span class="s-value">Full-Stack Platforms, Systems (C++), AI/ML</span>
+              </div>
+              <div class="snapshot-item">
+                <span class="s-label">Initiative</span>
+                <span class="s-value">Founder &amp; Lead Architect @ <a href="https://github.com/Synovara" target="_blank" class="text-link">Synovara</a></span>
+              </div>
+              <div class="snapshot-item">
+                <span class="s-label">Current Goal</span>
+                <span class="s-value highlight-status">Seeking SDE / Full-Stack Internships</span>
+              </div>
+              <div class="snapshot-item">
+                <span class="s-label">Location</span>
+                <span class="s-value">Dhaka, Bangladesh (Remote &bull; On-site)</span>
+              </div>
             </div>
           </div>
         </div>
+
       </div>
     </section>
 
-    <!-- ==========================================
-         SECTION 3: CODING JOURNEY (#journey)
-         ========================================== -->
-    <section class="portfolio-section" id="journey">
+    <!-- ==================== FEATURED PROJECTS ==================== -->
+    <section class="section projects-section" id="projects">
       <div class="container">
-        <div class="page-header">
-          <div class="page-breadcrumb">
-            <span class="crumb-parent">Overview</span>
-            <span class="crumb-separator">/</span>
-            <span class="crumb-current">Coding Journey</span>
-          </div>
-          <h2 class="page-title">The 7-Year Engineering Roadmap</h2>
-          <p class="page-subtitle">From writing my first HTML tag on a phone screen to studying Computer Science &amp; Engineering at DIU.</p>
-          <div class="medieval-divider">
-            <div class="divider-line"></div>
-            <div class="divider-gem"></div>
-            <div class="divider-line"></div>
-          </div>
+        
+        <div class="section-header">
+          <div class="section-tag">Featured Work</div>
+          <h2 class="section-title">Tested, Deployed &amp; Original Software</h2>
+          <p class="section-desc">A selection of production-grade applications, low-level systems, and developer tools built with high standards.</p>
         </div>
 
-        <div class="timeline-modern-flow">
-          <!-- Step 1 -->
-          <div class="timeline-step">
-            <div class="timeline-step-marker"><i class="fa-solid fa-bolt"></i></div>
-            <div class="timeline-step-card">
-              <div class="step-meta-row">
-                <span class="step-date-badge">Feb 26, 2019 &bull; The Spark</span>
-                <span class="step-category">Mobile IDE</span>
-              </div>
-              <h3 class="step-title">First HTML Code on SoloLearn</h3>
-              <p class="step-text">
-                With no personal computer, I wrote my very first lines of HTML code on a smartphone screen using the SoloLearn mobile app under username <code>Badolrakib</code>. Built basic forms, input buttons, and discovered the excitement of building software.
-              </p>
-              <div class="step-tags">
-                <span class="tech-chip">SoloLearn</span>
-                <span class="tech-chip">HTML5</span>
-                <span class="tech-chip">Mobile Coder</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Step 2 -->
-          <div class="timeline-step">
-            <div class="timeline-step-marker"><i class="fa-solid fa-compass"></i></div>
-            <div class="timeline-step-card">
-              <div class="step-meta-row">
-                <span class="step-date-badge">2019 &ndash; 2024 &bull; Exploration</span>
-                <span class="step-category">Self-Taught</span>
-              </div>
-              <h3 class="step-title">Exploring Computational Logic &amp; Web Basics</h3>
-              <p class="step-text">
-                Progressed from basic static markup into CSS styling, JavaScript DOM logic, and foundational programming. This hands-on exploration cemented my dream to pursue a formal degree in Computer Science.
-              </p>
-              <div class="step-tags">
-                <span class="tech-chip">JavaScript</span>
-                <span class="tech-chip">CSS3</span>
-                <span class="tech-chip">Web Basics</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Step 3 -->
-          <div class="timeline-step">
-            <div class="timeline-step-marker"><i class="fa-solid fa-graduation-cap"></i></div>
-            <div class="timeline-step-card">
-              <div class="step-meta-row">
-                <span class="step-date-badge">Sept 12, 2025 &bull; Academic Milestone</span>
-                <span class="step-category">Undergraduate</span>
-              </div>
-              <h3 class="step-title">Started B.Sc. in CSE at Daffodil International University</h3>
-              <p class="step-text">
-                Officially commenced my undergraduate studies in Computer Science &amp; Engineering at Daffodil International University. Transitioned hobbyist coding into formal discipline &mdash; covering discrete mathematics, digital logic, data structures, and computer architecture.
-              </p>
-              <div class="step-tags">
-                <span class="tech-chip">DIU CSE</span>
-                <span class="tech-chip">B.Sc. Degree</span>
-                <span class="tech-chip">Discrete Math</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Step 4 -->
-          <div class="timeline-step">
-            <div class="timeline-step-marker"><i class="fa-solid fa-code"></i></div>
-            <div class="timeline-step-card">
-              <div class="step-meta-row">
-                <span class="step-date-badge">2025 &ndash; Present &bull; Core Foundations</span>
-                <span class="step-category">Algorithmic Rigor</span>
-              </div>
-              <h3 class="step-title">Mastering C++, Data Structures &amp; LeetCode</h3>
-              <p class="step-text">
-                Deep dive into memory pointers, dynamic allocation, OOP paradigms, Linked Lists, Stacks, Queues, Binary Trees, and asymptotic Big-O complexity. Actively solving problems on LeetCode to sharpen competitive problem-solving instincts.
-              </p>
-              <div class="step-tags">
-                <span class="tech-chip">C++20</span>
-                <span class="tech-chip">Data Structures</span>
-                <span class="tech-chip">LeetCode Daily</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Step 5 -->
-          <div class="timeline-step">
-            <div class="timeline-step-marker"><i class="fa-solid fa-layer-group"></i></div>
-            <div class="timeline-step-card">
-              <div class="step-meta-row">
-                <span class="step-date-badge">Present &bull; Engineering Systems</span>
-                <span class="step-category">Full Stack</span>
-              </div>
-              <h3 class="step-title">Building Production Systems &amp; Developer Tools</h3>
-              <p class="step-text">
-                Applied theory to ship production applications: engineered <i>DevTrack PRO</i> with Picture-in-Picture technology, <i>Smart Meal Management</i> with MySQL relational schema, and <i>WanderLust</i> vacation rental platform with Mapbox SDK.
-              </p>
-              <div class="step-tags">
-                <span class="tech-chip">DevTrack PRO</span>
-                <span class="tech-chip">Node.js</span>
-                <span class="tech-chip">MySQL</span>
-                <span class="tech-chip">MERN</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Step 6 -->
-          <div class="timeline-step">
-            <div class="timeline-step-marker"><i class="fa-solid fa-bullseye"></i></div>
-            <div class="timeline-step-card">
-              <div class="step-meta-row">
-                <span class="step-date-badge">Future Horizon &bull; Target</span>
-                <span class="step-category">Career Vision</span>
-              </div>
-              <h3 class="step-title">Software Engineering Internships &amp; Data Analytics</h3>
-              <p class="step-text">
-                Preparing for competitive software engineering internships, contributing to open-source software, and diving into enterprise data analytics to extract intelligence and solve real-world problems.
-              </p>
-              <div class="step-tags">
-                <span class="tech-chip">Software Engineer</span>
-                <span class="tech-chip">Data Analyst</span>
-                <span class="tech-chip">Internships</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================
-         SECTION 4: FEATURED PROJECTS (#projects)
-         ========================================== -->
-    <section class="portfolio-section" id="projects">
-      <div class="container">
-        <div class="page-header">
-          <div class="page-breadcrumb">
-            <span class="crumb-parent">Portfolio</span>
-            <span class="crumb-separator">/</span>
-            <span class="crumb-current">Featured Projects</span>
-          </div>
-          <h2 class="page-title">Engineering Projects Spotlight</h2>
-          <p class="page-subtitle">Real-world systems engineered with clean code, scalable architecture, and user-centric design.</p>
-          <div class="medieval-divider">
-            <div class="divider-line"></div>
-            <div class="divider-gem"></div>
-            <div class="divider-line"></div>
-          </div>
-        </div>
-
-        <!-- Filter Tab Bar -->
-        <div class="projects-filter-bar">
-          <button class="filter-tab active" data-filter="all"><i class="fa-solid fa-border-all"></i> All Projects</button>
-          <button class="filter-tab" data-filter="fullstack"><i class="fa-solid fa-layer-group"></i> Full Stack &amp; MERN</button>
-          <button class="filter-tab" data-filter="systems"><i class="fa-solid fa-terminal"></i> Systems &amp; Tools</button>
-          <button class="filter-tab" data-filter="dsa"><i class="fa-solid fa-brain"></i> C++ &amp; Algorithms</button>
+        <!-- Category Filter Tabs -->
+        <div class="project-filters">
+          <button class="filter-btn active" data-filter="all">All Projects</button>
+          <button class="filter-btn" data-filter="web">Full-Stack Web</button>
+          <button class="filter-btn" data-filter="systems">Systems &amp; C++</button>
+          <button class="filter-btn" data-filter="ai">AI &amp; Algorithms</button>
         </div>
 
         <!-- Projects Grid -->
-        <div class="projects-masonry-grid">
-          <!-- Project 1: NEXUS -->
-          <div class="project-card-premium" data-category="fullstack systems">
-            <div class="project-mac-header">
-              <div class="mac-dots">
-                <span class="mac-dot red"></span>
-                <span class="mac-dot yellow"></span>
-                <span class="mac-dot green"></span>
-              </div>
-              <div class="mac-address-bar">baadaldev.github.io/nexus-simulator</div>
-            </div>
+        <div class="projects-grid" id="projects-grid">
+          
+          <!-- Project 1: DIU Campus Navigator (Flagship) -->
+          <article class="project-card" data-category="web ai">
             <div class="project-card-header">
-              <div class="project-folder-icon"><i class="fa-solid fa-chart-line"></i></div>
-              <div class="project-actions">
-                <button type="button" class="btn-case-study" onclick="openCaseStudy('nexus')">
-                  <i class="fa-solid fa-book-open"></i> Case Study
-                </button>
-                <a href="https://github.com/baadaldev" target="_blank" rel="noopener noreferrer" class="btn-github-link" title="GitHub Repo">
+              <div class="project-type-badge">
+                <i class="fa-solid fa-compass"></i> Flagship University App
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/baadaldev/diu-campus-navigator" target="_blank" rel="noopener" class="icon-link" title="Source Code">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="https://baadaldev.github.io/diu-campus-navigator/" target="_blank" rel="noopener" class="icon-link" title="Live Interactive Demo">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </div>
+            </div>
+
+            <h3 class="project-title">DIU Campus Navigator</h3>
+            <p class="project-desc">
+              Interactive 3D campus routing and transportation suite. Features Dijkstra's shortest-path navigation, Three.js 3D building exploration, official 45+ bus fleet timetables, fare calculator, and a built-in AI campus assistant.
+            </p>
+
+            <div class="project-tech-tags">
+              <span class="tech-tag">Three.js</span>
+              <span class="tech-tag">Dijkstra Algorithm</span>
+              <span class="tech-tag">Esri Leaflet Maps</span>
+              <span class="tech-tag">DIU Bus API</span>
+              <span class="tech-tag">JavaScript</span>
+            </div>
+
+            <div class="project-card-footer">
+              <a href="https://baadaldev.github.io/diu-campus-navigator/" target="_blank" rel="noopener" class="card-action-btn primary">
+                <span>Live Demo</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+              <a href="https://github.com/baadaldev/diu-campus-navigator" target="_blank" rel="noopener" class="card-action-btn outline">
+                <i class="fa-brands fa-github"></i> Code
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 2: CP Mastery Hub -->
+          <article class="project-card" data-category="web systems ai">
+            <div class="project-card-header">
+              <div class="project-type-badge">
+                <i class="fa-solid fa-bolt"></i> Learning Platform
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/baadaldev/cp-mastery-hub" target="_blank" rel="noopener" class="icon-link" title="Source Code">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="https://baadaldev.github.io/cp-mastery-hub/" target="_blank" rel="noopener" class="icon-link" title="Live Demo">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </div>
+            </div>
+
+            <h3 class="project-title">CP Mastery Hub</h3>
+            <p class="project-desc">
+              Competitive Programming &amp; DSA suite featuring a 20-chapter roadmap, 60fps algorithm visualizer, in-browser code playground, contest radar, and 1-click GitHub push integration.
+            </p>
+
+            <div class="project-tech-tags">
+              <span class="tech-tag">React 19</span>
+              <span class="tech-tag">Canvas 60fps</span>
+              <span class="tech-tag">C++20</span>
+              <span class="tech-tag">Data Structures</span>
+              <span class="tech-tag">Tailwind CSS</span>
+            </div>
+
+            <div class="project-card-footer">
+              <a href="https://baadaldev.github.io/cp-mastery-hub/" target="_blank" rel="noopener" class="card-action-btn primary">
+                <span>Live Demo</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+              <a href="https://github.com/baadaldev/cp-mastery-hub" target="_blank" rel="noopener" class="card-action-btn outline">
+                <i class="fa-brands fa-github"></i> Code
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 3: Discipline Tracker (DevTrack PRO) -->
+          <article class="project-card" data-category="web">
+            <div class="project-card-header">
+              <div class="project-type-badge">
+                <i class="fa-solid fa-shield-halved"></i> Productivity Engine
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/baadaldev/discipline-tracker" target="_blank" rel="noopener" class="icon-link" title="Source Code">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="https://baadaldev.github.io/To-Do-App-For-Me/" target="_blank" rel="noopener" class="icon-link" title="Live Demo">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </div>
+            </div>
+
+            <h3 class="project-title">Discipline Tracker (DevTrack PRO)</h3>
+            <p class="project-desc">
+              Habit defense and focus platform built with Clean Architecture. Features an OS-level Picture-in-Picture floating timer, interactive GitHub-style streak heatmap, offline-first sync, and AI coaching insights.
+            </p>
+
+            <div class="project-tech-tags">
+              <span class="tech-tag">JavaScript ES6+</span>
+              <span class="tech-tag">Clean Architecture</span>
+              <span class="tech-tag">PiP API</span>
+              <span class="tech-tag">Offline-First</span>
+              <span class="tech-tag">Tailwind CSS</span>
+            </div>
+
+            <div class="project-card-footer">
+              <a href="https://baadaldev.github.io/To-Do-App-For-Me/" target="_blank" rel="noopener" class="card-action-btn primary">
+                <span>Live Demo</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+              <a href="https://github.com/baadaldev/discipline-tracker" target="_blank" rel="noopener" class="card-action-btn outline">
+                <i class="fa-brands fa-github"></i> Code
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 4: Mini Redis C++ -->
+          <article class="project-card" data-category="systems">
+            <div class="project-card-header">
+              <div class="project-type-badge">
+                <i class="fa-solid fa-database"></i> Low-Level Systems
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/baadaldev/mini-redis-cpp" target="_blank" rel="noopener" class="icon-link" title="Source Code">
                   <i class="fa-brands fa-github"></i>
                 </a>
               </div>
             </div>
-            <h3 class="project-card-title">NEXUS: Mathematical Future Trajectory Simulator</h3>
-            <p class="project-card-desc">
-              Next-generation simulation platform projecting 5 to 10-year skill mastery, career trajectories, and stochastic compounding outcomes based on daily deliberate effort variance.
+
+            <h3 class="project-title">Mini Redis C++</h3>
+            <p class="project-desc">
+              High-performance, in-memory key-value database server implemented from scratch in modern C++20. Supports RESP protocol parsing, non-blocking network socket communications, and core command parsing.
             </p>
-            <div class="project-tags">
+
+            <div class="project-tech-tags">
+              <span class="tech-tag">C++20</span>
+              <span class="tech-tag">Network Sockets</span>
+              <span class="tech-tag">RESP Protocol</span>
+              <span class="tech-tag">Data Structures</span>
+              <span class="tech-tag">CMake</span>
+            </div>
+
+            <div class="project-card-footer">
+              <a href="https://github.com/baadaldev/mini-redis-cpp" target="_blank" rel="noopener" class="card-action-btn primary">
+                <i class="fa-brands fa-github"></i>
+                <span>Explore Repository</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 5: NEXUS Future Simulator -->
+          <article class="project-card" data-category="web ai">
+            <div class="project-card-header">
+              <div class="project-type-badge">
+                <i class="fa-solid fa-chart-line"></i> Simulation Engine
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/baadaldev/nexus-future-simulator" target="_blank" rel="noopener" class="icon-link" title="Source Code">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="https://baadaldev.github.io/-NEXUS-Personal-Future-Simulator/" target="_blank" rel="noopener" class="icon-link" title="Live Demo">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </div>
+            </div>
+
+            <h3 class="project-title">NEXUS Future Simulator</h3>
+            <p class="project-desc">
+              Mathematical life simulation engine modeling 5-to-10-year skill mastery, career trajectory, and stochastic compounding outcomes based on daily deliberate effort variance.
+            </p>
+
+            <div class="project-tech-tags">
               <span class="tech-tag">Next.js 16</span>
               <span class="tech-tag">React 19</span>
               <span class="tech-tag">Stochastic Models</span>
+              <span class="tech-tag">TypeScript</span>
               <span class="tech-tag">Tailwind CSS</span>
             </div>
-            <div class="project-metrics-row">
-              <span class="metric-item"><i class="fa-solid fa-bolt"></i> &lt;10ms Recompute</span>
-              <span class="metric-item"><i class="fa-solid fa-database"></i> 100% Client Offline</span>
-              <span class="metric-badge">Flagship 2026</span>
-            </div>
-          </div>
 
-          <!-- Project 2: DevTrack PRO -->
-          <div class="project-card-premium" data-category="systems">
-            <div class="project-mac-header">
-              <div class="mac-dots">
-                <span class="mac-dot red"></span>
-                <span class="mac-dot yellow"></span>
-                <span class="mac-dot green"></span>
-              </div>
-              <div class="mac-address-bar">baadaldev.github.io/dev-study-tracker</div>
-            </div>
-            <div class="project-card-header">
-              <div class="project-folder-icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
-              <div class="project-actions">
-                <button type="button" class="btn-case-study" onclick="openCaseStudy('devtrack')">
-                  <i class="fa-solid fa-book-open"></i> Case Study
-                </button>
-                <a href="https://baadaldev.github.io/dev-study-tracker/" target="_blank" rel="noopener noreferrer" class="btn-live-link">
-                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Live App
-                </a>
-                <a href="https://github.com/baadaldev" target="_blank" rel="noopener noreferrer" class="btn-github-link" title="GitHub Repo">
-                  <i class="fa-brands fa-github"></i>
-                </a>
-              </div>
-            </div>
-            <h3 class="project-card-title">DevTrack PRO: Engineering Study OS</h3>
-            <p class="project-card-desc">
-              A high-performance productivity platform engineered with an OS-level Picture-in-Picture floating mini-timer that stays pinned on Windows over VS Code and LeetCode, comprehensive lecture checkoffs, and multi-user profile isolation.
-            </p>
-            <ul class="project-highlights-list">
-              <li><i class="fa-solid fa-check"></i> Native Windows Picture-in-Picture always-on-top timer via Canvas Stream API</li>
-              <li><i class="fa-solid fa-check"></i> Course &amp; class lecture manager with real-time percentage progress bars</li>
-              <li><i class="fa-solid fa-check"></i> Multi-profile user authentication with zero-loss localStorage isolation</li>
-            </ul>
-            <div class="project-tags-cloud">
-              <span class="tech-chip">Picture-in-Picture API</span>
-              <span class="tech-chip">Web Audio Synth</span>
-              <span class="tech-chip">Chart.js</span>
-              <span class="tech-chip">Tailwind CSS</span>
-              <span class="tech-chip">JavaScript ES6+</span>
-            </div>
-          </div>
-
-          <!-- Project 3: Discipline Tracker -->
-          <div class="project-card-premium" data-category="fullstack systems">
-            <div class="project-mac-header">
-              <div class="mac-dots">
-                <span class="mac-dot red"></span>
-                <span class="mac-dot yellow"></span>
-                <span class="mac-dot green"></span>
-              </div>
-              <div class="mac-address-bar">baadaldev.github.io/discipline-engine</div>
-            </div>
-            <div class="project-card-header">
-              <div class="project-folder-icon"><i class="fa-solid fa-shield-halved"></i></div>
-              <div class="project-actions">
-                <button type="button" class="btn-case-study" onclick="openCaseStudy('discipline')">
-                  <i class="fa-solid fa-book-open"></i> Case Study
-                </button>
-                <a href="https://github.com/baadaldev" target="_blank" rel="noopener noreferrer" class="btn-github-link" title="GitHub Repo">
-                  <i class="fa-brands fa-github"></i>
-                </a>
-              </div>
-            </div>
-            <h3 class="project-card-title">Discipline Tracker: Cognitive Habit Engine</h3>
-            <p class="project-card-desc">
-              Cognitive behavioral tracker with streak momentum algorithms, local encrypted state storage, and dynamic GitHub-style 365-day habit heatmaps.
-            </p>
-            <div class="project-tags">
-              <span class="tech-tag">TypeScript</span>
-              <span class="tech-tag">Vanilla JS</span>
-              <span class="tech-tag">Web Audio API</span>
-              <span class="tech-tag">LocalDB</span>
-            </div>
-            <div class="project-metrics-row">
-              <span class="metric-item"><i class="fa-solid fa-fire"></i> 365-Day Heatmap</span>
-              <span class="metric-badge">Productivity</span>
-            </div>
-          </div>
-
-          <!-- Project 4: WanderLust -->
-          <div class="project-card-premium" data-category="fullstack">
-            <div class="project-mac-header">
-              <div class="mac-dots">
-                <span class="mac-dot red"></span>
-                <span class="mac-dot yellow"></span>
-                <span class="mac-dot green"></span>
-              </div>
-              <div class="mac-address-bar">wanderlust-travel.onrender.com</div>
-            </div>
-            <div class="project-card-header">
-              <div class="project-folder-icon"><i class="fa-solid fa-hotel"></i></div>
-              <div class="project-actions">
-                <button type="button" class="btn-case-study" onclick="openCaseStudy('wanderlust')">
-                  <i class="fa-solid fa-book-open"></i> Case Study
-                </button>
-                <a href="https://github.com/baadaldev" target="_blank" rel="noopener noreferrer" class="btn-github-link" title="GitHub Repo">
-                  <i class="fa-brands fa-github"></i>
-                </a>
-              </div>
-            </div>
-            <h3 class="project-card-title">WanderLust: Vacation Marketplace</h3>
-            <p class="project-card-desc">
-              Full-stack vacation rental marketplace built with MERN stack following the MVC architecture. Features Mapbox SDK geocoding, Cloudinary image pipeline, and session authentication.
-            </p>
-            <ul class="project-highlights-list">
-              <li><i class="fa-solid fa-check"></i> Interactive Mapbox coordinate mapping</li>
-              <li><i class="fa-solid fa-check"></i> Cloudinary image storage &amp; optimization</li>
-              <li><i class="fa-solid fa-check"></i> Secure session cookies &amp; listing authorization</li>
-            </ul>
-            <div class="project-tags-cloud">
-              <span class="tech-chip">Node.js</span>
-              <span class="tech-chip">Express.js</span>
-              <span class="tech-chip">MongoDB</span>
-              <span class="tech-chip">Mapbox SDK</span>
-              <span class="tech-chip">Cloudinary</span>
-            </div>
-          </div>
-
-          <!-- Project 5: Smart Meal Management -->
-          <div class="project-card-premium" data-category="fullstack">
-            <div class="project-mac-header">
-              <div class="mac-dots">
-                <span class="mac-dot red"></span>
-                <span class="mac-dot yellow"></span>
-                <span class="mac-dot green"></span>
-              </div>
-              <div class="mac-address-bar">smart-meal-management.local</div>
-            </div>
-            <div class="project-card-header">
-              <div class="project-folder-icon"><i class="fa-solid fa-utensils"></i></div>
-              <div class="project-actions">
-                <button type="button" class="btn-case-study" onclick="openCaseStudy('smartmeal')">
-                  <i class="fa-solid fa-book-open"></i> Case Study
-                </button>
-                <a href="https://github.com/baadaldev" target="_blank" rel="noopener noreferrer" class="btn-github-link" title="GitHub Repo">
-                  <i class="fa-brands fa-github"></i>
-                </a>
-              </div>
-            </div>
-            <h3 class="project-card-title">Smart Meal Management System</h3>
-            <p class="project-card-desc">
-              Hostel/mess dining management platform automating daily meal roll-calls, member deposit balance tracking, grocery expense audits, and transparent monthly budget rate computations.
-            </p>
-            <ul class="project-highlights-list">
-              <li><i class="fa-solid fa-check"></i> Automated meal rate &amp; balance reconciliations</li>
-              <li><i class="fa-solid fa-check"></i> Member deposit &amp; expense ledger tracking</li>
-              <li><i class="fa-solid fa-check"></i> Responsive dashboard UI with MySQL schema</li>
-            </ul>
-            <div class="project-tags-cloud">
-              <span class="tech-chip">JavaScript</span>
-              <span class="tech-chip">MySQL</span>
-              <span class="tech-chip">HTML5 / CSS3</span>
-              <span class="tech-chip">Relational Schema</span>
-            </div>
-          </div>
-
-          <!-- Project 6: DIU Student Management -->
-          <div class="project-card-premium" data-category="fullstack systems">
-            <div class="project-mac-header">
-              <div class="mac-dots">
-                <span class="mac-dot red"></span>
-                <span class="mac-dot yellow"></span>
-                <span class="mac-dot green"></span>
-              </div>
-              <div class="mac-address-bar">diu-student-portal.edu.bd</div>
-            </div>
-            <div class="project-card-header">
-              <div class="project-folder-icon"><i class="fa-solid fa-graduation-cap"></i></div>
-              <div class="project-actions">
-                <button type="button" class="btn-case-study" onclick="openCaseStudy('student')">
-                  <i class="fa-solid fa-book-open"></i> Case Study
-                </button>
-                <a href="https://github.com/baadaldev" target="_blank" rel="noopener noreferrer" class="btn-github-link" title="GitHub Repo">
-                  <i class="fa-brands fa-github"></i>
-                </a>
-              </div>
-            </div>
-            <h3 class="project-card-title">DIU Student Management System</h3>
-            <p class="project-card-desc">
-              Structured academic records system streamlining student registrations, course enrollments, attendance logs, and academic GPA analytics for university departmental batches.
-            </p>
-            <ul class="project-highlights-list">
-              <li><i class="fa-solid fa-check"></i> Relational database integrity &amp; query optimization</li>
-              <li><i class="fa-solid fa-check"></i> CRUD operations for student records &amp; courses</li>
-              <li><i class="fa-solid fa-check"></i> Modular administrative control panels</li>
-            </ul>
-            <div class="project-tags-cloud">
-              <span class="tech-chip">Database Systems</span>
-              <span class="tech-chip">SQL</span>
-              <span class="tech-chip">JavaScript</span>
-              <span class="tech-chip">Academic UI</span>
-            </div>
-          </div>
-
-          <!-- Project 7: C++ DSA Hub -->
-          <div class="project-card-premium" data-category="dsa">
-            <div class="project-mac-header">
-              <div class="mac-dots">
-                <span class="mac-dot red"></span>
-                <span class="mac-dot yellow"></span>
-                <span class="mac-dot green"></span>
-              </div>
-              <div class="mac-address-bar">github.com/baadaldev/leetcode-cpp</div>
-            </div>
-            <div class="project-card-header">
-              <div class="project-folder-icon"><i class="fa-solid fa-cubes-stacked"></i></div>
-              <div class="project-actions">
-                <button type="button" class="btn-case-study" onclick="openCaseStudy('dsa')">
-                  <i class="fa-solid fa-book-open"></i> Case Study
-                </button>
-                <a href="https://github.com/baadaldev" target="_blank" rel="noopener noreferrer" class="btn-github-link" title="GitHub Repo">
-                  <i class="fa-brands fa-github"></i>
-                </a>
-              </div>
-            </div>
-            <h3 class="project-card-title">C++ Algorithms &amp; LeetCode Hub</h3>
-            <p class="project-card-desc">
-              Systematic repository archiving solutions to algorithmic challenges, standard data structure implementations (Linked Lists, Binary Trees, Graphs), and semester contest preparation breakdowns.
-            </p>
-            <ul class="project-highlights-list">
-              <li><i class="fa-solid fa-check"></i> Rigorous asymptotic Time &amp; Space complexity notes</li>
-              <li><i class="fa-solid fa-check"></i> Standard implementations in modern C++20 and STL</li>
-              <li><i class="fa-solid fa-check"></i> Two Pointers, Sliding Window, DP, and Tree traversals</li>
-            </ul>
-            <div class="project-tags-cloud">
-              <span class="tech-chip">C++20</span>
-              <span class="tech-chip">STL</span>
-              <span class="tech-chip">DSA</span>
-              <span class="tech-chip">LeetCode</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================
-         SECTION 5: DEVELOPER TERMINAL (#terminal-section)
-         ========================================== -->
-    <section class="portfolio-section" id="terminal-section">
-      <div class="container">
-        <div class="page-header">
-          <div class="page-breadcrumb">
-            <span class="crumb-parent">Developer Console</span>
-            <span class="crumb-separator">/</span>
-            <span class="crumb-current">Interactive Shell</span>
-          </div>
-          <h2 class="page-title">Interactive Developer Terminal</h2>
-          <p class="page-subtitle">Type commands into the terminal below, or click any quick command chip to execute instant system queries.</p>
-          <div class="medieval-divider">
-            <div class="divider-line"></div>
-            <div class="divider-gem"></div>
-            <div class="divider-line"></div>
-          </div>
-        </div>
-
-        <div class="terminal-window">
-          <div class="terminal-header">
-            <div class="mac-buttons">
-              <span class="mac-btn mac-close"></span>
-              <span class="mac-btn mac-min"></span>
-              <span class="mac-btn mac-max"></span>
-            </div>
-            <div class="terminal-title">baadal@diu-cse: ~ (zsh)</div>
-            <div class="terminal-actions">
-              <button type="button" class="term-action-btn" id="term-clear-btn" title="Clear console output">
-                <i class="fa-solid fa-eraser"></i> Clear
-              </button>
-            </div>
-          </div>
-
-          <div class="terminal-body" id="terminal-body">
-            <div class="term-line">
-              <span style="color: #38bdf8;">┌──(</span><span style="color: #22c55e;">baadal@diu-cse</span><span style="color: #38bdf8;">)-[</span><span style="color: #f59e0b;">~</span><span style="color: #38bdf8;">]</span><br />
-              <span style="color: #38bdf8;">└─$</span> <span class="term-highlight">welcome</span>
-            </div>
-            <div class="term-line">
-              Welcome to <strong class="term-highlight">Baadal.dev Interactive CLI</strong> [Version 2.4.0-release]<br />
-              Type <span class="term-code">help</span> to view all available commands, or click the quick chips below.
-            </div>
-          </div>
-
-          <div class="terminal-chips-bar">
-            <span class="chip-label">Quick Commands:</span>
-            <button type="button" class="term-chip" data-cmd="help">help</button>
-            <button type="button" class="term-chip" data-cmd="bio">bio</button>
-            <button type="button" class="term-chip" data-cmd="projects">projects</button>
-            <button type="button" class="term-chip" data-cmd="skills">skills</button>
-            <button type="button" class="term-chip" data-cmd="stats">stats</button>
-            <button type="button" class="term-chip" data-cmd="sudo hire">sudo hire</button>
-            <button type="button" class="term-chip" data-cmd="contact">contact</button>
-            <button type="button" class="term-chip" data-cmd="clear">clear</button>
-          </div>
-
-          <div class="terminal-input-row">
-            <span class="term-prompt">
-              <span class="prompt-user">baadal</span><span class="prompt-at">@</span><span class="prompt-host">diu-cse</span>:<span class="prompt-path">~</span>$&nbsp;
-            </span>
-            <input type="text" id="terminal-input" class="terminal-input" autocomplete="off" spellcheck="false" placeholder="Type 'help', 'bio', 'projects', 'sudo hire'..." />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================
-         SECTION 6: TECHNICAL SKILLS & STACK (#skills)
-         ========================================== -->
-    <section class="portfolio-section" id="skills">
-      <div class="container">
-        <div class="page-header">
-          <div class="page-breadcrumb">
-            <span class="crumb-parent">Architecture</span>
-            <span class="crumb-separator">/</span>
-            <span class="crumb-current">Technical Skills</span>
-          </div>
-          <h2 class="page-title">Skills &amp; Architectural Tooling</h2>
-          <p class="page-subtitle">A balanced toolkit spanning low-level language fundamentals, algorithmic problem solving, and modern web application development.</p>
-          <div class="medieval-divider">
-            <div class="divider-line"></div>
-            <div class="divider-gem"></div>
-            <div class="divider-line"></div>
-          </div>
-        </div>
-
-        <div class="skills-bento-grid">
-          <!-- Category 1: Programming Languages -->
-          <div class="skill-category-card">
-            <h3><i class="fa-solid fa-code"></i> Core Languages</h3>
-            <div class="skill-pills-wrap">
-              <span class="skill-pill-item"><i class="fa-solid fa-c"></i> C / C++20</span>
-              <span class="skill-pill-item"><i class="fa-brands fa-js"></i> JavaScript (ES6+)</span>
-              <span class="skill-pill-item"><i class="fa-brands fa-python"></i> Python</span>
-              <span class="skill-pill-item"><i class="fa-solid fa-database"></i> SQL</span>
-              <span class="skill-pill-item"><i class="fa-brands fa-html5"></i> HTML5 Markup</span>
-              <span class="skill-pill-item"><i class="fa-brands fa-css3-alt"></i> Modern CSS3</span>
-            </div>
-          </div>
-
-          <!-- Category 2: Full-Stack & Web Frameworks -->
-          <div class="skill-category-card">
-            <h3><i class="fa-solid fa-layer-group"></i> Web &amp; Frameworks</h3>
-            <div class="skill-pills-wrap">
-              <span class="skill-pill-item"><i class="fa-brands fa-react"></i> React 19</span>
-              <span class="skill-pill-item"><i class="fa-brands fa-node"></i> Node.js</span>
-              <span class="skill-pill-item"><i class="fa-solid fa-server"></i> Express.js</span>
-              <span class="skill-pill-item"><i class="fa-solid fa-wind"></i> Tailwind CSS</span>
-              <span class="skill-pill-item"><i class="fa-solid fa-network-wired"></i> RESTful APIs</span>
-            </div>
-          </div>
-
-          <!-- Category 3: Databases & Storage -->
-          <div class="skill-category-card">
-            <h3><i class="fa-solid fa-database"></i> Databases &amp; Cloud</h3>
-            <div class="skill-pills-wrap">
-              <span class="skill-pill-item"><i class="fa-solid fa-table"></i> MySQL</span>
-              <span class="skill-pill-item"><i class="fa-solid fa-leaf"></i> MongoDB / Mongoose</span>
-              <span class="skill-pill-item"><i class="fa-solid fa-cloud"></i> Cloudinary CDN</span>
-              <span class="skill-pill-item"><i class="fa-solid fa-map-location-dot"></i> Mapbox SDK</span>
-            </div>
-          </div>
-
-          <!-- Category 4: Computer Science Fundamentals -->
-          <div class="skill-category-card">
-            <h3><i class="fa-solid fa-brain"></i> CS Fundamentals</h3>
-            <div class="skill-pills-wrap">
-              <span class="skill-pill-item"><i class="fa-solid fa-cubes"></i> Data Structures</span>
-              <span class="skill-pill-item"><i class="fa-solid fa-gears"></i> Algorithms Design</span>
-              <span class="skill-pill-item"><i class="fa-solid fa-object-group"></i> OOP Principles</span>
-              <span class="skill-pill-item"><i class="fa-solid fa-calculator"></i> Discrete Math</span>
-              <span class="skill-pill-item"><i class="fa-solid fa-diagram-project"></i> Relational Modeling</span>
-            </div>
-          </div>
-
-          <!-- Category 5: Developer Toolchain -->
-          <div class="skill-category-card" style="grid-column: 1 / -1;">
-            <h3><i class="fa-solid fa-toolbox"></i> Developer Toolchain &amp; Workflow</h3>
-            <div class="skill-pills-wrap">
-              <span class="skill-pill-item"><i class="fa-brands fa-git-alt"></i> Git Version Control</span>
-              <span class="skill-pill-item"><i class="fa-brands fa-github"></i> GitHub</span>
-              <span class="skill-pill-item"><i class="fa-solid fa-terminal"></i> VS Code</span>
-              <span class="skill-pill-item"><i class="fa-brands fa-linux"></i> Linux CLI</span>
-              <span class="skill-pill-item"><i class="fa-solid fa-paper-plane"></i> Postman</span>
-              <span class="skill-pill-item"><i class="fa-solid fa-laptop-code"></i> Windows Terminal</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================
-         SECTION 7: MEMORIES & EARLY ARCHIVES (#memories)
-         ========================================== -->
-    <section class="portfolio-section" id="memories">
-      <div class="container">
-        <div class="page-header">
-          <div class="page-breadcrumb">
-            <span class="crumb-parent">Archives</span>
-            <span class="crumb-separator">/</span>
-            <span class="crumb-current">Memories</span>
-          </div>
-          <h2 class="page-title">First Coding Steps (Feb 2019)</h2>
-          <p class="page-subtitle">Every senior engineer started with humble curiosity. Preserving the exact screenshots from 7 years ago on SoloLearn.</p>
-          <div class="medieval-divider">
-            <div class="divider-line"></div>
-            <div class="divider-gem"></div>
-            <div class="divider-line"></div>
-          </div>
-        </div>
-
-        <div class="memories-story-card">
-          <h3><i class="fa-solid fa-camera-retro" style="color: var(--realm-gold);"></i> The Mobile SoloLearn Archives</h3>
-          <p>
-            Back on <strong>February 26, 2019</strong>, I didn't own a laptop or desktop computer. But my curiosity about how websites worked led me to install the <strong>SoloLearn</strong> mobile app on a smartphone under the username <code>Badolrakib</code>.
-          </p>
-          <p>
-            I typed HTML tags character-by-character on a mobile on-screen keyboard, experimenting with forms, radio buttons, and inputs. Keeping these original captures serves as a constant reminder that with dedication and curiosity, anyone can begin their engineering journey from anywhere.
-          </p>
-        </div>
-
-        <!-- Memories Gallery Grid -->
-        <div class="memories-gallery-grid">
-          <!-- Memory 1 -->
-          <div class="memory-photo-card" onclick="openLightbox('assets/sololearn-code.jpg', 'SoloLearn Mobile Code Editor — Writing raw HTML on a smartphone in Feb 2019')">
-            <div class="memory-img-wrapper">
-              <img src="assets/sololearn-code.jpg" alt="SoloLearn Mobile Code Editor" class="memory-img" />
-              <div class="memory-overlay-hover"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-            </div>
-            <div class="memory-info-box">
-              <h4>Mobile Code Editor (2019)</h4>
-              <p>Writing raw HTML form markup on a smartphone screen without a computer.</p>
-            </div>
-          </div>
-
-          <!-- Memory 2 -->
-          <div class="memory-photo-card" onclick="openLightbox('assets/sololearn-output.jpg', 'SoloLearn Rendered Output — Testing interactive web forms and buttons')">
-            <div class="memory-img-wrapper">
-              <img src="assets/sololearn-output.jpg" alt="SoloLearn Output Preview" class="memory-img" />
-              <div class="memory-overlay-hover"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-            </div>
-            <div class="memory-info-box">
-              <h4>Rendered Output Preview</h4>
-              <p>Testing my first web form with input fields, checkboxes, and submit buttons.</p>
-            </div>
-          </div>
-
-          <!-- Memory 3 -->
-          <div class="memory-photo-card" onclick="openLightbox('assets/sololearn-projects.jpg', 'SoloLearn Project History — Archives under username Badolrakib')">
-            <div class="memory-img-wrapper">
-              <img src="assets/sololearn-projects.jpg" alt="SoloLearn Project Archives" class="memory-img" />
-              <div class="memory-overlay-hover"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-            </div>
-            <div class="memory-info-box">
-              <h4>SoloLearn Profile &amp; Projects</h4>
-              <p>Saved project experiments under my earliest developer handle: <code>Badolrakib</code>.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================
-         SECTION 8: ACHIEVEMENTS & METRICS (#achievements)
-         ========================================== -->
-    <section class="portfolio-section" id="achievements">
-      <div class="container">
-        <div class="page-header">
-          <div class="page-breadcrumb">
-            <span class="crumb-parent">Milestones</span>
-            <span class="crumb-separator">/</span>
-            <span class="crumb-current">Achievements</span>
-          </div>
-          <h2 class="page-title">Verified Achievements &amp; Track Record</h2>
-          <p class="page-subtitle">Real metrics reflecting dedication to algorithmic rigor, academic excellence, and software craft.</p>
-          <div class="medieval-divider">
-            <div class="divider-line"></div>
-            <div class="divider-gem"></div>
-            <div class="divider-line"></div>
-          </div>
-        </div>
-
-        <div class="achievements-grid-modern">
-          <div class="achievement-card-clean">
-            <div class="achieve-icon-box"><i class="fa-solid fa-brain"></i></div>
-            <div class="achieve-details">
-              <span class="achieve-pill">Competitive Programming</span>
-              <h3 class="achieve-title">Algorithmic Problem Solving</h3>
-              <p class="achieve-desc">Daily LeetCode &amp; Beecrowd practice tackling Two Pointers, Binary Search, and asymptotic time-space complexity optimization in C++.</p>
-              <div class="achieve-score">50+ Problems Solved</div>
-            </div>
-          </div>
-
-          <div class="achievement-card-clean">
-            <div class="achieve-icon-box"><i class="fa-solid fa-graduation-cap"></i></div>
-            <div class="achieve-details">
-              <span class="achieve-pill">Academic Rigor</span>
-              <h3 class="achieve-title">B.Sc. in CSE @ DIU</h3>
-              <p class="achieve-desc">Undergraduate in Computer Science &amp; Engineering at Daffodil International University. Excelling in Data Structures, Algorithms, and OOP.</p>
-              <div class="achieve-score">4th Semester Standing</div>
-            </div>
-          </div>
-
-          <div class="achievement-card-clean">
-            <div class="achieve-icon-box"><i class="fa-solid fa-code-branch"></i></div>
-            <div class="achieve-details">
-              <span class="achieve-pill">Production Systems</span>
-              <h3 class="achieve-title">Deployed Software Systems</h3>
-              <p class="achieve-desc">Architected and deployed 5+ full-stack and systems applications including DevTrack PRO, WanderLust, and Smart Meal Management.</p>
-              <div class="achieve-score">5+ Production Applications</div>
-            </div>
-          </div>
-
-          <div class="achievement-card-clean">
-            <div class="achieve-icon-box"><i class="fa-solid fa-clock-rotate-left"></i></div>
-            <div class="achieve-details">
-              <span class="achieve-pill">Persistence</span>
-              <h3 class="achieve-title">7-Year Engineering Path</h3>
-              <p class="achieve-desc">From SoloLearn mobile coder in Feb 2019 to university computer science student developing full-stack web platforms and systems software.</p>
-              <div class="achieve-score">7+ Years Journey</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================
-         SECTION 9: SEND A RAVEN (CONTACT) (#contact)
-         ========================================== -->
-    <section class="portfolio-section" id="contact">
-      <div class="container">
-        <div class="page-header">
-          <div class="page-breadcrumb">
-            <span class="crumb-parent">Inquiries</span>
-            <span class="crumb-separator">/</span>
-            <span class="crumb-current">Send a Raven</span>
-          </div>
-          <h2 class="page-title">Send a Raven to Baadal</h2>
-          <p class="page-subtitle">Interested in software engineering internships, technical collaborations, or high-performance web systems? Dispatch your message below.</p>
-          <div class="medieval-divider">
-            <div class="divider-line"></div>
-            <div class="divider-gem"></div>
-            <div class="divider-line"></div>
-          </div>
-        </div>
-
-        <div class="contact-layout-grid">
-          <!-- Contact Info Column -->
-          <div class="contact-info-card">
-            <h3>Direct Communication</h3>
-            <p>
-              Feel free to reach out directly via email, connect on LinkedIn, or inspect repositories on GitHub. I typically respond within 24 hours.
-            </p>
-            <div class="contact-details-list">
-              <a href="mailto:badolrakib1@gmail.com" class="contact-detail-item">
-                <i class="fa-solid fa-envelope"></i>
-                <div>
-                  <span style="font-size: 11px; color: var(--realm-gold); text-transform: uppercase;">Direct Email</span><br />
-                  <strong>badolrakib1@gmail.com</strong>
-                </div>
+            <div class="project-card-footer">
+              <a href="https://baadaldev.github.io/-NEXUS-Personal-Future-Simulator/" target="_blank" rel="noopener" class="card-action-btn primary">
+                <span>Live Demo</span>
+                <i class="fa-solid fa-arrow-right"></i>
               </a>
-              <a href="https://github.com/baadaldev" target="_blank" rel="noopener noreferrer" class="contact-detail-item">
+              <a href="https://github.com/baadaldev/nexus-future-simulator" target="_blank" rel="noopener" class="card-action-btn outline">
+                <i class="fa-brands fa-github"></i> Code
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 6: Where Did I See That -->
+          <article class="project-card" data-category="ai systems">
+            <div class="project-card-header">
+              <div class="project-type-badge">
+                <i class="fa-solid fa-brain"></i> Semantic Search
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/baadaldev/where-did-i-see-that" target="_blank" rel="noopener" class="icon-link" title="Source Code">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+
+            <h3 class="project-title">Where Did I See That</h3>
+            <p class="project-desc">
+              Local-first semantic memory and technical bookmark search tool. Indexes documentation and code fragments with vector embeddings, offering lightning-fast fuzzy recall without cloud privacy concerns.
+            </p>
+
+            <div class="project-tech-tags">
+              <span class="tech-tag">Local-First</span>
+              <span class="tech-tag">Vector Embeddings</span>
+              <span class="tech-tag">Semantic Search</span>
+              <span class="tech-tag">Privacy Focused</span>
+            </div>
+
+            <div class="project-card-footer">
+              <a href="https://github.com/baadaldev/where-did-i-see-that" target="_blank" rel="noopener" class="card-action-btn primary">
                 <i class="fa-brands fa-github"></i>
-                <div>
-                  <span style="font-size: 11px; color: var(--realm-gold); text-transform: uppercase;">GitHub</span><br />
-                  <strong>github.com/baadaldev</strong>
-                </div>
+                <span>Explore Repository</span>
               </a>
-              <a href="https://linkedin.com/in/baadaldev" target="_blank" rel="noopener noreferrer" class="contact-detail-item">
-                <i class="fa-brands fa-linkedin"></i>
-                <div>
-                  <span style="font-size: 11px; color: var(--realm-gold); text-transform: uppercase;">LinkedIn</span><br />
-                  <strong>linkedin.com/in/baadaldev</strong>
-                </div>
-              </a>
-              <div class="contact-detail-item">
-                <i class="fa-solid fa-location-dot"></i>
-                <div>
-                  <span style="font-size: 11px; color: var(--realm-gold); text-transform: uppercase;">Location</span><br />
-                  <strong>Dhaka, Bangladesh &bull; DIU Campus</strong>
-                </div>
-              </div>
             </div>
-          </div>
+          </article>
 
-          <!-- Royal Contact Parchment -->
-          <div class="parchment-contact-box">
-            <form id="citadel-contact-form" class="contact-form">
-              <div class="form-row">
-                <div class="form-group">
-                  <label class="form-label" for="contact-name">Your Name</label>
-                  <input type="text" id="contact-name" class="form-input" placeholder="e.g. John Doe / Tech Lead" required />
-                </div>
-                <div class="form-group">
-                  <label class="form-label" for="contact-email">Your Email Address</label>
-                  <input type="email" id="contact-email" class="form-input" placeholder="john@company.com" required />
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="form-label" for="contact-subject">Subject</label>
-                <input type="text" id="contact-subject" class="form-input" placeholder="e.g. Internship Inquiry / Software Engineering Role" required />
-              </div>
-
-              <div class="form-group">
-                <label class="form-label" for="contact-message">Message</label>
-                <textarea id="contact-message" class="form-textarea" placeholder="Write your message here..." required></textarea>
-              </div>
-
-              <button type="submit" id="btn-dispatch-raven" class="btn-dispatch-raven">
-                <span>🦅</span> DISPATCH RAVEN TO BAADAL <span>⚔️</span>
-              </button>
-            </form>
-
-            <div id="raven-decree-confirmed" class="raven-decree-confirmed">
-              <img src="assets/wax-seal.svg" alt="Imperial Wax Seal" class="decree-wax-seal" />
-              <h3 style="font-family: 'Cinzel', serif; color: var(--realm-gold-light); margin-bottom: 6px;">THE RAVEN HAS TAKEN FLIGHT</h3>
-              <p class="decree-text">
-                Your message has been sealed with royal crimson wax and dispatched. Baadal shall reply swiftly to your email!
-              </p>
-            </div>
-          </div>
         </div>
+
       </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="citadel-footer">
+    <!-- ==================== SKILLS SECTION ==================== -->
+    <section class="section skills-section" id="skills">
       <div class="container">
-        <div class="footer-motto">“Code is Fire • Architecture is Steel”</div>
-        <p class="footer-copy">
-          Md Rakibul Islam (Baadal) &bull; CSE Undergraduate at Daffodil International University &bull; Forged with Three.js 3D WebGL
-        </p>
+        
+        <div class="section-header">
+          <div class="section-tag">Technical Proficiency</div>
+          <h2 class="section-title">Core Languages, Frameworks &amp; Tooling</h2>
+          <p class="section-desc">Practical proficiency developed through competitive programming and real-world system implementations.</p>
+        </div>
+
+        <div class="skills-grid">
+          <!-- Skill Card 1: Languages -->
+          <div class="skill-category-card">
+            <div class="skill-card-icon">
+              <i class="fa-solid fa-code"></i>
+            </div>
+            <h3 class="skill-category-title">Programming Languages</h3>
+            <ul class="skill-items-list">
+              <li><i class="fa-solid fa-chevron-right"></i> <strong>C++ (C++20 / STL)</strong> &bull; Advanced</li>
+              <li><i class="fa-solid fa-chevron-right"></i> <strong>C</strong> &bull; Systems &amp; Low-level</li>
+              <li><i class="fa-solid fa-chevron-right"></i> <strong>JavaScript (ES6+)</strong> &bull; Advanced</li>
+              <li><i class="fa-solid fa-chevron-right"></i> <strong>TypeScript</strong> &bull; Proficient</li>
+              <li><i class="fa-solid fa-chevron-right"></i> <strong>Python</strong> &bull; Data &amp; AI Integration</li>
+              <li><i class="fa-solid fa-chevron-right"></i> <strong>HTML5 &amp; CSS3</strong> &bull; Modern UI</li>
+            </ul>
+          </div>
+
+          <!-- Skill Card 2: Frontend & UI -->
+          <div class="skill-category-card">
+            <div class="skill-card-icon">
+              <i class="fa-brands fa-react"></i>
+            </div>
+            <h3 class="skill-category-title">Frontend Engineering</h3>
+            <ul class="skill-items-list">
+              <li><i class="fa-solid fa-chevron-right"></i> <strong>React.js (React 19)</strong></li>
+              <li><i class="fa-solid fa-chevron-right"></i> <strong>Next.js (App Router)</strong></li>
+              <li><i class="fa-solid fa-chevron-right"></i> <strong>Tailwind CSS</strong></li>
+              <li><i class="fa-solid fa-chevron-right"></i> <strong>Three.js / WebGL</strong></li>
+              <li><i class="fa-solid fa-chevron-right"></i> <strong>Vite &amp; Responsive Web</strong></li>
+            </ul>
+          </div>
+
+          <!-- Skill Card 3: Backend & Databases -->
+          <div class="skill-category-card">
+            <div class="skill-card-icon">
+              <i class="fa-solid fa-server"></i>
+            </div>
+            <h3 class="skill-category-title">Backend &amp; Databases</h3>
+            <ul class="skill-items-list">
+              <li><i class="fa-solid fa-chevron-right"></i> <strong>Node.js &amp; Express.js</strong></li>
+              <li><i class="fa-solid fa-chevron-right"></i> <strong>RESTful APIs &amp; JSON</strong></li>
+              <li><i class="fa-solid fa-chevron-right"></i> <strong>SQL &amp; Relational Schemas</strong></li>
+              <li><i class="fa-solid fa-chevron-right"></i> <strong>MongoDB / SQLite</strong></li>
+              <li><i class="fa-solid fa-chevron-right"></i> <strong>Network Socket Programming</strong></li>
+            </ul>
+          </div>
+
+          <!-- Skill Card 4: Core CS & Tools -->
+          <div class="skill-category-card">
+            <div class="skill-card-icon">
+              <i class="fa-solid fa-microchip"></i>
+            </div>
+            <h3 class="skill-category-title">Core CS &amp; Developer Tools</h3>
+            <ul class="skill-items-list">
+              <li><i class="fa-solid fa-chevron-right"></i> <strong>Data Structures &amp; Algorithms</strong></li>
+              <li><i class="fa-solid fa-chevron-right"></i> <strong>Object-Oriented Programming (OOP)</strong></li>
+              <li><i class="fa-solid fa-chevron-right"></i> <strong>Git &amp; GitHub (CI/CD)</strong></li>
+              <li><i class="fa-solid fa-chevron-right"></i> <strong>Linux / Command Line</strong></li>
+              <li><i class="fa-solid fa-chevron-right"></i> <strong>Postman &amp; VS Code</strong></li>
+            </ul>
+          </div>
+        </div>
+
       </div>
-    </footer>
+    </section>
+
+    <!-- ==================== LEADERSHIP & CP PROFILES ==================== -->
+    <section class="section leadership-section" id="leadership">
+      <div class="container">
+        
+        <div class="section-header">
+          <div class="section-tag">Experience &amp; Community</div>
+          <h2 class="section-title">Leadership, Education &amp; Problem Solving</h2>
+          <p class="section-desc">Where I build, learn, and contribute continuously.</p>
+        </div>
+
+        <div class="experience-grid">
+          <!-- Org Card: Synovara -->
+          <div class="exp-card highlight-card">
+            <div class="exp-badge">Leadership</div>
+            <div class="exp-header">
+              <div class="exp-logo-wrap">
+                <i class="fa-solid fa-cubes"></i>
+              </div>
+              <div>
+                <h3 class="exp-title">Founder &amp; Lead Architect</h3>
+                <p class="exp-org"><a href="https://github.com/Synovara" target="_blank" class="text-link">Synovara</a> &bull; Independent Software Collective</p>
+                <span class="exp-duration">Oct 2026 – Present &bull; Open Source</span>
+              </div>
+            </div>
+            <p class="exp-desc">
+              Directing open-source development across low-level C++20 systems, scalable web platforms, and intelligent developer utilities. Establishing clean architecture standards and modular documentation.
+            </p>
+            <div class="exp-tags">
+              <span>Open Source</span>
+              <span>Systems Engineering</span>
+              <span>Full-Stack</span>
+              <span>Synovara</span>
+            </div>
+          </div>
+
+          <!-- Education Card: DIU -->
+          <div class="exp-card">
+            <div class="exp-badge">Education</div>
+            <div class="exp-header">
+              <div class="exp-logo-wrap">
+                <i class="fa-solid fa-graduation-cap"></i>
+              </div>
+              <div>
+                <h3 class="exp-title">B.Sc. in Computer Science &amp; Engineering</h3>
+                <p class="exp-org">Daffodil International University (DIU)</p>
+                <span class="exp-duration">2024 – 2028 (4th Semester) &bull; Dhaka, Bangladesh</span>
+              </div>
+            </div>
+            <p class="exp-desc">
+              Relevant Coursework: Structured Programming (C/C++), Data Structures &amp; Algorithms, Object-Oriented Programming (OOP), Discrete Mathematics, Database Management Systems (DBMS).
+            </p>
+            <div class="exp-tags">
+              <span>Data Structures</span>
+              <span>Algorithms</span>
+              <span>OOP</span>
+              <span>DBMS</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Problem Solving Badges Strip -->
+        <div class="cp-badges-container">
+          <h4 class="cp-title"><i class="fa-solid fa-trophy" style="color: #f59e0b; margin-right: 8px;"></i> Problem Solving Profiles &amp; Ratings</h4>
+          <div class="cp-links-row">
+            <a href="https://leetcode.com/u/Baadal89131/" target="_blank" rel="noopener" class="cp-badge-card">
+              <div class="cp-icon leetcode"><i class="fa-solid fa-code"></i></div>
+              <div class="cp-meta">
+                <strong>LeetCode</strong>
+                <span>@Baadal89131 &bull; Active Solver</span>
+              </div>
+              <i class="fa-solid fa-arrow-up-right-from-square cp-arrow"></i>
+            </a>
+
+            <a href="https://www.hackerrank.com/profile/badolrakib1" target="_blank" rel="noopener" class="cp-badge-card">
+              <div class="cp-icon hackerrank"><i class="fa-brands fa-hackerrank"></i></div>
+              <div class="cp-meta">
+                <strong>HackerRank</strong>
+                <span>@badolrakib1 &bull; C++ &amp; Problem Solving</span>
+              </div>
+              <i class="fa-solid fa-arrow-up-right-from-square cp-arrow"></i>
+            </a>
+
+            <a href="https://github.com/baadaldev" target="_blank" rel="noopener" class="cp-badge-card">
+              <div class="cp-icon github"><i class="fa-brands fa-github"></i></div>
+              <div class="cp-meta">
+                <strong>GitHub</strong>
+                <span>@baadaldev &bull; 18+ Repositories</span>
+              </div>
+              <i class="fa-solid fa-arrow-up-right-from-square cp-arrow"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== CONTACT SECTION ==================== -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        
+        <div class="contact-box">
+          <div class="contact-header">
+            <div class="section-tag">Let's Connect</div>
+            <h2 class="section-title">Ready to Build Something Impactful?</h2>
+            <p class="section-desc">
+              Whether you have an internship opportunity, an open-source collaboration, or just want to chat about engineering and algorithms—my inbox is always open.
+            </p>
+          </div>
+
+          <div class="contact-details-row">
+            <!-- Email Box with Copy Button -->
+            <div class="contact-method-card">
+              <div class="cm-icon"><i class="fa-solid fa-envelope"></i></div>
+              <div class="cm-info">
+                <span class="cm-label">Direct Email</span>
+                <span class="cm-value" id="email-text">badolrakib1@gmail.com</span>
+              </div>
+              <button type="button" class="copy-email-btn" id="copy-email-btn" title="Copy to clipboard">
+                <i class="fa-solid fa-copy"></i>
+                <span id="copy-tooltip">Copy</span>
+              </button>
+            </div>
+
+            <!-- LinkedIn Box -->
+            <a href="https://www.linkedin.com/in/md-rakibul-islam-a2b136408" target="_blank" rel="noopener" class="contact-method-card">
+              <div class="cm-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+              <div class="cm-info">
+                <span class="cm-label">LinkedIn</span>
+                <span class="cm-value">md-rakibul-islam</span>
+              </div>
+              <i class="fa-solid fa-arrow-up-right-from-square cm-arrow"></i>
+            </a>
+
+            <!-- GitHub Box -->
+            <a href="https://github.com/baadaldev" target="_blank" rel="noopener" class="contact-method-card">
+              <div class="cm-icon"><i class="fa-brands fa-github"></i></div>
+              <div class="cm-info">
+                <span class="cm-label">GitHub</span>
+                <span class="cm-value">baadaldev</span>
+              </div>
+              <i class="fa-solid fa-arrow-up-right-from-square cm-arrow"></i>
+            </a>
+          </div>
+
+          <div class="contact-footer-cta">
+            <a href="mailto:badolrakib1@gmail.com?subject=Opportunity%20Discussion%20from%20Portfolio" class="btn btn-primary btn-lg">
+              <i class="fa-solid fa-paper-plane"></i>
+              <span>Send Me an Email</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
   </main>
 
-  <!-- =======================================================
-       MODAL: CASE STUDIES & RESUME
-       ======================================================= -->
-  <div id="general-modal-backdrop" class="realm-modal-backdrop" onclick="if(event.target === this) closeModal()">
-    <div class="realm-modal-dialog">
-      <button class="modal-close-btn" onclick="closeModal()">✕</button>
-      <h3 id="modal-title" class="modal-title">Title</h3>
-      <div id="modal-body" class="modal-body"></div>
-      <div style="text-align: right; margin-top: 20px;">
-        <button class="btn-primary-realm" onclick="closeModal()">
-          <span>✓</span> Close
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-left">
+        <a href="#hero" class="brand-logo">
+          <span class="brand-bracket">&lt;</span><span class="brand-name">Baadal</span><span class="brand-dot">.dev</span><span class="brand-bracket"> /&gt;</span>
+        </a>
+        <p class="footer-tagline">Crafted with clean code &amp; precision by Md. Rakibul Islam.</p>
+      </div>
+
+      <div class="footer-nav">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#leadership">Experience</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="footer-right">
+        <span>&copy; 2026 Md. Rakibul Islam. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== RESUME MODAL ==================== -->
+  <div class="modal-backdrop" id="resume-modal" onclick="closeResumeModal(event)">
+    <div class="modal-dialog" onclick="event.stopPropagation()">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <i class="fa-solid fa-file-lines" style="color: var(--accent-cyan);"></i>
+          <h3>Curriculum Vitae — Md. Rakibul Islam</h3>
+        </div>
+        <button type="button" class="modal-close-btn" onclick="closeResumeModal(event)" aria-label="Close modal">
+          <i class="fa-solid fa-xmark"></i>
         </button>
+      </div>
+
+      <div class="modal-body">
+        <div class="resume-preview-card">
+          <div class="rp-header">
+            <h4>Md. Rakibul Islam (Baadal)</h4>
+            <p>CSE Student at Daffodil International University | Full-Stack &amp; Systems Developer</p>
+            <div class="rp-contacts">
+              <span><i class="fa-solid fa-envelope"></i> badolrakib1@gmail.com</span>
+              <span><i class="fa-solid fa-location-dot"></i> Dhaka, Bangladesh</span>
+              <span><i class="fa-brands fa-github"></i> github.com/baadaldev</span>
+            </div>
+          </div>
+
+          <div class="rp-section">
+            <h5>EDUCATION</h5>
+            <p><strong>B.Sc. in Computer Science &amp; Engineering</strong> &bull; Daffodil International University (2024–2028)</p>
+          </div>
+
+          <div class="rp-section">
+            <h5>TECHNICAL SKILLS</h5>
+            <p><strong>Languages:</strong> C++20, C, JavaScript (ES6+), TypeScript, Python, HTML5, CSS3</p>
+            <p><strong>Frameworks &amp; Tools:</strong> React, Next.js, Node.js, Express, Tailwind CSS, Three.js, Git, Linux</p>
+            <p><strong>Core CS:</strong> Data Structures &amp; Algorithms, Object-Oriented Programming (OOP), Graph Theory</p>
+          </div>
+
+          <div class="rp-section">
+            <h5>FLAGSHIP PROJECTS</h5>
+            <p><strong>DIU Campus Navigator:</strong> 3D interactive routing platform powered by Dijkstra's algorithm &amp; Three.js.</p>
+            <p><strong>CP Mastery Hub:</strong> 20-chapter competitive programming roadmap with 60fps algorithm visualizer.</p>
+            <p><strong>Mini Redis C++:</strong> Custom in-memory key-value database built in C++20 with socket communication.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <a href="mailto:badolrakib1@gmail.com?subject=Resume%20Request" class="btn btn-primary">
+          <i class="fa-solid fa-envelope"></i> Request Full PDF CV
+        </a>
+        <a href="https://www.linkedin.com/in/md-rakibul-islam-a2b136408" target="_blank" rel="noopener" class="btn btn-outline">
+          <i class="fa-brands fa-linkedin"></i> Connect on LinkedIn
+        </a>
       </div>
     </div>
   </div>
 
-  <!-- =======================================================
-       MODAL: MEMORIES LIGHTBOX
-       ======================================================= -->
-  <div id="lightbox-modal-backdrop" class="realm-modal-backdrop" onclick="if(event.target === this) closeLightbox()">
-    <div class="lightbox-dialog">
-      <button class="modal-close-btn" onclick="closeLightbox()">✕</button>
-      <img id="lightbox-img" class="lightbox-img" src="" alt="Early Memory" />
-      <p id="lightbox-caption" class="lightbox-caption"></p>
-    </div>
-  </div>
-
-  <!-- =======================================================
-       SCRIPTS
-       ======================================================= -->
-  <script src="scripts/three.min.js"></script>
-  <script>
-    if (typeof THREE === 'undefined') {
-      document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"><\/script>');
-    }
-  </script>
-  <script src="scripts/audio-engine.js"></script>
-  <script src="scripts/particles.js"></script>
-  <script src="scripts/astrolabe-3d.js"></script>
-  <script src="scripts/raven-animation.js"></script>
-  <script src="scripts/app.js"></script>
+  <!-- JavaScript -->
+  <script src="script.js"></script>
 </body>
 </html>

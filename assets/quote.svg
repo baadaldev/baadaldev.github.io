@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 120" width="100%" height="120">
+  <defs>
+    <linearGradient id="q-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#09090b" />
+      <stop offset="50%" stop-color="#120608" />
+      <stop offset="100%" stop-color="#070709" />
+    </linearGradient>
+    <linearGradient id="q-border" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7f1d1d" />
+      <stop offset="50%" stop-color="#ef4444" />
+      <stop offset="100%" stop-color="#7f1d1d" />
+    </linearGradient>
+    <filter id="q-glow">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Card Background -->
+  <rect width="820" height="120" rx="10" fill="url(#q-bg)" stroke="url(#q-border)" stroke-width="1.2" />
+
+  <!-- Corner Cyber Accents -->
+  <path d="M 8 20 L 8 8 L 20 8" stroke="#ff2a45" stroke-width="2.5" fill="none" stroke-linecap="round" />
+  <path d="M 812 20 L 812 8 L 800 8" stroke="#ff2a45" stroke-width="2.5" fill="none" stroke-linecap="round" />
+  <path d="M 8 100 L 8 112 L 20 112" stroke="#ff2a45" stroke-width="2.5" fill="none" stroke-linecap="round" />
+  <path d="M 812 100 L 812 112 L 800 112" stroke="#ff2a45" stroke-width="2.5" fill="none" stroke-linecap="round" />
+
+  <!-- Big Quote Mark -->
+  <text x="32" y="56" font-family="Georgia, serif" font-size="44" font-weight="bold" fill="#ff2a45" opacity="0.9" filter="url(#q-glow)">&#8220;</text>
+
+  <!-- Quote Text Line -->
+  <text x="64" y="52" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15.5" font-style="italic" font-weight="500" fill="#f1f5f9">
+    &#8220;Driven by curiosity, building for impact &#8212; turning logic and data into real-world solutions.&#8221;
+  </text>
+
+  <!-- Attribution Line -->
+  <text x="760" y="88" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" fill="#ef4444" letter-spacing="1">
+    &#8212; Md Rakibul Islam (Baadal)
+  </text>
+</svg>

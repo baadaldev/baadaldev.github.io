@@ -1,79 +1,25 @@
-# ⚔️ THE CITADEL: GAME OF THRONES CINEMATIC PORTFOLIO
+# 🗺️ The Cartographer's Odyssey — Md Rakibul Islam (Baadal)
 
-> *"A developer always pays their technical debt."*
+> **A Cinematic Historical Novel & Living Map Portfolio**  
+> *Live at: [baadaldev.github.io](https://baadaldev.github.io/)*
 
-An epic, award-winning Game of Thrones inspired portfolio website engineered with **Three.js 3D WebGL**, procedural **Web Audio API Orchestral Synthesis** (the iconic cello theme without needing any external MP3 files!), real-time **Atmospheric Particle Shaders** (dragon embers, Winterfell snow, and wildfire), and **Interactive Westeros Lore**.
-
----
-
-## 🌟 Majestic Features
-
-1. **The Grand Astrolabe 3D Opening Sequence (WebGL)**:
-   - Authentic rotating concentric brass & gold astrolabe bands with engraved relief gears.
-   - Blazing central sun with lens flares and solar corona.
-   - Mechanical citadel keeps and rotating cogwheel platforms rising from below.
-   - Cinematic camera fly-through dive upon clicking **"CLAIM THE THRONE & ENTER"**.
-
-2. **Procedural Web Audio Orchestral Engine**:
-   - Synthesizes the haunting Game of Thrones D-minor cello theme, taiko war drums, violins, and clockwork cogs entirely in real time using the browser's Web Audio API (zero audio file dependencies!).
-   - Sound FX: Valyrian steel sword clangs, dragon flame breaths, winter blizzard wind, and raven caws.
-   - Floating antique audio widget with real-time frequency visualizer bars and volume slider.
-
-3. **The Four Great Houses Theme Switcher**:
-   - **House Targaryen** ("Fire and Blood"): Fiery crimson, molten gold, and rising fire embers.
-   - **House Stark** ("Winter is Coming"): Arctic ice cyan, falling snowflakes, and silver blade tones.
-   - **House Lannister** ("Hear Me Roar"): 24k imperial gold, deep crimson, and shimmering gold dust.
-   - **The Night's Watch** ("Shield of the Realm"): Obsidian black and emerald wildfire embers.
-
-4. **The Four Houses of Code (Tech Stack)**:
-   - House of the Iron Interface (Frontend)
-   - House of the Iron Citadel (Backend)
-   - House of the Grand Vaults (Database)
-   - House of the High Watchtower (DevOps & Cloud)
-   - Runic mastery bars styled as forged Valyrian steel blades.
-
-5. **Chronicles of Conquest (Projects)**:
-   - Ancient battle map cards with 3D cursor tilt effects.
-   - Royal wax seals stamped on each victory.
-   - "View Battle Lore" modal popup detailing system architecture and benchmarks.
-
-6. **Send a Raven (Interactive Contact Section)**:
-   - Royal parchment desk with wax seal stamp.
-   - When dispatched, a silhouette raven swoops across the starry sky with authentic wing-flap audio!
-
-7. **The Citadel Scribe (In-Browser Live Editor)**:
-   - Click **"Edit Scribe"** in the top navigation to update your Name, Royal Titles, Bio, Email, and GitHub link directly in the browser with instant local saving (`localStorage`).
+<p align="left">
+  <a href="https://github.com/topics/portfolio"><img src="https://img.shields.io/badge/topic-portfolio-0284c7?style=flat-square" alt="portfolio" /></a>
+  <a href="https://github.com/topics/developer-portfolio"><img src="https://img.shields.io/badge/topic-developer--portfolio-10b981?style=flat-square" alt="developer-portfolio" /></a>
+  <a href="https://github.com/topics/personal-website"><img src="https://img.shields.io/badge/topic-personal--website-8b5cf6?style=flat-square" alt="personal-website" /></a>
+  <a href="https://github.com/topics/github-pages"><img src="https://img.shields.io/badge/topic-github--pages-22272e?style=flat-square&logo=github&logoColor=white" alt="github-pages" /></a>
+  <a href="https://github.com/topics/javascript"><img src="https://img.shields.io/badge/topic-javascript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" alt="javascript" /></a>
+</p>
 
 ---
 
-## 🚀 How to Run
+## 📜 Concept & Aesthetic
+Inspired by 16th-century navigational manuscripts, ancient sea charts, and epic adventure chronicles.
 
-### Option 1: Instant Direct Launch
-Double click or open `index.html` in any modern web browser (Google Chrome, Microsoft Edge, Brave, Firefox):
-```powershell
-start index.html
-```
-
-### Option 2: Run with Local Development Server
-From this directory:
-```bash
-npm start
-```
-or:
-```bash
-npx serve . -l 3000
-```
-Then visit: `http://localhost:3000`
+* **Living Cartography:** An animated Canvas ocean with sailing caravels, contour lines, and ambient candlelight.
+* **Procedural Soundscape:** Pure **Web Audio API** synthesized medieval ambient music (D-Minor drone, ocean wind, harmonic chimes) with zero external audio assets.
+* **Illuminated Manuscripts:** Vintage Cinzel & Cormorant Garamond typography with drop-cap initials and antique deckle borders.
+* **Province Navigation:** Interactive HUD that glides smoothly across the historical map from kingdom to kingdom.
 
 ---
-
-## 🛠️ Personalization
-
-To modify the default content permanently, edit `realm-config.js`:
-- `lord.name`: Your name
-- `lord.title`: Your professional subtitle
-- `lord.stats`: Years in realm, projects completed, etc.
-- `housesOfTech`: Your technical skills and mastery percentages
-- `campaigns`: Your portfolio projects, battle reports, and URLs
-- `annals`: Your work timeline and milestones
-- `endorsements`: Client testimonials and recommendations
+*Authored & Engineered with passion by [Md Rakibul Islam (Baadal)](https://github.com/baadaldev) · Anno Domini 2026*

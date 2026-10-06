@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 80" width="100%" height="80">
+  <defs>
+    <linearGradient id="footer-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7f1d1d" stop-opacity="0" />
+      <stop offset="30%" stop-color="#ef4444" stop-opacity="0.8" />
+      <stop offset="50%" stop-color="#ff4d6d" stop-opacity="1" />
+      <stop offset="70%" stop-color="#ef4444" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#7f1d1d" stop-opacity="0" />
+    </linearGradient>
+    <filter id="f-glow">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Glowing Neon Divider Line -->
+  <line x1="50" y1="20" x2="850" y2="20" stroke="url(#footer-grad)" stroke-width="2" filter="url(#f-glow)" />
+
+  <!-- Center Diamond & Tech Mark -->
+  <polygon points="450,15 456,20 450,25 444,20" fill="#ff2a45" filter="url(#f-glow)" />
+  <circle cx="430" cy="20" r="2" fill="#ef4444" />
+  <circle cx="470" cy="20" r="2" fill="#ef4444" />
+
+  <text x="450" y="52" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" fill="#64748b" letter-spacing="2">
+    CRAFTED WITH PASSION BY <tspan fill="#ef4444">MD RAKIBUL ISLAM (BAADAL)</tspan> &#8226; &#169; 2026
+  </text>
+</svg>
