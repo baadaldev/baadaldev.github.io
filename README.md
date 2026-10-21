@@ -23,6 +23,3 @@ Inspired by 16th-century navigational manuscripts, ancient sea charts, and epic 
 
 ---
 *Authored & Engineered with passion by [Md Rakibul Islam (Baadal)](https://github.com/baadaldev) · Anno Domini 2026*
-**
-&&
-@@
